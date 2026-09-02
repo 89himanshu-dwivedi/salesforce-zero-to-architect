@@ -34,9 +34,8 @@ A **Kafka topic** is a named category/stream of events — a durable, append-onl
 - Bridging Kafka to Salesforce still consumes API and callout limits.
 
 > **Want the deeper material for this topic?**
-> Advanced and architect-level depth, real-world scenarios, gotchas and interview questions
-> are not published here. Connect with me - **LinkedIn · X · GitHub** - details on the
-> [home page](../index.md).
+> Advanced depth, real-world scenarios, gotchas and interview questions are not published here.
+> Connect: [LinkedIn](https://www.linkedin.com/in/himanshukumar-sf/) · [X](https://x.com/kum60094) · [GitHub](https://github.com/89himanshu-dwivedi) · [Email](mailto:himanshu.jee.1996@gmail.com)
 
 ## Kafka Partitions
 
@@ -57,9 +56,8 @@ A **partition** is a sub-log of a Kafka topic. Splitting a topic into partitions
 - Key choice determines skew - a hot key serialises throughput.
 
 > **Want the deeper material for this topic?**
-> Advanced and architect-level depth, real-world scenarios, gotchas and interview questions
-> are not published here. Connect with me - **LinkedIn · X · GitHub** - details on the
-> [home page](../index.md).
+> Advanced depth, real-world scenarios, gotchas and interview questions are not published here.
+> Connect: [LinkedIn](https://www.linkedin.com/in/himanshukumar-sf/) · [X](https://x.com/kum60094) · [GitHub](https://github.com/89himanshu-dwivedi) · [Email](mailto:himanshu.jee.1996@gmail.com)
 
 ## Consumer Groups
 
@@ -80,9 +78,8 @@ A **consumer group** is a set of consumers that cooperatively read a topic — K
 - Offset management is the consumer's responsibility.
 
 > **Want the deeper material for this topic?**
-> Advanced and architect-level depth, real-world scenarios, gotchas and interview questions
-> are not published here. Connect with me - **LinkedIn · X · GitHub** - details on the
-> [home page](../index.md).
+> Advanced depth, real-world scenarios, gotchas and interview questions are not published here.
+> Connect: [LinkedIn](https://www.linkedin.com/in/himanshukumar-sf/) · [X](https://x.com/kum60094) · [GitHub](https://github.com/89himanshu-dwivedi) · [Email](mailto:himanshu.jee.1996@gmail.com)
 
 ## Offsets
 
@@ -103,9 +100,8 @@ An **offset** is a consumer's position in a partition — the index of the next 
 - Manual offset resets are operationally risky and rarely reversible.
 
 > **Want the deeper material for this topic?**
-> Advanced and architect-level depth, real-world scenarios, gotchas and interview questions
-> are not published here. Connect with me - **LinkedIn · X · GitHub** - details on the
-> [home page](../index.md).
+> Advanced depth, real-world scenarios, gotchas and interview questions are not published here.
+> Connect: [LinkedIn](https://www.linkedin.com/in/himanshukumar-sf/) · [X](https://x.com/kum60094) · [GitHub](https://github.com/89himanshu-dwivedi) · [Email](mailto:himanshu.jee.1996@gmail.com)
 
 ## RabbitMQ
 
@@ -126,9 +122,8 @@ An **offset** is a consumer's position in a partition — the index of the next 
 - Message TTL and queue limits must be configured explicitly.
 
 > **Want the deeper material for this topic?**
-> Advanced and architect-level depth, real-world scenarios, gotchas and interview questions
-> are not published here. Connect with me - **LinkedIn · X · GitHub** - details on the
-> [home page](../index.md).
+> Advanced depth, real-world scenarios, gotchas and interview questions are not published here.
+> Connect: [LinkedIn](https://www.linkedin.com/in/himanshukumar-sf/) · [X](https://x.com/kum60094) · [GitHub](https://github.com/89himanshu-dwivedi) · [Email](mailto:himanshu.jee.1996@gmail.com)
 
 ## Azure Event Hub
 
@@ -149,9 +144,8 @@ An **offset** is a consumer's position in a partition — the index of the next 
 - Salesforce integration is via HTTP or middleware, consuming callout limits.
 
 > **Want the deeper material for this topic?**
-> Advanced and architect-level depth, real-world scenarios, gotchas and interview questions
-> are not published here. Connect with me - **LinkedIn · X · GitHub** - details on the
-> [home page](../index.md).
+> Advanced depth, real-world scenarios, gotchas and interview questions are not published here.
+> Connect: [LinkedIn](https://www.linkedin.com/in/himanshukumar-sf/) · [X](https://x.com/kum60094) · [GitHub](https://github.com/89himanshu-dwivedi) · [Email](mailto:himanshu.jee.1996@gmail.com)
 
 ## AWS EventBridge
 
@@ -172,9 +166,8 @@ An **offset** is a consumer's position in a partition — the index of the next 
 - Salesforce Event Relay has its own configuration and object support limits.
 
 > **Want the deeper material for this topic?**
-> Advanced and architect-level depth, real-world scenarios, gotchas and interview questions
-> are not published here. Connect with me - **LinkedIn · X · GitHub** - details on the
-> [home page](../index.md).
+> Advanced depth, real-world scenarios, gotchas and interview questions are not published here.
+> Connect: [LinkedIn](https://www.linkedin.com/in/himanshukumar-sf/) · [X](https://x.com/kum60094) · [GitHub](https://github.com/89himanshu-dwivedi) · [Email](mailto:himanshu.jee.1996@gmail.com)
 
 ## Google Pub/Sub
 
@@ -195,9 +188,8 @@ An **offset** is a consumer's position in a partition — the index of the next 
 - Salesforce integration requires middleware or custom callouts.
 
 > **Want the deeper material for this topic?**
-> Advanced and architect-level depth, real-world scenarios, gotchas and interview questions
-> are not published here. Connect with me - **LinkedIn · X · GitHub** - details on the
-> [home page](../index.md).
+> Advanced depth, real-world scenarios, gotchas and interview questions are not published here.
+> Connect: [LinkedIn](https://www.linkedin.com/in/himanshukumar-sf/) · [X](https://x.com/kum60094) · [GitHub](https://github.com/89himanshu-dwivedi) · [Email](mailto:himanshu.jee.1996@gmail.com)
 
 ---
 
@@ -206,8 +198,11 @@ An **offset** is a consumer's position in a partition — the index of the next 
 These pages carry the **definitions and limits** only. The advanced depth, real-world
 scenarios, error playbooks, best-option reasoning and interview questions are kept aside.
 
-If you would like them, or you want to talk about the topics on this page, connect with me
-on **LinkedIn**, **X (Twitter)** or **GitHub** - all links are on the
-[home page](../index.md).
+If you would like them, or you want to talk about anything on this page:
+
+- **LinkedIn** - [in/himanshukumar-sf](https://www.linkedin.com/in/himanshukumar-sf/)
+- **X** - [@kum60094](https://x.com/kum60094)
+- **GitHub** - [89himanshu-dwivedi](https://github.com/89himanshu-dwivedi)
+- **Email** - [himanshu.jee.1996@gmail.com](mailto:himanshu.jee.1996@gmail.com)
 
 *- Himanshu Kumar*

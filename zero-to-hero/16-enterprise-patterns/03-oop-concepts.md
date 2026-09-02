@@ -33,9 +33,8 @@
 - `@TestVisible`; global = permanent contract.
 
 > **Want the deeper material for this topic?**
-> Advanced and architect-level depth, real-world scenarios, gotchas and interview questions
-> are not published here. Connect with me - **LinkedIn · X · GitHub** - details on the
-> [home page](../index.md).
+> Advanced depth, real-world scenarios, gotchas and interview questions are not published here.
+> Connect: [LinkedIn](https://www.linkedin.com/in/himanshukumar-sf/) · [X](https://x.com/kum60094) · [GitHub](https://github.com/89himanshu-dwivedi) · [Email](mailto:himanshu.jee.1996@gmail.com)
 
 ## Inheritance
 
@@ -55,9 +54,8 @@
 - Multiple interfaces; prefer composition for reuse.
 
 > **Want the deeper material for this topic?**
-> Advanced and architect-level depth, real-world scenarios, gotchas and interview questions
-> are not published here. Connect with me - **LinkedIn · X · GitHub** - details on the
-> [home page](../index.md).
+> Advanced depth, real-world scenarios, gotchas and interview questions are not published here.
+> Connect: [LinkedIn](https://www.linkedin.com/in/himanshukumar-sf/) · [X](https://x.com/kum60094) · [GitHub](https://github.com/89himanshu-dwivedi) · [Email](mailto:himanshu.jee.1996@gmail.com)
 
 ## Polymorphism
 
@@ -77,9 +75,8 @@
 - Type.forName dynamic dispatch; metadata-driven.
 
 > **Want the deeper material for this topic?**
-> Advanced and architect-level depth, real-world scenarios, gotchas and interview questions
-> are not published here. Connect with me - **LinkedIn · X · GitHub** - details on the
-> [home page](../index.md).
+> Advanced depth, real-world scenarios, gotchas and interview questions are not published here.
+> Connect: [LinkedIn](https://www.linkedin.com/in/himanshukumar-sf/) · [X](https://x.com/kum60094) · [GitHub](https://github.com/89himanshu-dwivedi) · [Email](mailto:himanshu.jee.1996@gmail.com)
 
 ## Abstraction
 
@@ -99,9 +96,8 @@
 - Clean contracts at real variation; enables DIP/OCP.
 
 > **Want the deeper material for this topic?**
-> Advanced and architect-level depth, real-world scenarios, gotchas and interview questions
-> are not published here. Connect with me - **LinkedIn · X · GitHub** - details on the
-> [home page](../index.md).
+> Advanced depth, real-world scenarios, gotchas and interview questions are not published here.
+> Connect: [LinkedIn](https://www.linkedin.com/in/himanshukumar-sf/) · [X](https://x.com/kum60094) · [GitHub](https://github.com/89himanshu-dwivedi) · [Email](mailto:himanshu.jee.1996@gmail.com)
 
 ## Composition
 
@@ -121,9 +117,8 @@
 - Delegation in code; powers strategy/decorator.
 
 > **Want the deeper material for this topic?**
-> Advanced and architect-level depth, real-world scenarios, gotchas and interview questions
-> are not published here. Connect with me - **LinkedIn · X · GitHub** - details on the
-> [home page](../index.md).
+> Advanced depth, real-world scenarios, gotchas and interview questions are not published here.
+> Connect: [LinkedIn](https://www.linkedin.com/in/himanshukumar-sf/) · [X](https://x.com/kum60094) · [GitHub](https://github.com/89himanshu-dwivedi) · [Email](mailto:himanshu.jee.1996@gmail.com)
 
 ## Aggregation
 
@@ -143,9 +138,8 @@
 - Own sharing/ownership; reparentable; more per object.
 
 > **Want the deeper material for this topic?**
-> Advanced and architect-level depth, real-world scenarios, gotchas and interview questions
-> are not published here. Connect with me - **LinkedIn · X · GitHub** - details on the
-> [home page](../index.md).
+> Advanced depth, real-world scenarios, gotchas and interview questions are not published here.
+> Connect: [LinkedIn](https://www.linkedin.com/in/himanshukumar-sf/) · [X](https://x.com/kum60094) · [GitHub](https://github.com/89himanshu-dwivedi) · [Email](mailto:himanshu.jee.1996@gmail.com)
 
 ## Association
 
@@ -165,9 +159,8 @@
 - Junction object for many-to-many; can carry attributes.
 
 > **Want the deeper material for this topic?**
-> Advanced and architect-level depth, real-world scenarios, gotchas and interview questions
-> are not published here. Connect with me - **LinkedIn · X · GitHub** - details on the
-> [home page](../index.md).
+> Advanced depth, real-world scenarios, gotchas and interview questions are not published here.
+> Connect: [LinkedIn](https://www.linkedin.com/in/himanshukumar-sf/) · [X](https://x.com/kum60094) · [GitHub](https://github.com/89himanshu-dwivedi) · [Email](mailto:himanshu.jee.1996@gmail.com)
 
 ## Dependency
 
@@ -187,9 +180,8 @@ A **dependency** (uses-a) is the weakest link: one class **uses another temporar
 - Inject; keep graph acyclic/layered; explicit deps.
 
 > **Want the deeper material for this topic?**
-> Advanced and architect-level depth, real-world scenarios, gotchas and interview questions
-> are not published here. Connect with me - **LinkedIn · X · GitHub** - details on the
-> [home page](../index.md).
+> Advanced depth, real-world scenarios, gotchas and interview questions are not published here.
+> Connect: [LinkedIn](https://www.linkedin.com/in/himanshukumar-sf/) · [X](https://x.com/kum60094) · [GitHub](https://github.com/89himanshu-dwivedi) · [Email](mailto:himanshu.jee.1996@gmail.com)
 
 ---
 
@@ -198,8 +190,11 @@ A **dependency** (uses-a) is the weakest link: one class **uses another temporar
 These pages carry the **definitions and limits** only. The advanced depth, real-world
 scenarios, error playbooks, best-option reasoning and interview questions are kept aside.
 
-If you would like them, or you want to talk about the topics on this page, connect with me
-on **LinkedIn**, **X (Twitter)** or **GitHub** - all links are on the
-[home page](../index.md).
+If you would like them, or you want to talk about anything on this page:
+
+- **LinkedIn** - [in/himanshukumar-sf](https://www.linkedin.com/in/himanshukumar-sf/)
+- **X** - [@kum60094](https://x.com/kum60094)
+- **GitHub** - [89himanshu-dwivedi](https://github.com/89himanshu-dwivedi)
+- **Email** - [himanshu.jee.1996@gmail.com](mailto:himanshu.jee.1996@gmail.com)
 
 *- Himanshu Kumar*

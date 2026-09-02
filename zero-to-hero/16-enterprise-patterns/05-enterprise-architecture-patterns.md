@@ -32,9 +32,8 @@ The **Presentation Layer** is the UI — LWC, Aura, Visualforce, screen flows. I
 - UI validation = UX; authoritative rules server-side.
 
 > **Want the deeper material for this topic?**
-> Advanced and architect-level depth, real-world scenarios, gotchas and interview questions
-> are not published here. Connect with me - **LinkedIn · X · GitHub** - details on the
-> [home page](../index.md).
+> Advanced depth, real-world scenarios, gotchas and interview questions are not published here.
+> Connect: [LinkedIn](https://www.linkedin.com/in/himanshukumar-sf/) · [X](https://x.com/kum60094) · [GitHub](https://github.com/89himanshu-dwivedi) · [Email](mailto:himanshu.jee.1996@gmail.com)
 
 ## Controller Layer
 
@@ -54,9 +53,8 @@ The **Controller Layer** is the thin bridge between UI and business logic — `@
 - cacheable reads; reused across entry points.
 
 > **Want the deeper material for this topic?**
-> Advanced and architect-level depth, real-world scenarios, gotchas and interview questions
-> are not published here. Connect with me - **LinkedIn · X · GitHub** - details on the
-> [home page](../index.md).
+> Advanced depth, real-world scenarios, gotchas and interview questions are not published here.
+> Connect: [LinkedIn](https://www.linkedin.com/in/himanshukumar-sf/) · [X](https://x.com/kum60094) · [GitHub](https://github.com/89himanshu-dwivedi) · [Email](mailto:himanshu.jee.1996@gmail.com)
 
 ## Service Layer
 
@@ -76,9 +74,8 @@ The **Service Layer** holds **coarse-grained business operations** (use cases li
 - Stateless, bulkified, interface + factory; reused.
 
 > **Want the deeper material for this topic?**
-> Advanced and architect-level depth, real-world scenarios, gotchas and interview questions
-> are not published here. Connect with me - **LinkedIn · X · GitHub** - details on the
-> [home page](../index.md).
+> Advanced depth, real-world scenarios, gotchas and interview questions are not published here.
+> Connect: [LinkedIn](https://www.linkedin.com/in/himanshukumar-sf/) · [X](https://x.com/kum60094) · [GitHub](https://github.com/89himanshu-dwivedi) · [Email](mailto:himanshu.jee.1996@gmail.com)
 
 ## Domain Layer
 
@@ -98,9 +95,8 @@ The **Domain Layer** encapsulates the **behavior and rules of a single sObject**
 - Triggers delegate; fflib_SObjectDomain; mockable.
 
 > **Want the deeper material for this topic?**
-> Advanced and architect-level depth, real-world scenarios, gotchas and interview questions
-> are not published here. Connect with me - **LinkedIn · X · GitHub** - details on the
-> [home page](../index.md).
+> Advanced depth, real-world scenarios, gotchas and interview questions are not published here.
+> Connect: [LinkedIn](https://www.linkedin.com/in/himanshukumar-sf/) · [X](https://x.com/kum60094) · [GitHub](https://github.com/89himanshu-dwivedi) · [Email](mailto:himanshu.jee.1996@gmail.com)
 
 ## Data Layer
 
@@ -120,9 +116,8 @@ The **Data Layer** isolates all **persistence** — SOQL queries and DML — fro
 - Mockable, FLS-aware, bulkified, consistent.
 
 > **Want the deeper material for this topic?**
-> Advanced and architect-level depth, real-world scenarios, gotchas and interview questions
-> are not published here. Connect with me - **LinkedIn · X · GitHub** - details on the
-> [home page](../index.md).
+> Advanced depth, real-world scenarios, gotchas and interview questions are not published here.
+> Connect: [LinkedIn](https://www.linkedin.com/in/himanshukumar-sf/) · [X](https://x.com/kum60094) · [GitHub](https://github.com/89himanshu-dwivedi) · [Email](mailto:himanshu.jee.1996@gmail.com)
 
 ## Repository Pattern
 
@@ -142,9 +137,8 @@ The **Repository pattern** provides a **collection-like interface** for accessin
 - Mockable via factory; fflib_SObjectSelector base.
 
 > **Want the deeper material for this topic?**
-> Advanced and architect-level depth, real-world scenarios, gotchas and interview questions
-> are not published here. Connect with me - **LinkedIn · X · GitHub** - details on the
-> [home page](../index.md).
+> Advanced depth, real-world scenarios, gotchas and interview questions are not published here.
+> Connect: [LinkedIn](https://www.linkedin.com/in/himanshukumar-sf/) · [X](https://x.com/kum60094) · [GitHub](https://github.com/89himanshu-dwivedi) · [Email](mailto:himanshu.jee.1996@gmail.com)
 
 ## Unit of Work Pattern
 
@@ -164,9 +158,8 @@ The **Unit of Work** tracks all record changes during a transaction and **commit
 - Atomic (savepoint), bundled DML, mockable; service owns it.
 
 > **Want the deeper material for this topic?**
-> Advanced and architect-level depth, real-world scenarios, gotchas and interview questions
-> are not published here. Connect with me - **LinkedIn · X · GitHub** - details on the
-> [home page](../index.md).
+> Advanced depth, real-world scenarios, gotchas and interview questions are not published here.
+> Connect: [LinkedIn](https://www.linkedin.com/in/himanshukumar-sf/) · [X](https://x.com/kum60094) · [GitHub](https://github.com/89himanshu-dwivedi) · [Email](mailto:himanshu.jee.1996@gmail.com)
 
 ---
 
@@ -175,8 +168,11 @@ The **Unit of Work** tracks all record changes during a transaction and **commit
 These pages carry the **definitions and limits** only. The advanced depth, real-world
 scenarios, error playbooks, best-option reasoning and interview questions are kept aside.
 
-If you would like them, or you want to talk about the topics on this page, connect with me
-on **LinkedIn**, **X (Twitter)** or **GitHub** - all links are on the
-[home page](../index.md).
+If you would like them, or you want to talk about anything on this page:
+
+- **LinkedIn** - [in/himanshukumar-sf](https://www.linkedin.com/in/himanshukumar-sf/)
+- **X** - [@kum60094](https://x.com/kum60094)
+- **GitHub** - [89himanshu-dwivedi](https://github.com/89himanshu-dwivedi)
+- **Email** - [himanshu.jee.1996@gmail.com](mailto:himanshu.jee.1996@gmail.com)
 
 *- Himanshu Kumar*

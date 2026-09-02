@@ -34,9 +34,8 @@
 - Debouncing does not prevent out-of-order responses - track a request sequence.
 
 > **Want the deeper material for this topic?**
-> Advanced and architect-level depth, real-world scenarios, gotchas and interview questions
-> are not published here. Connect with me - **LinkedIn · X · GitHub** - details on the
-> [home page](../index.md).
+> Advanced depth, real-world scenarios, gotchas and interview questions are not published here.
+> Connect: [LinkedIn](https://www.linkedin.com/in/himanshukumar-sf/) · [X](https://x.com/kum60094) · [GitHub](https://github.com/89himanshu-dwivedi) · [Email](mailto:himanshu.jee.1996@gmail.com)
 
 ## Throttling
 
@@ -57,9 +56,8 @@
 - Not a substitute for server-side rate limiting.
 
 > **Want the deeper material for this topic?**
-> Advanced and architect-level depth, real-world scenarios, gotchas and interview questions
-> are not published here. Connect with me - **LinkedIn · X · GitHub** - details on the
-> [home page](../index.md).
+> Advanced depth, real-world scenarios, gotchas and interview questions are not published here.
+> Connect: [LinkedIn](https://www.linkedin.com/in/himanshukumar-sf/) · [X](https://x.com/kum60094) · [GitHub](https://github.com/89himanshu-dwivedi) · [Email](mailto:himanshu.jee.1996@gmail.com)
 
 ## Lazy Loading
 
@@ -80,9 +78,8 @@
 - Static Resources are capped at 5 MB each, 250 MB per org.
 
 > **Want the deeper material for this topic?**
-> Advanced and architect-level depth, real-world scenarios, gotchas and interview questions
-> are not published here. Connect with me - **LinkedIn · X · GitHub** - details on the
-> [home page](../index.md).
+> Advanced depth, real-world scenarios, gotchas and interview questions are not published here.
+> Connect: [LinkedIn](https://www.linkedin.com/in/himanshukumar-sf/) · [X](https://x.com/kum60094) · [GitHub](https://github.com/89himanshu-dwivedi) · [Email](mailto:himanshu.jee.1996@gmail.com)
 
 ## Pagination
 
@@ -103,9 +100,8 @@
 - Concurrent inserts shift rows between pages.
 
 > **Want the deeper material for this topic?**
-> Advanced and architect-level depth, real-world scenarios, gotchas and interview questions
-> are not published here. Connect with me - **LinkedIn · X · GitHub** - details on the
-> [home page](../index.md).
+> Advanced depth, real-world scenarios, gotchas and interview questions are not published here.
+> Connect: [LinkedIn](https://www.linkedin.com/in/himanshukumar-sf/) · [X](https://x.com/kum60094) · [GitHub](https://github.com/89himanshu-dwivedi) · [Email](mailto:himanshu.jee.1996@gmail.com)
 
 ## Infinite Scroll
 
@@ -126,9 +122,8 @@
 - Offset-based loading breaks at 2,000 rows.
 
 > **Want the deeper material for this topic?**
-> Advanced and architect-level depth, real-world scenarios, gotchas and interview questions
-> are not published here. Connect with me - **LinkedIn · X · GitHub** - details on the
-> [home page](../index.md).
+> Advanced depth, real-world scenarios, gotchas and interview questions are not published here.
+> Connect: [LinkedIn](https://www.linkedin.com/in/himanshukumar-sf/) · [X](https://x.com/kum60094) · [GitHub](https://github.com/89himanshu-dwivedi) · [Email](mailto:himanshu.jee.1996@gmail.com)
 
 ## Client Side Cache
 
@@ -149,9 +144,8 @@
 - No API flushes the Lightning client cache for all users.
 
 > **Want the deeper material for this topic?**
-> Advanced and architect-level depth, real-world scenarios, gotchas and interview questions
-> are not published here. Connect with me - **LinkedIn · X · GitHub** - details on the
-> [home page](../index.md).
+> Advanced depth, real-world scenarios, gotchas and interview questions are not published here.
+> Connect: [LinkedIn](https://www.linkedin.com/in/himanshukumar-sf/) · [X](https://x.com/kum60094) · [GitHub](https://github.com/89himanshu-dwivedi) · [Email](mailto:himanshu.jee.1996@gmail.com)
 
 ## RefreshApex
 
@@ -172,9 +166,8 @@
 - Triggers a fresh server round trip and its Apex governor limits.
 
 > **Want the deeper material for this topic?**
-> Advanced and architect-level depth, real-world scenarios, gotchas and interview questions
-> are not published here. Connect with me - **LinkedIn · X · GitHub** - details on the
-> [home page](../index.md).
+> Advanced depth, real-world scenarios, gotchas and interview questions are not published here.
+> Connect: [LinkedIn](https://www.linkedin.com/in/himanshukumar-sf/) · [X](https://x.com/kum60094) · [GitHub](https://github.com/89himanshu-dwivedi) · [Email](mailto:himanshu.jee.1996@gmail.com)
 
 ## Memoization
 
@@ -195,9 +188,8 @@
 - Stale memoised data after a save is a common bug - clear on refresh.
 
 > **Want the deeper material for this topic?**
-> Advanced and architect-level depth, real-world scenarios, gotchas and interview questions
-> are not published here. Connect with me - **LinkedIn · X · GitHub** - details on the
-> [home page](../index.md).
+> Advanced depth, real-world scenarios, gotchas and interview questions are not published here.
+> Connect: [LinkedIn](https://www.linkedin.com/in/himanshukumar-sf/) · [X](https://x.com/kum60094) · [GitHub](https://github.com/89himanshu-dwivedi) · [Email](mailto:himanshu.jee.1996@gmail.com)
 
 ---
 
@@ -206,8 +198,11 @@
 These pages carry the **definitions and limits** only. The advanced depth, real-world
 scenarios, error playbooks, best-option reasoning and interview questions are kept aside.
 
-If you would like them, or you want to talk about the topics on this page, connect with me
-on **LinkedIn**, **X (Twitter)** or **GitHub** - all links are on the
-[home page](../index.md).
+If you would like them, or you want to talk about anything on this page:
+
+- **LinkedIn** - [in/himanshukumar-sf](https://www.linkedin.com/in/himanshukumar-sf/)
+- **X** - [@kum60094](https://x.com/kum60094)
+- **GitHub** - [89himanshu-dwivedi](https://github.com/89himanshu-dwivedi)
+- **Email** - [himanshu.jee.1996@gmail.com](mailto:himanshu.jee.1996@gmail.com)
 
 *- Himanshu Kumar*

@@ -35,9 +35,8 @@ A **transaction** is one execution context — everything that happens from a si
 - Callouts forbidden after uncommitted DML.
 
 > **Want the deeper material for this topic?**
-> Advanced and architect-level depth, real-world scenarios, gotchas and interview questions
-> are not published here. Connect with me - **LinkedIn · X · GitHub** - details on the
-> [home page](../index.md).
+> Advanced depth, real-world scenarios, gotchas and interview questions are not published here.
+> Connect: [LinkedIn](https://www.linkedin.com/in/himanshukumar-sf/) · [X](https://x.com/kum60094) · [GitHub](https://github.com/89himanshu-dwivedi) · [Email](mailto:himanshu.jee.1996@gmail.com)
 
 ## Commit
 
@@ -58,9 +57,8 @@ A **commit** is when all the changes made during a transaction are **saved perma
 - Post-commit work runs in separate contexts.
 
 > **Want the deeper material for this topic?**
-> Advanced and architect-level depth, real-world scenarios, gotchas and interview questions
-> are not published here. Connect with me - **LinkedIn · X · GitHub** - details on the
-> [home page](../index.md).
+> Advanced depth, real-world scenarios, gotchas and interview questions are not published here.
+> Connect: [LinkedIn](https://www.linkedin.com/in/himanshukumar-sf/) · [X](https://x.com/kum60094) · [GitHub](https://github.com/89himanshu-dwivedi) · [Email](mailto:himanshu.jee.1996@gmail.com)
 
 ## Rollback
 
@@ -81,9 +79,8 @@ A **rollback** undoes the database changes of a transaction. If an unhandled exc
 - Partial-success DML returns results instead of rolling back.
 
 > **Want the deeper material for this topic?**
-> Advanced and architect-level depth, real-world scenarios, gotchas and interview questions
-> are not published here. Connect with me - **LinkedIn · X · GitHub** - details on the
-> [home page](../index.md).
+> Advanced depth, real-world scenarios, gotchas and interview questions are not published here.
+> Connect: [LinkedIn](https://www.linkedin.com/in/himanshukumar-sf/) · [X](https://x.com/kum60094) · [GitHub](https://github.com/89himanshu-dwivedi) · [Email](mailto:himanshu.jee.1996@gmail.com)
 
 ## Order of Execution
 
@@ -104,9 +101,8 @@ The **Order of Execution** is the defined sequence of everything that happens wh
 - Order is fixed — you design around it, not change it.
 
 > **Want the deeper material for this topic?**
-> Advanced and architect-level depth, real-world scenarios, gotchas and interview questions
-> are not published here. Connect with me - **LinkedIn · X · GitHub** - details on the
-> [home page](../index.md).
+> Advanced depth, real-world scenarios, gotchas and interview questions are not published here.
+> Connect: [LinkedIn](https://www.linkedin.com/in/himanshukumar-sf/) · [X](https://x.com/kum60094) · [GitHub](https://github.com/89himanshu-dwivedi) · [Email](mailto:himanshu.jee.1996@gmail.com)
 
 ## SOQL Limit
 
@@ -127,9 +123,8 @@ The **SOQL limit** caps how many queries you can run in one transaction: **100**
 - Cumulative across all code/automation.
 
 > **Want the deeper material for this topic?**
-> Advanced and architect-level depth, real-world scenarios, gotchas and interview questions
-> are not published here. Connect with me - **LinkedIn · X · GitHub** - details on the
-> [home page](../index.md).
+> Advanced depth, real-world scenarios, gotchas and interview questions are not published here.
+> Connect: [LinkedIn](https://www.linkedin.com/in/himanshukumar-sf/) · [X](https://x.com/kum60094) · [GitHub](https://github.com/89himanshu-dwivedi) · [Email](mailto:himanshu.jee.1996@gmail.com)
 
 ## DML Limit
 
@@ -150,9 +145,8 @@ The **DML limit** caps database writes: **150 DML statements** per transaction a
 - Savepoints count as statements; cumulative across automation.
 
 > **Want the deeper material for this topic?**
-> Advanced and architect-level depth, real-world scenarios, gotchas and interview questions
-> are not published here. Connect with me - **LinkedIn · X · GitHub** - details on the
-> [home page](../index.md).
+> Advanced depth, real-world scenarios, gotchas and interview questions are not published here.
+> Connect: [LinkedIn](https://www.linkedin.com/in/himanshukumar-sf/) · [X](https://x.com/kum60094) · [GitHub](https://github.com/89himanshu-dwivedi) · [Email](mailto:himanshu.jee.1996@gmail.com)
 
 ## Heap Size
 
@@ -173,9 +167,8 @@ The **DML limit** caps database writes: **150 DML statements** per transaction a
 - Counts all live references.
 
 > **Want the deeper material for this topic?**
-> Advanced and architect-level depth, real-world scenarios, gotchas and interview questions
-> are not published here. Connect with me - **LinkedIn · X · GitHub** - details on the
-> [home page](../index.md).
+> Advanced depth, real-world scenarios, gotchas and interview questions are not published here.
+> Connect: [LinkedIn](https://www.linkedin.com/in/himanshukumar-sf/) · [X](https://x.com/kum60094) · [GitHub](https://github.com/89himanshu-dwivedi) · [Email](mailto:himanshu.jee.1996@gmail.com)
 
 ## CPU Time
 
@@ -196,9 +189,8 @@ The **DML limit** caps database writes: **150 DML statements** per transaction a
 - Cumulative across all automation.
 
 > **Want the deeper material for this topic?**
-> Advanced and architect-level depth, real-world scenarios, gotchas and interview questions
-> are not published here. Connect with me - **LinkedIn · X · GitHub** - details on the
-> [home page](../index.md).
+> Advanced depth, real-world scenarios, gotchas and interview questions are not published here.
+> Connect: [LinkedIn](https://www.linkedin.com/in/himanshukumar-sf/) · [X](https://x.com/kum60094) · [GitHub](https://github.com/89himanshu-dwivedi) · [Email](mailto:himanshu.jee.1996@gmail.com)
 
 ## Callout Limit
 
@@ -219,9 +211,8 @@ The **callout limit** caps external web service calls: **100 callouts** per tran
 - Per-callout timeout configurable.
 
 > **Want the deeper material for this topic?**
-> Advanced and architect-level depth, real-world scenarios, gotchas and interview questions
-> are not published here. Connect with me - **LinkedIn · X · GitHub** - details on the
-> [home page](../index.md).
+> Advanced depth, real-world scenarios, gotchas and interview questions are not published here.
+> Connect: [LinkedIn](https://www.linkedin.com/in/himanshukumar-sf/) · [X](https://x.com/kum60094) · [GitHub](https://github.com/89himanshu-dwivedi) · [Email](mailto:himanshu.jee.1996@gmail.com)
 
 ---
 
@@ -230,8 +221,11 @@ The **callout limit** caps external web service calls: **100 callouts** per tran
 These pages carry the **definitions and limits** only. The advanced depth, real-world
 scenarios, error playbooks, best-option reasoning and interview questions are kept aside.
 
-If you would like them, or you want to talk about the topics on this page, connect with me
-on **LinkedIn**, **X (Twitter)** or **GitHub** - all links are on the
-[home page](../index.md).
+If you would like them, or you want to talk about anything on this page:
+
+- **LinkedIn** - [in/himanshukumar-sf](https://www.linkedin.com/in/himanshukumar-sf/)
+- **X** - [@kum60094](https://x.com/kum60094)
+- **GitHub** - [89himanshu-dwivedi](https://github.com/89himanshu-dwivedi)
+- **Email** - [himanshu.jee.1996@gmail.com](mailto:himanshu.jee.1996@gmail.com)
 
 *- Himanshu Kumar*

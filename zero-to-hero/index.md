@@ -11,8 +11,8 @@ One folder per series. Inside each folder, one page per sub-topic group, and eve
 > error playbooks, best-option reasoning and interview questions — are **not published here**.
 >
 > **Want them, or want to talk about any of this?** Connect with me:
-> [GitHub](https://github.com/89himanshu-dwivedi) ·
-> [Trailblazer](https://www.salesforce.com/trailblazer/hdwivedi2) · **LinkedIn** · **X (Twitter)**
+> [LinkedIn](https://www.linkedin.com/in/himanshukumar-sf/) · [X](https://x.com/kum60094) · [GitHub](https://github.com/89himanshu-dwivedi) ·
+> [Trailblazer](https://www.salesforce.com/trailblazer/hdwivedi2) · [Email](mailto:himanshu.jee.1996@gmail.com)
 >
 > *— Himanshu Kumar*
 

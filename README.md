@@ -47,7 +47,7 @@ I add one folder at a time as I work through a topic. Each folder holds my notes
 - 8 years: Apex, LWC, CPQ & Revenue Cloud, FSC, Health Cloud, Public Sector Solutions, Agentforce, Data Cloud
 - Also work in AI engineering — RAG pipelines, agents, LLM apps in Python
 - B.Tech in Computer Science, AKTU Lucknow
-- [GitHub](https://github.com/89himanshu-dwivedi) · [Trailblazer](https://www.salesforce.com/trailblazer/hdwivedi2)
+- [GitHub](https://github.com/89himanshu-dwivedi) · [LinkedIn](https://www.linkedin.com/in/himanshukumar-sf/) · [X](https://x.com/kum60094) · [Trailblazer](https://www.salesforce.com/trailblazer/hdwivedi2) · [Email](mailto:himanshu.jee.1996@gmail.com)
 
 ---
 
