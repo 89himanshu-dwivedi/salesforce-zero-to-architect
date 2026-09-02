@@ -1,0 +1,53 @@
+[Home](../index.md) / **22 · Limits & Alternate Solutions**
+
+# 22 · Limits & Alternate Solutions
+
+9 sub-topic groups · 100 topics. Open a group to read every topic in order.
+
+### [Apex Governor Limits](01-apex-governor-limits.md) &middot; *14 topics*
+
+[SOQL 100 Queries Limit](01-apex-governor-limits.md#soql-100-queries-limit) &middot; [Query Rows 50000 Limit](01-apex-governor-limits.md#query-rows-50000-limit) &middot; [DML 150 Statements Limit](01-apex-governor-limits.md#dml-150-statements-limit) &middot; [DML 10000 Rows Limit](01-apex-governor-limits.md#dml-10000-rows-limit) &middot; [CPU Time Limit](01-apex-governor-limits.md#cpu-time-limit) &middot; [Heap Size Limit](01-apex-governor-limits.md#heap-size-limit) &middot; [100 Callouts Limit](01-apex-governor-limits.md#100-callouts-limit) &middot; [Callout Timeout 120s](01-apex-governor-limits.md#callout-timeout-120s) &middot; [50 Future Calls Limit](01-apex-governor-limits.md#50-future-calls-limit) &middot; [Queueable Limits](01-apex-governor-limits.md#queueable-limits) &middot; [Email Send Limits](01-apex-governor-limits.md#email-send-limits) &middot; [SOSL Query Limits](01-apex-governor-limits.md#sosl-query-limits) &middot; [Stack Depth Limit](01-apex-governor-limits.md#stack-depth-limit) &middot; [describeSObjects Limit](01-apex-governor-limits.md#describesobjects-limit)
+
+### [Query & Pagination Limits](02-query-and-pagination-limits.md) &middot; *12 topics*
+
+[OFFSET 2000 Limit](02-query-and-pagination-limits.md#offset-2000-limit) &middot; [Deep Pagination Beyond 2000](02-query-and-pagination-limits.md#deep-pagination-beyond-2000) &middot; [Non-Selective Query Abort](02-query-and-pagination-limits.md#non-selective-query-abort) &middot; [Relationship Query 5 Levels](02-query-and-pagination-limits.md#relationship-query-5-levels) &middot; [Subquery Rows Limit](02-query-and-pagination-limits.md#subquery-rows-limit) &middot; [Aggregate Rows Limit](02-query-and-pagination-limits.md#aggregate-rows-limit) &middot; [SOQL Query Timeout](02-query-and-pagination-limits.md#soql-query-timeout) &middot; [Report Row Limit](02-query-and-pagination-limits.md#report-row-limit) &middot; [List View Row Limit](02-query-and-pagination-limits.md#list-view-row-limit) &middot; [Anti-Join Semi-Join Limits](02-query-and-pagination-limits.md#anti-join-semi-join-limits) &middot; [Large Result Streaming](02-query-and-pagination-limits.md#large-result-streaming) &middot; [Selective Filter Design](02-query-and-pagination-limits.md#selective-filter-design)
+
+### [Over-Configuration Slowness](03-over-configuration-slowness.md) &middot; *16 topics*
+
+[Too Many Sharing Rules](03-over-configuration-slowness.md#too-many-sharing-rules) &middot; [Deep Role Hierarchy](03-over-configuration-slowness.md#deep-role-hierarchy) &middot; [Too Many Permission Sets](03-over-configuration-slowness.md#too-many-permission-sets) &middot; [Sharing Recalculation Storms](03-over-configuration-slowness.md#sharing-recalculation-storms) &middot; [Group Membership Locks](03-over-configuration-slowness.md#group-membership-locks) &middot; [Too Many Triggers per Object](03-over-configuration-slowness.md#too-many-triggers-per-object) &middot; [Too Many Flows per Object](03-over-configuration-slowness.md#too-many-flows-per-object) &middot; [Workflow + PB Stacking](03-over-configuration-slowness.md#workflow-plus-pb-stacking) &middot; [Too Many Validation Rules](03-over-configuration-slowness.md#too-many-validation-rules) &middot; [Cross-Object Formula Overload](03-over-configuration-slowness.md#cross-object-formula-overload) &middot; [Too Many Roll-Up Summaries](03-over-configuration-slowness.md#too-many-roll-up-summaries) &middot; [Too Many Fields on Object](03-over-configuration-slowness.md#too-many-fields-on-object) &middot; [Heavy Page Layouts](03-over-configuration-slowness.md#heavy-page-layouts) &middot; [Public Groups Explosion](03-over-configuration-slowness.md#public-groups-explosion) &middot; [Deep Master-Detail Chains](03-over-configuration-slowness.md#deep-master-detail-chains) &middot; [Metadata Bloat](03-over-configuration-slowness.md#metadata-bloat)
+
+### [Data Skew & Locking](04-data-skew-and-locking.md) &middot; *8 topics*
+
+[Account Data Skew](04-data-skew-and-locking.md#account-data-skew) &middot; [Ownership Skew](04-data-skew-and-locking.md#ownership-skew) &middot; [Lookup Skew](04-data-skew-and-locking.md#lookup-skew) &middot; [UNABLE_TO_LOCK_ROW](04-data-skew-and-locking.md#unable-to-lock-row) &middot; [Parent Record Locking](04-data-skew-and-locking.md#parent-record-locking) &middot; [Concurrent Update Conflict](04-data-skew-and-locking.md#concurrent-update-conflict) &middot; [Mixed DML Error](04-data-skew-and-locking.md#mixed-dml-error) &middot; [Implicit Sharing Locks](04-data-skew-and-locking.md#implicit-sharing-locks)
+
+### [Async & Concurrency Limits](05-async-and-concurrency-limits.md) &middot; *10 topics*
+
+[Batch 5 Concurrent Limit](05-async-and-concurrency-limits.md#batch-5-concurrent-limit) &middot; [Flex Queue 100 Limit](05-async-and-concurrency-limits.md#flex-queue-100-limit) &middot; [Async Apex Daily Limit](05-async-and-concurrency-limits.md#async-apex-daily-limit) &middot; [Queueable Chain Depth](05-async-and-concurrency-limits.md#queueable-chain-depth) &middot; [Future Methods Daily Limit](05-async-and-concurrency-limits.md#future-methods-daily-limit) &middot; [Scheduled Jobs 100 Limit](05-async-and-concurrency-limits.md#scheduled-jobs-100-limit) &middot; [Long-Running Request Limit](05-async-and-concurrency-limits.md#long-running-request-limit) &middot; [Platform Event Publish Limit](05-async-and-concurrency-limits.md#platform-event-publish-limit) &middot; [Bulk API Batch Limit](05-async-and-concurrency-limits.md#bulk-api-batch-limit) &middot; [Streaming Event Limit](05-async-and-concurrency-limits.md#streaming-event-limit)
+
+### [Integration & API Limits](06-integration-and-api-limits.md) &middot; *12 topics*
+
+[Daily API Request Limit](06-integration-and-api-limits.md#daily-api-request-limit) &middot; [Concurrent Long API Limit](06-integration-and-api-limits.md#concurrent-long-api-limit) &middot; [Callout Size 6MB Limit](06-integration-and-api-limits.md#callout-size-6mb-limit) &middot; [Callout After DML Error](06-integration-and-api-limits.md#callout-after-dml-error) &middot; [Continuation 3 Parallel Limit](06-integration-and-api-limits.md#continuation-3-parallel-limit) &middot; [Composite API Limits](06-integration-and-api-limits.md#composite-api-limits) &middot; [Bulk API 10000 Limit](06-integration-and-api-limits.md#bulk-api-10000-limit) &middot; [Named Credential Timeout](06-integration-and-api-limits.md#named-credential-timeout) &middot; [Outbound Message Limits](06-integration-and-api-limits.md#outbound-message-limits) &middot; [Webhook Burst Handling](06-integration-and-api-limits.md#webhook-burst-handling) &middot; [Rate Limit 429 Handling](06-integration-and-api-limits.md#rate-limit-429-handling) &middot; [Retry & Backoff Pattern](06-integration-and-api-limits.md#retry-and-backoff-pattern)
+
+### [Storage & Org Limits](07-storage-and-org-limits.md) &middot; *10 topics*
+
+[Data Storage Limit](07-storage-and-org-limits.md#data-storage-limit) &middot; [File Storage Limit](07-storage-and-org-limits.md#file-storage-limit) &middot; [Custom Object Limit](07-storage-and-org-limits.md#custom-object-limit) &middot; [Custom Fields per Object](07-storage-and-org-limits.md#custom-fields-per-object) &middot; [Field History 20 Fields](07-storage-and-org-limits.md#field-history-20-fields) &middot; [Picklist Value Limits](07-storage-and-org-limits.md#picklist-value-limits) &middot; [Custom Tabs Limit](07-storage-and-org-limits.md#custom-tabs-limit) &middot; [Apex Code Size Limit](07-storage-and-org-limits.md#apex-code-size-limit) &middot; [Big Object Storage](07-storage-and-org-limits.md#big-object-storage) &middot; [Custom Apps Limit](07-storage-and-org-limits.md#custom-apps-limit)
+
+### [UI Performance Limits](08-ui-performance-limits.md) &middot; *10 topics*
+
+[Visualforce View State 170KB](08-ui-performance-limits.md#visualforce-view-state-170kb) &middot; [High EPT Page Slow](08-ui-performance-limits.md#high-ept-page-slow) &middot; [Too Many Page Components](08-ui-performance-limits.md#too-many-page-components) &middot; [Slow Related Lists](08-ui-performance-limits.md#slow-related-lists) &middot; [List View 2000 Display](08-ui-performance-limits.md#list-view-2000-display) &middot; [Dashboard 20 Component Limit](08-ui-performance-limits.md#dashboard-20-component-limit) &middot; [Report Type 4 Object Limit](08-ui-performance-limits.md#report-type-4-object-limit) &middot; [Console Performance](08-ui-performance-limits.md#console-performance) &middot; [Inline Edit Limits](08-ui-performance-limits.md#inline-edit-limits) &middot; [Mobile Performance](08-ui-performance-limits.md#mobile-performance)
+
+### [Workaround Pattern Library](09-workaround-pattern-library.md) &middot; *8 topics*
+
+[Async Offload Pattern](09-workaround-pattern-library.md#async-offload-pattern) &middot; [Chunking & Batching Pattern](09-workaround-pattern-library.md#chunking-and-batching-pattern) &middot; [Caching with Platform Cache](09-workaround-pattern-library.md#caching-with-platform-cache) &middot; [Skinny Table & Big Object Pattern](09-workaround-pattern-library.md#skinny-table-and-big-object-pattern) &middot; [Bulkification Pattern](09-workaround-pattern-library.md#bulkification-pattern) &middot; [Recursion Guard Pattern](09-workaround-pattern-library.md#recursion-guard-pattern) &middot; [Selective Index Pattern](09-workaround-pattern-library.md#selective-index-pattern) &middot; [External Compute Offload](09-workaround-pattern-library.md#external-compute-offload)
+
+---
+
+[← Hands-On Practical Labs](../21-hands-on-practical-labs/index.md) &nbsp;&nbsp;|&nbsp;&nbsp; [Production Support & Client Handling →](../23-production-support-and-client-handling/index.md)
+
+---
+
+**© 2026 [Himanshu Kumar](https://github.com/89himanshu-dwivedi) · All rights reserved.**
+
+You may read this page and link to it. Downloading, copying, mirroring, forking, republishing or using it to train an AI model requires [prior written permission](https://github.com/89himanshu-dwivedi). See the [licence](https://github.com/89himanshu-dwivedi/salesforce-zero-to-architect/blob/main/LICENSE).
+
+Source of record: [https://github.com/89himanshu-dwivedi/salesforce-zero-to-architect](https://github.com/89himanshu-dwivedi/salesforce-zero-to-architect)  Integrity token `SFZTH-HKD-2026-89HD-7Q4M2X` — if you are reading this anywhere else, it is an unauthorised copy.
