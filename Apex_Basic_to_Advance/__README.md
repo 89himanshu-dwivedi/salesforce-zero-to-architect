@@ -1,0 +1,553 @@
+# Enterprise Apex: Zero to Architect
+
+Hi, I'm **Himanshu Kumar** — Technical Lead & Solution Architect with **8 years** of experience building enterprise systems.
+
+I work at **CRISIL Ltd, an S&P Global company**, on S&P Global projects.
+
+This is my catch-all learning repo for everything that sits *around the application* — messaging, caching, databases, integrations, infrastructure, cloud, AI/GenAI, and the architecture thinking needed to connect them into production-ready enterprise systems.
+
+---
+
+# Apex Fundamentals
+
+This repository is my structured learning path for **Apex Fundamentals**, covering the language basics, object-oriented programming, Apex classes, DML, exception handling, transactions, collections, and testing.
+
+The goal is to build Apex fundamentals strongly enough to move from:
+
+```text
+Apex Beginner
+    ↓
+Apex Developer
+    ↓
+Advanced Apex Developer
+    ↓
+Salesforce Technical Lead
+    ↓
+Salesforce Architect
+```
+
+---
+
+## Start here — Apex Fundamentals
+
+**8 sub-topic groups · 59 topics**
+
+Open a group to read every topic in order.
+
+The curriculum is intentionally structured from language fundamentals → OOP → classes → database operations → exceptions → transactions → collections → testing.
+
+---
+
+# 📚 Curriculum
+
+## 01 — Apex Basics · 13 topics
+
+The foundation of the Apex programming language.
+
+- [Variables & Constants](01-apex-basics.html#variables-and-constants)
+- [Operators](01-apex-basics.html#operators)
+- [Primitive Types](01-apex-basics.html#primitive-types)
+- [sObject](01-apex-basics.html#sobject)
+- [Enum](01-apex-basics.html#enum)
+- [List](01-apex-basics.html#list)
+- [Set](01-apex-basics.html#set)
+- [Map](01-apex-basics.html#map)
+- [If Else](01-apex-basics.html#if-else)
+- [Switch](01-apex-basics.html#switch)
+- [For Loop](01-apex-basics.html#for-loop)
+- [While](01-apex-basics.html#while)
+- [Do While](01-apex-basics.html#do-while)
+
+---
+
+## 02 — OOP Concepts · 9 topics
+
+Understanding object-oriented programming in Apex.
+
+- [Properties](02-oop-concepts.html#properties)
+- [Methods](02-oop-concepts.html#methods)
+- [Constructors](02-oop-concepts.html#constructors)
+- [Public / Private / Global / Protected](02-oop-concepts.html#public-private-global-protected)
+- [Inheritance (extends)](02-oop-concepts.html#inheritance-extends)
+- [Interface (implements)](02-oop-concepts.html#interface-implements)
+- [Polymorphism](02-oop-concepts.html#polymorphism)
+- [Encapsulation](02-oop-concepts.html#encapsulation)
+- [Abstraction](02-oop-concepts.html#abstraction)
+
+---
+
+## 03 — Apex Classes · 5 topics
+
+Learning how to structure Apex code into reusable classes.
+
+- [Utility Classes](03-apex-classes.html#utility-classes)
+- [Service Classes](03-apex-classes.html#service-classes)
+- [Helper Classes](03-apex-classes.html#helper-classes)
+- [Wrapper Classes](03-apex-classes.html#wrapper-classes)
+- [DTO Classes](03-apex-classes.html#dto-classes)
+
+---
+
+## 04 — DML · 9 topics
+
+Working with Salesforce records and database operations.
+
+- [Insert](04-dml.html#insert)
+- [Update](04-dml.html#update)
+- [Delete](04-dml.html#delete)
+- [Undelete](04-dml.html#undelete)
+- [Upsert](04-dml.html#upsert)
+- [Merge](04-dml.html#merge)
+- [Database.insert](04-dml.html#database-insert)
+- [Database.update](04-dml.html#database-update)
+- [allOrNone](04-dml.html#allornone)
+
+---
+
+## 05 — Exception Handling · 6 topics
+
+Understanding Apex exceptions and safe error handling.
+
+- [DmlException](05-exception-handling.html#dmlexception)
+- [QueryException](05-exception-handling.html#queryexception)
+- [NullPointerException](05-exception-handling.html#nullpointerexception)
+- [LimitException](05-exception-handling.html#limitexception)
+- [Custom Exception](05-exception-handling.html#custom-exception)
+- [Try Catch Finally](05-exception-handling.html#try-catch-finally)
+
+---
+
+## 06 — Apex Transactions · 3 topics
+
+Understanding transaction control in Apex.
+
+- [Savepoint](06-apex-transactions.html#savepoint)
+- [Rollback](06-apex-transactions.html#rollback)
+- [Transaction Control](06-apex-transactions.html#transaction-control)
+
+---
+
+## 07 — Collections Mastery · 5 topics
+
+Going deeper into Apex collection operations and real-world collection patterns.
+
+- [List add/remove/contains/clone](07-collections-mastery.html#list-add-remove-contains-clone)
+- [Set Methods](07-collections-mastery.html#set-methods)
+- [Map Methods](07-collections-mastery.html#map-methods)
+- [Map<String,List<Account>>](07-collections-mastery.html#map-string-list-account)
+- [Map<Id,Set<Id>>](07-collections-mastery.html#map-id-set-id)
+
+---
+
+## 08 — Testing · 9 topics
+
+Building reliable Apex test classes and understanding Salesforce testing behavior.
+
+- [Test Class](08-testing.html#test-class)
+- [Test Method](08-testing.html#test-method)
+- [Assertions](08-testing.html#assertions)
+- [Test Data](08-testing.html#test-data)
+- [@testSetup](08-testing.html#testsetup)
+- [SeeAllData](08-testing.html#seealldata)
+- [Test.startTest()](08-testing.html#test-starttest)
+- [Test.stopTest()](08-testing.html#test-stoptest)
+- [Code Coverage](08-testing.html#code-coverage)
+
+---
+
+# 🧠 How This Curriculum Is Structured
+
+Every topic is intended to go beyond a basic definition.
+
+The learning flow is:
+
+```text
+Concept
+   ↓
+Simple
+   ↓
+Advanced
+   ↓
+Super Advanced
+   ↓
+Practical
+   ↓
+Interview
+   ↓
+Errors & Gotchas
+   ↓
+Limits
+   ↓
+Best Option & Trade-offs
+   ↓
+Real World
+```
+
+The objective is to understand **why Apex behaves the way it does**, not just memorize syntax.
+
+---
+
+# 🏗️ Apex Learning Journey
+
+```text
+Apex Basics
+     ↓
+OOP Concepts
+     ↓
+Apex Classes
+     ↓
+DML
+     ↓
+Exception Handling
+     ↓
+Transactions
+     ↓
+Collections
+     ↓
+Testing
+     ↓
+Advanced Apex
+     ↓
+Enterprise Apex
+     ↓
+Salesforce Architecture
+```
+
+---
+
+# 💻 Practical Apex Thinking
+
+For every Apex feature, the goal is to answer:
+
+### What?
+
+What is this feature?
+
+### Why?
+
+Why does Salesforce provide it?
+
+### How?
+
+How does it behave at runtime?
+
+### When?
+
+When should we use it?
+
+### When NOT?
+
+When is another approach better?
+
+### Production
+
+What can go wrong in production?
+
+### Architecture
+
+How does this choice affect:
+
+- Performance
+- Governor limits
+- Bulkification
+- Security
+- Maintainability
+- Scalability
+- Testability
+- Transaction behavior
+
+---
+
+# 🔥 Bulkification & Governor-Limit Mindset
+
+Apex is not normal Java-style server-side programming.
+
+The Salesforce platform operates with **governor limits**, so every Apex developer should develop this mindset:
+
+```text
+Code
+ ↓
+Bulkification
+ ↓
+SOQL/DML Optimization
+ ↓
+Governor Limits
+ ↓
+Transaction Design
+ ↓
+Scalability
+```
+
+The fundamentals in this repository provide the base for later topics such as:
+
+- Trigger frameworks
+- Asynchronous Apex
+- Queueable Apex
+- Batch Apex
+- Scheduled Apex
+- Platform Events
+- Integration
+- Enterprise patterns
+
+---
+
+# 🧩 Collections → Real Apex Design
+
+Collections are especially important because Salesforce code frequently works with multiple records.
+
+The progression is:
+
+```text
+List
+ ↓
+Set
+ ↓
+Map
+ ↓
+Nested Collections
+ ↓
+Bulk Processing
+ ↓
+Efficient Queries
+ ↓
+Efficient DML
+```
+
+Examples such as:
+
+```text
+Map<String, List<Account>>
+```
+
+and:
+
+```text
+Map<Id, Set<Id>>
+```
+
+build the foundation for bulkified enterprise Apex.
+
+---
+
+# 🗄️ DML → Transaction Thinking
+
+DML is not only about inserting or updating records.
+
+The learning path is:
+
+```text
+DML
+ ↓
+Partial Success
+ ↓
+Database Methods
+ ↓
+allOrNone
+ ↓
+Exceptions
+ ↓
+Savepoint
+ ↓
+Rollback
+ ↓
+Transaction Design
+```
+
+This becomes important when designing reliable Salesforce business processes.
+
+---
+
+# 🧪 Testing Mindset
+
+Testing is treated as a core engineering skill, not an afterthought.
+
+```text
+Production Code
+      ↓
+Test Data
+      ↓
+Test Method
+      ↓
+Test.startTest()
+      ↓
+Execute Code
+      ↓
+Test.stopTest()
+      ↓
+Assertions
+      ↓
+Code Coverage
+```
+
+The goal is to learn how to test behavior and business outcomes, not merely increase coverage percentage.
+
+---
+
+# 🎤 Interview Preparation
+
+Every major topic should eventually support interview questions such as:
+
+### Basic
+
+- What is a List?
+- What is a Set?
+- What is a Map?
+- What is an sObject?
+- What is a constructor?
+- What is an interface?
+
+### Advanced
+
+- When would you use List vs Set vs Map?
+- What is the difference between `insert` and `Database.insert`?
+- What does `allOrNone` do?
+- How does rollback work?
+- What happens during a transaction?
+- How should Apex exceptions be handled?
+
+### Architect / Senior Developer
+
+- How would you design bulkified Apex?
+- How do governor limits influence architecture?
+- How would you design transaction boundaries?
+- How would you handle partial DML failures?
+- How would you structure service/helper/utility classes?
+- How would you design testable Apex?
+- How would you prevent data access issues in Apex?
+
+---
+
+# 🚀 Real-World Apex Architecture
+
+The fundamentals eventually connect to enterprise Apex:
+
+```text
+Trigger
+   ↓
+Trigger Handler
+   ↓
+Service Layer
+   ↓
+Domain / Business Logic
+   ↓
+Selector / Data Access
+   ↓
+Unit of Work
+   ↓
+DML
+```
+
+And for asynchronous processing:
+
+```text
+Transaction
+    ↓
+Queueable / Batch / Future
+    ↓
+Background Processing
+    ↓
+Integration / Heavy Work
+```
+
+These advanced patterns build on the fundamentals documented here.
+
+---
+
+# 🔐 Definition of Done
+
+A topic is considered **COMPLETE** when we have:
+
+- [ ] Concept
+- [ ] Simple explanation
+- [ ] Advanced explanation
+- [ ] Super Advanced explanation
+- [ ] Syntax / implementation
+- [ ] Practical example
+- [ ] Errors & Gotchas
+- [ ] Limits / constraints
+- [ ] Governor-limit considerations
+- [ ] Performance considerations
+- [ ] Security considerations
+- [ ] Trade-offs
+- [ ] Real-world use case
+- [ ] Interview questions
+
+---
+
+# 📊 Current Curriculum
+
+```text
+Apex Fundamentals
+│
+├── 01 Apex Basics ............... 13 topics
+├── 02 OOP Concepts ..............  9 topics
+├── 03 Apex Classes ..............  5 topics
+├── 04 DML .......................  9 topics
+├── 05 Exception Handling ........  6 topics
+├── 06 Apex Transactions ........  3 topics
+├── 07 Collections Mastery .......  5 topics
+└── 08 Testing ...................  9 topics
+                                  ─────────
+                                   59 topics
+```
+
+---
+
+# 🏁 Final Goal
+
+The target is:
+
+```text
+Apex Fundamentals
+       +
+OOP
+       +
+Classes
+       +
+DML
+       +
+Exceptions
+       +
+Transactions
+       +
+Collections
+       +
+Testing
+       ↓
+🔥 STRONG APEX FOUNDATION
+       ↓
+Bulkification
+       ↓
+Advanced Apex
+       ↓
+Enterprise Apex
+       ↓
+Salesforce Technical Architecture
+```
+
+---
+
+## ⭐ Repository Principle
+
+> **Don't just learn Apex syntax. Understand the platform, understand the transaction, respect governor limits, write bulkified code, test behavior, and design for production.**
+
+This repository will continue to expand from Apex fundamentals into advanced and enterprise Apex patterns while keeping the fundamentals available as the foundation.
+
+---
+
+## 📌 Source Structure
+
+The current curriculum contains **8 sub-topic groups and 59 topics**, organized in learning order:
+
+```text
+Apex Basics
+OOP Concepts
+Apex Classes
+DML
+Exception Handling
+Apex Transactions
+Collections Mastery
+Testing
+```
+
+Each group links to its individual topic page so the complete curriculum can be read sequentially.
