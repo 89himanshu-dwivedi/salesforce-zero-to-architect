@@ -1094,3 +1094,9 @@ Interview
 ```
 
 The README itself remains intentionally short so it works as a **navigation/glimpse file**, while the detailed MD/script contains the complete learning material.
+
+---
+
+## License
+
+See [LICENSE](LICENSE) &mdash; proprietary, all rights reserved, permission required.
