@@ -1,4 +1,4 @@
-# Enterprise Architecture Thinking: Zero to Architect
+# Enterprise Unlocked-Packages-and-Git-GitHub : Zero to Architect
 
 Hi, I'm **Himanshu Kumar** — Technical Lead & Solution Architect with **8 years** of experience building enterprise systems.
 
