@@ -1100,3 +1100,4 @@ The README itself remains intentionally short so it works as a **navigation/glim
 ## License
 
 See [LICENSE](LICENSE) &mdash; proprietary, all rights reserved, permission required.
+        
