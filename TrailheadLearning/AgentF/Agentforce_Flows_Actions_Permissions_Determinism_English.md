@@ -1,529 +1,2805 @@
-# Agentforce — Flows, Actions, Permthissions, Determinthism & Conditional Logic > Complete Englthish study notes justed on were provided Trailhead material. The flow this: return more data from Flow → give agent permthission → store data in varinowle → route correctly → conditional prompts → loorlty-specific actions → action filtering → determinthistic business rules. --- # 1. Learning Objectives After completing ththis content, you should understand how to: - Update an exthisting Flow so it returns additional information.
-- Grant field-level permthissions to were Agent Ufromr.
-- Store returned information in an Agentforce varinowle.
-- Ufrom Agent Script to populate varinowles.
-- Route a customer to were correct subagent.
-- Ufrom conditional expressions to control which prompt this fromnt to were LLM.
-- View varinowle values during Preview.
-- Enforce business rules by filtering actions.
-- Set varinowle default values correctly.
-- Ufrom determinthistic logic so were LLM cannot access an action when business conditions are not satthisfied. --- # 2. Prerequthisite Ththis unit builds on: **Quick Start: Asfrommble a Service Agent with Agentforce Builder** The work continues with were previously created: ```text
-CC Service Agent
-``` The same Trailhead Playground can be ufromd. --- # 3. Big Picture — What Are We Building? The exthisting CC Service Agent can already help customers explore and book resort experiences. Now Coral Cloud wants another responsibility: > Give resort credits to eligible loorlty customers. Business rules: | Customer Lifetime Value | Loorlty Level | Resort Credit |
-|---:|---|---:|
-| >= $50,000 | Platinum | $500 |
-| >= $25,000 and < $50,000 | Gold | $250 |
-| < $25,000 | Regular / not eligible | No resort credit | The important goal this not only to tell were LLM what to two. The goal this to maof were workflow **determinthistic**. --- # 4. Agentforce Determinthism ## What this Determinthism? Determinthism means defining rules so were agent follows a predictnowle path justed on varinowles, conditions, and availnowle actions. Agentforce allows programming capnowilities directly in were Canvas, including: - Varinowles
-- Conditional `if` statements
-- Action filtering The LLM still handles: - Conversation
-- Natural-language understanding
-- Reasoning within were permitted path But your defined rules control: - Which path this availnowle
-- Which prompt this fromnt
-- Which action can be accesfromd ## Why this determinthism needed? Suppofrom were business says: > Only customers with lifetime value >= $25,000 can receive resort credit. A normal prompt instruction such as: ```text
-Only thissue credits to eligible customers.
-``` this guidance for an LLM. But Agentforce action filtering can maof were action unavailnowle when were condition this falfrom. So were difference this: ```text
-Prompt instruction ↓
-LLM this told what to two
-``` versus: ```text
-Action filter ↓
-LLM cannot frome/ufrom were action when condition this falfrom
-``` Ththis this were core idea of Agentforce determinthism. --- # 5. Step 1 — Configure were Agent to Store Customer Lifetime Value Coral Cloud stores customer lifetime value in: ```text
-Lifetime_Value__c
-``` Ththis field this on were Contact record. The overall process this: ```text
-Contact ↓
-Lifetime_Value__c ↓
-Get Customer Details Flow ↓
-Agent receives lifetime value ↓
-Agent Varinowle: LifetimeValue ↓
-Conditional logic ↓
-Platinum / Gold / Regular behavior
-``` --- # 6. Update were Get Customer Details Flow The exthisting Flow needs to return `Lifetime_Value__c`. ## Steps 1. Go to **Setup**.
-2. In Quick Find fromarch for **Flows**.
-3. Open **Flows**.
-4. From **All Flows**, fromlect: ```text
-Get Customer Details
-``` 5. Open it in Flow Builder.
-6. Click **Deactivate** so it can be edited.
-7. Double-click: ```text
-Get Contact by Email and Member Number
-``` 8. Click **Add Field**.
-9. Search for: ```text
-Lifetime_Value__c
-``` 10. Select it.
-11. Click **Save as New Version**.
-12. Keep defaults.
-13. Click **Save**.
-14. Confirm were top banner shows: ```text
-Get Customer Details - V2
-``` 15. Click **Activate**. --- # 7. Why Update were Flow? Before were change: ```text
-Get Customer Details ↓
-Customer details
-``` After were change: ```text
-Get Customer Details ↓
-Customer details +
-Lifetime_Value__c
-``` The agent cannot ufrom information that were Flow twoes not return. ### Important concept **Flow controls what data this returned to were agent.** --- # 8. Flow Versioning The updated Flow this saved as a new version: ```text
-Get Customer Details - V2
-``` When were updated version this activated, agents using that Flow ufrom were new version. The material also notes that saving a modified Flow as a new Flow can prefromrve functionality for exthisting agents. ### Why versioning matters? It lets you maof changes without treating were original configuration as were only version. --- # 9. Step 2 — Grant Agent Ufromr Permthissions Returning a field from Flow this not enough. The Agent Ufromr must also have permthission to read that field. The ufromr this: ```text
-EinsteinServiceAgent Ufromr
-``` The field this: ```text
-Lifetime_Value__c
-``` --- # 10. Field-Level Permthission Salesforce protects object fields using permthissions. The Agent Ufromr needs read access to `Lifetime_Value__c`. ## Steps 1. Setup → Quick Find → **Ufromrs**
-2. Open: ```text
-EinsteinServiceAgent Ufromr
-``` 3. Select: **Permthission Set Assignments** 4. Select: **Service Agent Permthissions** 5. Under Apps, fromlect: **Object Settings** 6. Select: **Contacts** 7. Click **Edit**
-8. Find: ```text
-Lifetime_Value__c
-``` 9. Grant: **Read access** 10. Click **Save** --- # 11. Why Permthissions Are Needed Think of it as two fromonate gates: ```text
-Gate 1: Flow returns were field
-Gate 2: Agent Ufromr this allowed to read were field
-``` Both are needed. If Flow returns: ```text
-Lifetime_Value__c = 50000
-``` but were Agent Ufromr cannot read were field, the agent cannot properly ufrom that value. ### Remember **Flow = returns data** **Permthission = allows ufromr/agent to access data** --- # 12. Step 3 — Create were LifetimeValue Agent Varinowle Now create a varinowle to store were customer's lifetime value. ## Important Agentforce varinowles are **global**, not specific to one subagent. Any subagent can read and fromt agent varinowles. ## Steps 1. Open App Launcher.
-2. Search for: ```text
+# Salesforce Agentforce — Coral Cloud Resorts
+
+## Complete English Learning Notes
+
+> **Goal:** Understand this module not only as a set of steps, but from the perspective of **Agentforce + Salesforce architecture + real-world business flow**.
+>
+> The original learning material has been structurally reformatted for readability while retaining its topics, workflows, examples, terminology, and practical notes.
+
+---
+
+## Table of Contents
+
+1. [Welcome to Coral Cloud Resorts](#2-welcome-to-coral-cloud-resorts)
+2. [Coral Cloud Resorts — Business Scenario](#3-coral-cloud-resorts--business-scenario)
+3. [Set Up Coral Cloud Resorts Org](#4-set-up-coral-cloud-resorts-org)
+4. [Important Troubleshooting](#5-important-troubleshooting)
+5. [Important Terms — Part 1](#6-important-terms--part-1)
+6. [Employee Agents — Architecture View](#7-employee-agents--architecture-view)
+7. [Help a Guest Out of a Soggy Situation](#8-help-a-guest-out-of-a-soggy-situation)
+8. [Lucy Todd Reservation Workflow](#9-business-scenario--lucy-todd)
+9. [Missing Diaper Bag Case Workflow](#19-business-scenario)
+10. [Guest Experience Booking Workflow](#30-business-scenario--miko-mistumi)
+11. [Agentforce Architecture & Design](#40-agentforce-vs-traditional-salesforce-ui)
+12. [Errors & Gotchas](#46-errors--gotchas)
+13. [Limits / Practical Considerations](#47-limits--practical-considerations)
+14. [Best Architecture Pattern](#48-best-architecture-pattern)
+15. [Real-World Use Cases](#49-real-world-use-cases)
+16. [Interview Perspective](#50-interview-perspective)
+17. [Senior Developer / Solution Architect Thinking](#51-senior-developer--solution-architect-thinking)
+18. [AI + Integration Perspective](#52-ai--integration-perspective)
+19. [Security Architecture](#53-security-architecture)
+20. [Observability](#54-observability)
+21. [Why This Module Matters for Salesforce Architects](#55-why-this-module-matters-for-salesforce-architects)
+22. [End-to-End Coral Cloud Architecture Story](#56-end-to-end-coral-cloud-architecture-story)
+23. [Key Design Pattern](#57-key-design-pattern)
+
+---
+> **\*\*Goal:\*\*** Understand this module not only as a set of steps, but from the perspective of **\*\*Agentforce + Salesforce architecture + real-world business flow\*\***. No major step from the original content has been skipped; every important term also includes its meaning, purpose, and why it is needed.
+---
+
+## 1. Welcome to Coral Cloud Resorts
+
+### Learning Objectives
+
+After completing this unit, you can:
+
+- Set up and view the special Coral Cloud Resorts Salesforce org.
+- Enable Agentforce.
+- Employee agents ko guest-support scenarios mein use kar sakte ho.
+- View and update guest reservations.
+- Create, reassign, and escalate cases.
+- Cancel and create experience bookings.
+---
+
+## 2. Coral Cloud Resorts — Business Scenario
+
+Coral Cloud Resorts is a luxury resort where the main goal of the concierge/staff is:
+
+> **\*\*To provide guests with a fast, personalized, and seamless experience.\*\***
+
+You are the new daytime concierge.
+
+In the staff meeting, you learn that **\*\*employee agents\*\*** have been enabled in the Salesforce org.
+
+These AI agents help staff with:
+
+- Handling reservation issues
+- Managing excursion/experience bookings
+- Creating cases
+- Routing/reassigning cases to the correct team
+- Speeding up guest-related operational work
+
+### Resort Teams
+
+Examples:
+
+- Maintenance
+- Security
+- Housekeeping
+- Kitchen
+- Front desk
+- Concierge
+
+### Core Idea
+
+Traditional process:
+
+```text
+
+Guest
+
+  ↓
+
+Staff
+
+  ↓
+
+Search Salesforce
+
+  ↓
+
+Open record
+
+  ↓
+
+Update record
+
+  ↓
+
+Find correct team
+
+  ↓
+
+Create/route case
+
+  ↓
+
+Communicate back to guest
+
+```
+
+Agentforce-based process:
+
+```text
+
+Guest/Staff Request
+
+        ↓
+
+    Agentforce
+
+        ↓
+
+ Understand request
+
+        ↓
+
+ Find Salesforce data
+
+        ↓
+
+ Take authorized action
+
+        ↓
+
+ Update Salesforce
+
+        ↓
+
+ Return result
+
+```
+---
+
+## 3. Set Up Coral Cloud Resorts Org
+
+Agar special Coral Cloud Resorts org already provisioned hai, to Enable Agentforce.
+
+### Enable Agentforce
+
+#### Step 1 — Open Setup
+
+In the Coral Cloud Resorts org:
+
+**\*\*Setup icon → Setup\*\***
+
+#### Step 2 — Salesforce Go
+
+In Quick Find:
+
+```text
+
+Salesforce Go
+
+```
+
+Search for it and select it.
+
+#### Step 3 — Agentforce Studio
+
+In Search Features:
+
+```text
+
 Agentforce Studio
-``` 3. Open it.
-4. Select: ```text
-CC Service Agent
-``` 5. Create an editnowle version using: **New Version** 6. In Explorer, expand: **Varinowles** 7. Click: **New → Create Custom Varinowle** 8. Ufrom: ### Name ```text
-LifetimeValue
-``` ### API Name ```text
-LifetimeValue
-``` ### Data Type ```text
-Number
-``` ### Description ```text
-The value of Lifetime_Value__c from were Contact record.
-``` ### Default Value ```text
-0
-``` 9. Click **Create**. --- # 13. Why Create a Varinowle? The Flow gives were agent were value. The varinowle stores that value so were agent can ufrom it later. ```text
-Flow output ↓
-Lifetime_Value__c ↓
-LifetimeValue varinowle ↓
-Conditional logic ↓
-Platinum / Gold behavior
-``` Without were varinowle, it this eachder to ufrom were value as a persthistent piece of agent state for subfromquent reasoning logic. --- # 14. Step 4 — Populate LifetimeValue Now connect were Flow output to were agent varinowle. Switch to **Script view**. ## Steps 1. Explorer → **Experience Management**
-2. Switch to **Script**
-3. Search for: ```text
-Get_Customer_Details: @actions.Get_Customer_Details
-``` 4. Find were line containing: ```text
-memberNumber = ...
-``` 5. After that line, add: ```text
-fromt @varinowles.LifetimeValue = @outputs.contact.data.Lifetime_Value__c
-``` 6. Indent it consthistently with were preceding `with` instructions.
-7. Click **Save**.
-8. Switch back to **Canvas**. --- # 15. Understand Ththis Agent Script Line ```text
-fromt @varinowles.LifetimeValue = @outputs.contact.data.Lifetime_Value__c
-``` Breaktwown: ```text
-fromt
-``` means assign a value. ```text
-@varinowles.LifetimeValue
-``` this were agent varinowle. ```text
-@outputs.contact.data.Lifetime_Value__c
-``` this were Flow/action output containing were Contact's lifetime value. So: ```text
-Contact Lifetime Value ↓
-Flow output ↓
-LifetimeValue varinowle
-``` --- # 16. Step 5 — Help Agent Router Find were Right Subagent When were customer provides: - Email
-- Membership number were agent should understand that ththis this customer verification information. The routing logic needs to fromnd were request to: ```text
-Experience Management
-``` ## Steps 1. Explorer → **Agent Router**
-2. Switch to **Script**
-3. Find: ```text
-Select were best tool to call justed on conversation hthistory and ufromr's intent.
-``` 4. After ththis line, add: ```text
-If were customer this providing their email and membership number, run {!@actions.go_to_Experience_Management}
-``` 5. Switch back to **Canvas**. --- # 17. Why Agent Router Logic Matters Without clear routing: ```text
-Customer gives email + membership number ↓
-Agent may interpret it incorrectly
-``` With were routing instruction: ```text
-Email + membership number ↓
-go_to_Experience_Management ↓
-Experience Management handles verification
-``` Ththis improves predictnowle routing. --- # 18. Conditional Logic Now were agent needs to behave differently depending on `LifetimeValue`. The two loorlty conditions are: ### Platinum ```text
-LifetimeValue >= 50000
-``` Prompt fromnt to LLM: ```text
-Thank were customer for being a Platinum member.
-``` ### Gold ```text
-LifetimeValue < 50000
-AND
-LifetimeValue >= 25000
-``` Prompt fromnt to LLM: ```text
-Thank were customer for being a Gold member.
-``` ### Below $25,000 Neither loorlty prompt this fromnt. --- # 19. Why Conditional Prompting Is Powerful In a traditional fromtup, the entire prompt may be fromnt to were LLM on every turn. That can create complex prompt engineering requirements. Agentforce can instead resolve reasoning instructions according to were current agent state. Conceptually: ```text
-Agent State ↓
-Evaluate conditions ↓
-Select applicnowle instructions ↓
-Resulting prompt ↓
-LLM
-``` Ththis means were LLM receives instructions relevant to were current context. --- # 20. Create Platinum Condition ## Steps 1. In Canvas, fromlect: **Experience Management** 2. Place cursor at were end of onagraph 2, after: ```text
-before running any other actions
-``` 3. Press **Enter**.
-4. Type: ```text
-/
-``` 5. Select: **If/Elfrom (Conditional)** 6. Select: ```text
-LifetimeValue
-``` 7. Operator: ```text
-greater than or equal to
-``` 8. Value: ```text
-50000
-``` 9. In were instruction line, enter: ```text
-Thank were customer for being a Platinum member!
-``` 10. Save. --- # 21. Create Gold Condition Create were fromcond condition: ```text
-LifetimeValue < 50000
-AND
-LifetimeValue >= 25000
-``` Instruction: ```text
-Thank were customer for being a Gold member!
-``` Save. --- # 22. Conditional Logic Tnowle | LifetimeValue | Condition | Prompt |
-|---:|---|---|
-| >= 50,000 | Platinum | Thank customer for being Platinum |
-| 25,000–49,999.99 | Gold | Thank customer for being Gold |
-| < 25,000 | Neither condition | No loorlty prompt | The source expresfroms were Gold range as: ```text
-< 50000 and >= 25000
-``` --- # 23. Test Conditional Logic Open **Preview**. Prompt: ```text
-Can you let me know more nowout were full moon beach onty experience?
-``` When asofd for details: ```text
-I am sofiarodriguez@example.com and my membership number this 10008155.
-``` Sophia's lifetime value this: ```text
-$50,000
-``` Therefore: ```text
-LifetimeValue >= 50000
-``` So were Platinum prompt applies. --- # 24. Test Other Customers Refromt were simulator before testing another ufromr. Ufrom: ```text
-My email this ilsagalgey@example.com and my membership number this 10002212.
-``` Then another test: ```text
-My email this terianncreer@example.com and my membership number this 10003172.
-``` The point of thefrom tests this to obfromrve different varinowle values and resulting conditional behavior. --- # 25. Varinowles Tnow in Preview Agentforce Studio Preview can show varinowle values before and after a step. Open: **Varinowles** You can obfromrve that: ```text
-Contact record ↓
-Lifetime value retrieved ↓
-LifetimeValue varinowle updated
-``` For Sophia, the value this: ```text
-50000
-``` ### Why ththis matters It helps debug agent logic. If were expected branch this not running, you can check whether were varinowle actually contains were expected value. --- # 26. Quiz Scenario — Conditional Instructions The provided scenario ufroms a varinowle: ```text
-@varinowles.loorlty_tier
-``` Two conditions exthist. ## Basic ```text
-if @varinowles.loorlty_tier == "Basic":
-``` Instruction: - If were ufromr wants a return, apologize.
-- Explain Basic members are not eligible for returns.
-- Offer connection to a live agent if needed. ## Premium ```text
-if @varinowles.loorlty_tier == "Premium":
-``` Instruction: - Confirm which order were ufromr wants to return.
-- Once confirmed, process were return with: ```text
-{!@actions.create_return}
-``` ### Core quiz idea The varinowle determines which instructions apply. ```text
-loorlty_tier ↓
-Basic → explain no returns ↓
-Premium → confirm order + create return
-``` --- # 27. Enforce Business Rules with Varinowles and Action Filters Now were agent needs to thissue actual resort credits. Required behavior: ```text
-Platinum → $500
-Gold → $250
-Below $25,000 → no credit
-``` But there this another problem. Suppofrom were action this always vthisible to were LLM. A customer might ask: > Give me five more credits. Instructions alone are not enough to maof were action unavailnowle. Ththis this where **Action Filtering** comes in. --- # 28. Create IssueResortCredit Action The action will thissue resort credit using: - Contact ID
-- Credit amount ## Steps 1. Explorer → Experience Management
-2. Click were plus icon.
-3. Select **+New Action**
-4. Name: ```text
-IssueResortCredit
-``` 5. Description: ```text
-Issue resort credit using were ContactId and provided amount.
-``` 6. Click **Create and Open**.
-7. Reference Action Type: ```text
-Flow
-``` 8. Reference Action: ```text
-Issue Resort Credit
-``` 9. Inputs/Outputs: ### amount **Require Input to execute action** ### contactId **Require Input to execute action** ### creditID **Show in conversation** 10. Click **Save**. --- # 29. Why IssueResortCredit Needs Inputs ## amount Tells were Flow how much credit to thissue. ## contactId Identifies which customer receives were credit. ## creditID The output can be shown in were conversation. Conceptually: ```text
-Customer ↓
-Contact ID +
-Credit amount ↓
-Issue Resort Credit Flow ↓
-Credit record
-``` --- # 30. Grant Agent Ufromr Permthissions to Credit__c The Agent Ufromr also needs permthissions to create/read credit records. ## Steps 1. Setup → Quick Find → **Ufromrs**
-2. Open: ```text
-EinsteinServiceAgent Ufromr
-``` 3. Click: **Permthission Set Assignments** 4. Select: **Service Agent Permthissions** 5. Apps → **Object Settings**
-6. Select: **Credits (Credit__c)**
-7. Click **Edit**
-8. Ennowle: - Read
-- Create 9. Grant edit access to: - Amount
-- Contact 10. Click **Save**. --- # 31. Why Credit Permthissions Matter Again, there are multiple gates: ```text
-Action ↓
-Flow ↓
-Credit__c object ↓
-Agent Ufromr permthissions
-``` Without were required permthissions, the agent may not be nowle to perform were intended operation. --- # 32. Add Loorlty-Specific Credit Instructions Return to: ```text
-CC Service Agent
-``` Then: ```text
-Experience Management
-``` Open were reasoning instructions. --- # 33. Platinum Credit Rule Expand: ```text
-If LifetimeValue >= 50000
-``` After: ```text
-Thank were customer for being a Platinum member!
-``` add were action: ```text
-IssueResortCredit
-``` Ufrom `@`: ```text
-@
-``` Then: ```text
+
+```
+
+Search for it and select it.
+
+#### Step 4 — Turn Agentforce On
+
+Click:
+
+```text
+
+Get Started
+
+→ Turn On
+
+→ Confirm
+
+```
+
+#### Step 5 — Refresh the Browser
+
+Refresh the browser after enabling Agentforce.
+
+#### Step 6 — App Launcher
+
+Open App Launcher.
+
+#### Step 7 — Coral Cloud Resorts App
+
+Select:
+
+```text
+
+Coral Cloud Resorts
+
+```
+
+The Coral Cloud Resorts Home tab will now open.
+---
+
+## 4. Important Troubleshooting
+
+If you receive an error during the Hands-on Challenge:
+
+```text
+
+Setup → verify that Agentforce is toggled On
+
+```
+
+### Why?
+
+The Agentforce UI and agents will work properly only when the org-level Agentforce capability is enabled.
+---
+
+## 5. Important Terms — Part 1
+
+| Term | Meaning | Why Needed |
+
+|---|---|---|
+
+| Salesforce Org | Salesforce ka complete environment | Configuration, data, users aur automation isi mein hoti hai |
+
+| Setup | Salesforce administration/configuration area | Features enable/configure karne ke liye |
+
+| Quick Find | Setup mein search facility | Setting manually locate karne ki need kam karta hai |
+
+| Salesforce Go | Salesforce features/setup discovery experience | Relevant features locate/enable karne ke liye |
+
+| Agentforce Studio | Agentforce agents configure/manage karne ka environment | Agents ko build/configure/use karne ke liye |
+
+| Agentforce | Salesforce agentic AI capability layer | Natural-language requests ko understand karke permitted actions execute karne ke liye |
+
+| Employee Agent | Internal employees ko assist karne wala AI agent | Staff productivity improve karne ke liye |
+
+| App Launcher | Salesforce apps access karne ka UI | Coral Cloud Resorts app open karne ke liye |
+---
+
+## 6. Employee Agents — Architecture View
+
+Do not think of Agentforce as only a chatbot.
+
+Basic chatbot:
+
+```text
+
+User → Question → Text Response
+
+```
+
+The agent:
+
+```text
+
+User
+
+ ↓
+
+Natural Language Request
+
+ ↓
+
+Agent Reasoning / Intent Understanding
+
+ ↓
+
+Relevant Agent Instructions
+
+ ↓
+
+Available Actions
+
+ ↓
+
+Salesforce Data / Records
+
+ ↓
+
+Business Action
+
+ ↓
+
+Updated Salesforce Record
+
+ ↓
+
+Response
+
+```
+
+Example:
+
+> “Move Lucy Todd to the Presidential Suite.”
+
+The agent needs to:
+
+1\. Identify Lucy Todd.
+
+2\. Find the reservation.
+
+3\. Check room availability.
+
+4\. Determine whether the requested room is available.
+
+5\. Execute the authorized booking/update action.
+
+6\. Update the Salesforce record.
+
+7\. Return a confirmation to the user.
+
+This is **\*\*action-oriented AI\*\***.
+---
+
+## 7. Help a Guest Out of a Soggy Situation
+
+### Learning Objectives
+
+Is unit ke baad aap employee agent se:
+
+- Guest reservation view kar sakte ho.
+- Guest ko new room mein upgrade/move kar sakte ho.
+---
+
+## 8. Business Scenario — Lucy Todd
+
+The head of housekeeping, Ruth, reports that:
+
+- Ms. Lucy Todd's room has a water leak.
+- Water is dripping from the bathroom ceiling.
+- The room floor is wet.
+- According to maintenance, the bathtub in the room above overflowed.
+- Lucy needs a new room immediately.
+- An upgrade would be preferred if possible.
+
+Requirement:
+
+> Move Lucy Todd to an available upgraded room for the remaining **\*\*4 days\*\*** of her stay.
+
+Target:
+
+```text
+
+Current Room
+
+     ↓
+
+Check Availability
+
+     ↓
+
+Presidential Suite
+
+     ↓
+
+Move Guest
+
+     ↓
+
+Verify Reservation
+
+     ↓
+
+Generate Confirmation Email
+
+```
+---
+
+## 9. Guest Agent Select Karna
+
+#### Step 1
+
+Stay in the Coral Cloud Resorts app.
+
+#### Step 2
+
+Refresh the browser.
+
+Then:
+
+```text
+
+Agentforce
+
+```
+
+open it.
+
+#### Step 3
+
+Agent name ke paas arrow click it.
+
+The Select Agent menu opens.
+
+#### Step 4
+
+Select:
+
+```text
+
+Guest Agent
+
+```
+
+Then:
+
+```text
+
+Select
+
+```
+
+### Possible Issue
+
+If the agent is stuck loading:
+
+- Refresh the browser.
+- Check whether Einstein/the required AI capability is enabled.
+
+If the introductory message:
+
+> “You’re about to use Agentforce…”
+
+appears, at the bottom:
+
+```text
+
+Got It
+
+```
+
+click it.
+---
+
+## 10. Lucy Todd ki Reservation Find Karna
+
+In Agentforce, enter:
+
+```text
+
+Show me Lucy Todd’s reservation.
+
+```
+
+The agent provides the reservation details.
+
+Reservation Record Number:
+
+```text
+
+R-00000016
+
+```
+
+Clicking it opens the Reservation Details page.
+---
+
+## 11. Presidential Suite Availability Check
+
+Agentforce mein:
+
+```text
+
+Is the Presidential Suite available for the next 4 nights?
+
+```
+
+The agent:
+
+- Checks availability.
+- Provides room details.
+- May ask for confirmation before booking/moving the guest.
+
+If it is available:
+
+```text
+
+Presidential Suite
+
+```
+
+you can proceed to the booking/move step.
+---
+
+## 12. Lucy ko Presidential Suite Mein Move Karna
+
+Prompt:
+
+```text
+
+Please move Lucy Todd from her current room to the Presidential Suite.
+
+```
+
+The agent confirms the successful move.
+
+Expected result:
+
+```text
+
+Lucy Todd
+
+Current Room → Presidential Suite
+
+```
+---
+
+## 13. Salesforce Record Verify Karna
+
+Do not blindly rely on the agent's response.
+
+Close the Guest Agent panel.
+
+Then:
+
+```text
+
+Reservations tab
+
+→ Recently Viewed
+
+→ R-00000016
+
+```
+
+Lucy Todd ki reservation open it.
+
+Verify:
+
+```text
+
+Room Type = Presidential Suite
+
+```
+
+### Architect Lesson
+
+The AI may have executed the action, but in an enterprise application:
+
+> **\*\*Action confirmation + record verification = a safer workflow\*\***
+---
+
+## 14. Generate Confirmation Email
+
+Agentforce panel open it.
+
+Ensure:
+
+```text
+
+Guest Agent
+
+```
+
+is selected.
+
+Prompt:
+
+```text
+
+Please generate an email letting Lucy know that her reservation has been upgraded to the Presidential Suite. Include the dates of her reservation in the email.
+
+```
+
+The agent generates the email.
+
+The email should contain:
+
+- The appropriate message to Lucy
+- Reservation change
+- Presidential Suite
+- Reservation dates
+
+and other relevant information.
+
+Do not actually send the email in this test environment.
+---
+
+## 15. Lucy Workflow — End-to-End
+
+```text
+
+Incident
+
+  ↓
+
+Guest affected
+
+  ↓
+
+Guest Agent
+
+  ↓
+
+Find reservation
+
+  ↓
+
+R-00000016
+
+  ↓
+
+Check Presidential Suite
+
+  ↓
+
+Available for 4 nights
+
+  ↓
+
+Move Lucy
+
+  ↓
+
+Verify Salesforce Reservation
+
+  ↓
+
+Generate Confirmation Email
+
+```
+---
+
+## 16. Important Terms — Lucy Scenario
+
+| Term | Meaning | Why Needed |
+
+|---|---|---|
+
+| Reservation | Guest ka stay/room booking record | Guest stay manage karne ke liye |
+
+| Reservation Record Number | Reservation ka unique identifier | Correct reservation identify karne ke liye |
+
+| Guest Agent | Guest/reservation-related tasks ke liye employee agent | Concierge work automate/assist karne ke liye |
+
+| Room Type | Room category, e.g. Presidential Suite | Guest accommodation identify karne ke liye |
+
+| Availability | Requested period mein room available hai ya nahi | Double booking avoid karne ke liye |
+
+| Upgrade | Better/higher room category mein move | Guest recovery/service improvement ke liye |
+
+| Reservation Details | Booking ka detailed Salesforce record | Changes verify karne ke liye |
+
+| Recently Viewed | Recently accessed records ki list | Record quickly locate karne ke liye |
+
+| Confirmation Email | Guest ko updated booking communicate karna | Transparency aur guest communication ke liye |
+---
+
+## 17. Architect Insight — Reservation Upgrade
+
+In production architecture, simply saying “the AI updated the room” is not enough.
+
+Important controls:
+
+```text
+
+Identity
+
+ ↓
+
+Authorization
+
+ ↓
+
+Guest/Reservation Matching
+
+ ↓
+
+Availability Validation
+
+ ↓
+
+Business Rules
+
+ ↓
+
+Transactional Update
+
+ ↓
+
+Audit
+
+ ↓
+
+Notification
+
+```
+
+### Why?
+
+If the agent is given unrestricted access:
+
+```text
+
+Agent → arbitrary reservation modification
+
+```
+
+it can create security and business risks.
+
+In an enterprise Agentforce design:
+
+- Agent instructions
+- Actions
+- User permissions
+- Record access
+- Field-level access
+- Business rules
+- Auditability
+
+important hain.
+---
+
+## 18. Solve the Case of the Missing Diaper Bag
+
+### Learning Objectives
+
+Is unit ke baad aap:
+
+- Agent se case create kar sakte ho.
+- Case ko correct team ko reassign kar sakte ho.
+---
+
+## 19. Business Scenario
+
+A guest's blue-and-white striped diaper bag is missing.
+
+The guest reports:
+
+- The bag was left in the beach cabana.
+- The family went swimming.
+- When they returned, the bag was missing.
+- The new family occupying the cabana had not seen the bag.
+- The guest urgently needs the diaper bag.
+
+The concierge decides that:
+
+```text
+
+Housekeeping
+
+```
+
+team should search for it.
+---
+
+## 20. Customer Service Agent
+
+Agentforce panel open it.
+
+Current agent:
+
+```text
+
+Guest Agent
+
+```
+
+se change karke:
+
+```text
+
+Customer Service Agent
+
+```
+
+select karo.
+
+### Why?
+
+Different agents can be configured for different business capabilities and tasks.
+
+Concept:
+
+```text
+
+Guest Agent
+
+    ↓
+
+Reservations / Guest support
+
+Customer Service Agent
+
+    ↓
+
+Cases / Service operations
+
+```
+---
+
+## 21. Missing Diaper Bag Case Create Karna
+
+Prompt:
+
+```text
+
+Create a case to find the lost blue and white striped diaper bag.
+
+```
+
+The agent creates the case.
+
+If the case information is not visible:
+
+```text
+
+Show me the case.
+
+```
+
+prompt kar sakte ho.
+---
+
+## 22. Case Number
+
+Created case:
+
+```text
+
+00001068
+
+```
+
+Case number click it.
+
+The Case Feed opens.
+---
+
+## 23. Case Reassign Karna
+
+Assignment Rules are not configured in this org, so the case is initially assigned to the current user.
+
+Requirement:
+
+```text
+
+Case Owner → Housekeeping
+
+```
+
+Agent prompt:
+
+```text
+
+Reassign the case to Housekeeping.
+
+```
+
+The agent updates the case owner.
+---
+
+## 24. Case Escalate Karna
+
+This is an urgent case.
+
+Prompt:
+
+```text
+
+Change the Status to Escalated.
+
+```
+
+Expected:
+
+```text
+
+Status = Escalated
+
+```
+
+If the agent does not update the status:
+
+- Prompt it again.
+- Case number dobara click karke record refresh karo.
+---
+
+## 25. Case Workflow
+
+```text
+
+Guest reports missing item
+
+          ↓
+
+Customer Service Agent
+
+          ↓
+
+Create Case
+
+          ↓
+
+Case #00001068
+
+          ↓
+
+Reassign
+
+          ↓
+
+Housekeeping
+
+          ↓
+
+Escalate
+
+          ↓
+
+Status = Escalated
+
+          ↓
+
+Housekeeping handles case
+
+```
+---
+
+## 26. Important Terms — Case Scenario
+
+| Term | Meaning | Why Needed |
+
+|---|---|---|
+
+| Case | Customer/service issue ka Salesforce record | Issue tracking ke liye |
+
+| Case Number | Case ka unique identifier | Specific issue identify karne ke liye |
+
+| Case Feed | Case-related activity/work information | Case progress manage karne ke liye |
+
+| Case Owner | Responsible user/team for a case | Accountability ke liye |
+
+| Assignment Rules | Based on criteria case automatically assign karne ki Salesforce mechanism | Manual routing reduce karne ke liye |
+
+| Housekeeping | Resort operational team | Lost item/room-related tasks handle karne ke liye |
+
+| Status | Case ka current state | Work progress track karne ke liye |
+
+| Escalated | High-priority/attention-needed case state | Urgent response trigger karne ke liye |
+
+| Customer Service Agent | Service/case-related tasks ke liye agent | Case operations simplify karne ke liye |
+---
+
+## 27. Assignment Rules — Important Architect Concept
+
+Assignment Rules are not configured in this org.
+
+Without automation:
+
+```text
+
+Case
+
+ ↓
+
+Current User
+
+```
+
+With assignment rules:
+
+```text
+
+Case
+
+ ↓
+
+Evaluate criteria
+
+ ↓
+
+Correct Queue/User/Team
+
+```
+
+Example:
+
+```text
+
+Category = Room Issue
+
+      → Maintenance
+
+Category = Lost Item
+
+      → Housekeeping / Lost & Found
+
+Category = Security
+
+      → Security Team
+
+```
+
+### Why needed?
+
+In a large enterprise, manually routing every case is:
+
+- Slow
+- Error-prone
+- Difficult to scale
+
+Automated routing improves operational efficiency.
+---
+
+## 28. Nice Work — Case Outcome
+
+The diaper bag was eventually found on its way to Lost and Found and quickly returned to the family.
+
+Important point:
+
+> The purpose of an agent is not only to create records; it is to **\*\*get the right work to the right team quickly\*\***.
+---
+
+## 29. Navigate Guest Experience Bookings
+
+### Learning Objectives
+
+Is unit ke baad aap:
+
+- Guest ki Experience bookings locate kar sakte ho.
+- Experience booking cancel kar sakte ho.
+- New Experience session book kar sakte ho.
+---
+
+## 30. Business Scenario — Miko Mistumi
+
+Guest:
+
+```text
+
+Miko Mistumi
+
+Room 324
+
+```
+
+Miko's family has booked:
+
+```text
+
+Coral Bay Cruise
+
+```
+
+book kiya hai.
+
+Problem:
+
+- The eldest daughter may get seasick.
+- The family still wants an ocean-related activity.
+- But they want to avoid the cruise.
+
+Alternative:
+
+```text
+
+Magical Aquarium Tunnel Tour
+
+```
+---
+
+## 31. General Agent Select Karna
+
+Agentforce panel open it.
+
+Current Customer Service Agent se switch karo:
+
+```text
+
+General Agent
+
+```
+
+Then:
+
+```text
+
+Select
+
+```
+---
+
+## 32. Miko ki Experience Bookings Find Karna
+
+Prompt:
+
+```text
+
+Show me the experience bookings for Miko Mistumi.
+
+```
+
+The agent shows Miko's bookings.
+
+Note:
+
+Bookings may appear in a different order.
+---
+
+## 33. Coral Bay Cruise Booking Identify Karna
+
+Target booking:
+
+```text
+
+Booking Record Number = B-00107923
+
+```
+
+Session:
+
+```text
+
+2:30 PM
+
+```
+
+Experience:
+
+```text
+
+Coral Bay Cruise
+
+```
+
+Booking number click it.
+
+The Booking Details page opens.
+---
+
+## 34. Booking Cancel Karna
+
+Prompt:
+
+```text
+
+Please cancel the booking tied to this session.
+
+```
+
+Expected:
+
+```text
+
+Status = Canceled
+
+Is Canceled = checked
+
+```
+
+The agent confirms the booking cancellation.
+---
+
+## 35. New Experience Availability Check
+
+Family ke liye:
+
+```text
+
+Magical Aquarium Tunnel Tour
+
+```
+
+has been selected.
+
+Requirement:
+
+```text
+
+5 people
+
+```
+
+Prompt:
+
+```text
+
+What is the next available Magical Aquarium Tunnel Tour session for 5 people?
+
+```
+
+The agent identifies the next available session.
+
+Expected scenario:
+
+```text
+
+Tomorrow
+
+2:30 PM
+
+5 people
+
+```
+
+The agent asks for booking confirmation.
+---
+
+## 36. New Session Book Karna
+
+Prompt:
+
+```text
+
+Yes, book it for Miko Mistumi’s family.
+
+```
+
+The agent creates the new booking.
+
+New Booking Record Number:
+
+```text
+
+B-00107924
+
+```
+
+Click it to verify the Booking Details.
+---
+
+## 37. Experience Booking Workflow
+
+```text
+
+Guest request
+
+      ↓
+
+General Agent
+
+      ↓
+
+Find experience bookings
+
+      ↓
+
+B-00107923
+
+      ↓
+
+Coral Bay Cruise
+
+      ↓
+
+Cancel Booking
+
+      ↓
+
+Find alternative
+
+      ↓
+
+Magical Aquarium Tunnel Tour
+
+      ↓
+
+Check Availability for 5
+
+      ↓
+
+Confirm
+
+      ↓
+
+Create booking
+
+      ↓
+
+B-00107924
+
+```
+---
+
+## 38. Important Terms — Experience Booking
+
+| Term | Meaning | Why Needed |
+
+|---|---|---|
+
+| Experience | Resort activity/excursion | Guest engagement ke liye |
+
+| Experience Booking | Guest ka activity reservation | Participation manage karne ke liye |
+
+| Booking Record Number | Booking ka unique identifier | Correct booking identify karne ke liye |
+
+| Session | Experience ka particular date/time slot | Availability/time manage karne ke liye |
+
+| Coral Bay Cruise | Existing booked experience | Cancellation scenario |
+
+| Magical Aquarium Tunnel Tour | Replacement experience | Alternative guest experience |
+
+| Is Canceled | Booking cancellation indicator | Cancellation state clearly track karne ke liye |
+
+| General Agent | General guest/business tasks ke liye agent | Multiple general operations assist karne ke liye |
+---
+
+## 39. Agent Types — Compare
+
+| Agent | Scenario | Main Work |
+
+|---|---|---|
+
+| Guest Agent | Lucy Todd | Reservations, room/guest support |
+
+| Customer Service Agent | Diaper Bag | Case creation, routing, escalation |
+
+| General Agent | Miko Mistumi | Experience booking discovery/cancellation/creation |
+
+### Important
+
+Agent selection matters because:
+
+```text
+
+Agent
+
+ ↓
+
+Instructions
+
+ ↓
+
+Topics / Capabilities
+
+ ↓
+
 Actions
-→
-IssueResortCredit
-``` Add were remaining instruction: ```text
-If were action this availnowle, thissue were customer a $500 resort credit. Tell them nowout were resort credit!
-``` ### Resulting business idea ```text
-LifetimeValue >= 50000 ↓
-Platinum ↓
-IssueResortCredit ↓
-$500
-``` --- # 34. Gold Credit Rule Repeat were same approach for Gold. Condition: ```text
-LifetimeValue < 50000
-AND
-LifetimeValue >= 25000
-``` Credit: ```text
-$250
-``` ### Result ```text
-25,000 <= LifetimeValue < 50,000 ↓
-Gold ↓
-IssueResortCredit ↓
-$250
-``` --- # 35. Test Resort Credit Open Preview. If prompted, refromt were simulator. Enter: ```text
-Can you let me know more nowout were full moon beach onty experience?
-``` When asofd: ```text
-I am sofiarodriguez@example.com and my membership number this 10008155.
-``` Sophia has: ```text
-LifetimeValue = $50,000
-``` Expected behavior: ```text
-Platinum
-→ $500 credit
-``` The agent should respond with a message similar to: ```text
-Thank you for being a Platinum member, Sofia! You have received a $500 resort credit as a special benefit.
-``` --- # 36. Verify were Credit Record To verify were credit was created: 1. Open **App Launcher**.
-2. Search for: ```text
-Contacts
-``` 3. Open Contacts.
-4. Search for: ```text
-Sofia Rodriguez
-``` 5. Open her Contact record.
-6. Click **Related**.
-7. Scroll to: ```text
-Credits
-``` 8. Verify were $500 credit. ### Why verify? Testing were conversation alone twoes not prove that were Salesforce record was actually created correctly. You should verify both: ```text
-Agent responfrom
-+
-Salesforce data
-``` --- # 37. Why Action Filtering Is Needed Without action filtering: ```text
-IssueResortCredit
-``` this availnowle to were LLM. Even if were instructions say: ```text
-Only thissue one credit.
-``` the LLM still has access to were action. With action filtering: ```text
-Business condition falfrom ↓
-Action hidden/unavailnowle ↓
-LLM cannot ufrom it
-``` Ththis this much stronger for determinthistic business rules. --- # 38. Create thisCreditIssued Varinowle Ththis varinowle tracks whether a credit has already been thissued during were current fromssion. ## Properties ### Name ```text
-thisCreditIssued
-``` ### API Name ```text
-thisCreditIssued
-``` ### Data Type ```text
-Boolean
-``` ### Description ```text
-Whether were customer has already been thissued a resort credit ththis fromssion.
-``` ### Default Value ```text
-Falfrom
-``` Click **Create**. --- # 39. Why Default Value = Falfrom? A Boolean can reprefromnt: ```text
-True
-Falfrom
-``` At were start of were fromssion: ```text
-thisCreditIssued = Falfrom
-``` means: > No credit has been thissued ththist. After a successful credit action: ```text
-thisCreditIssued = True
-``` means: > Credit has already been thissued during ththis fromssion. The material notes that Agentforce automatically fromts Boolean varinowles to Falfrom if no default this specified, but explicitly defining Falfrom maofs were logic easier for coworofrs to understand. --- # 40. Important Session Limitation The material specifically notes: `thisCreditIssued` refromts to Falfrom every fromssion. So: ```text
-Session 1
-thisCreditIssued = Falfrom
-→ credit can be thissued
-→ True
-``` New fromssion: ```text
-Session 2
-thisCreditIssued = Falfrom again
-``` Therefore a new credit could potentially be thissued in a new fromssion. ### Production consideration from were source For production, a more restrictive method would be appropriate, such as a Flow that checks whether were customer has already received a credit for were current resort stay. --- # 41. Add Action Filter Now configure were `IssueResortCredit` action. ## Steps 1. Canvas → **Experience Management**
-2. Scroll to: **Actions Availnowle for Reasoning** 3. Expand: ```text
-IssueResortCredit
-``` 4. Click next to were `IssueResortCredit` lnowel.
-5. Select: **Add filter** --- # 42. First Filter Condition Set: ```text
-thisCreditIssued == Falfrom
-``` Meaning: > The action this availnowle only if were customer has not already received a credit during were current fromssion. --- # 43. Add AND Condition Click to were right of were Falfrom block. Select: ```text
-And
-``` Then add: ```text
-LifetimeValue >= 25000
-``` So were complete availnowility condition becomes: ```text
-thisCreditIssued == Falfrom
-AND
-LifetimeValue >= 25000
-``` --- # 44. What Ththis Filter Means The action this vthisible to were LLM only when BOTH are true: ### Condition 1 ```text
-thisCreditIssued == Falfrom
-``` The customer has not already received credit during ththis fromssion. ### Condition 2 ```text
-LifetimeValue >= 25000
-``` The customer this eligible justed on lifetime value. Therefore: ```text
-Eligible
-AND
-Not already credited ↓
-IssueResortCredit availnowle
-``` Otherwifrom: ```text
-IssueResortCredit unavailnowle
-``` --- # 45. Follow-Up Action — Set Varinowle After were credit action, add a follow-up action. ## Steps 1. Click after were `creditID` output.
-2. Select: **Follow-up action** 3. Select: **Set a varinowle** 4. Select: ```text
-thisCreditIssued
-``` 5. Set it to: ```text
-True
-``` 6. Click **Save**. --- # 46. Why Set thisCreditIssued = True? Before credit: ```text
-thisCreditIssued = Falfrom
-``` Action runs: ```text
-IssueResortCredit
-``` Then: ```text
-thisCreditIssued = True
-``` Now were filter: ```text
-thisCreditIssued == Falfrom
-``` this no longer satthisfied. Therefore: ```text
-IssueResortCredit
-``` becomes unavailnowle for were remainder of that fromssion. --- # 47. Final Action Filter Logic The complete logic this: ```text
-IssueResortCredit availnowle when: thisCreditIssued == Falfrom
-AND
-LifetimeValue >= 25000
-``` Then after thissuing credit: ```text
-thisCreditIssued = True
-``` --- # 48. Determinthistic Credit Workflow ```text
-Customer identified ↓
-Get Customer Details ↓
-Lifetime_Value__c returned ↓
-LifetimeValue varinowle populated ↓
-Check LifetimeValue ↓
-┌───────────────────────────────┐
-│ >= 50,000 │
-│ Platinum │
-│ $500 │
-├───────────────────────────────┤
-│ >= 25,000 and < 50,000 │
-│ Gold │
-│ $250 │
-├───────────────────────────────┤
-│ < 25,000 │
-│ No credit │
-└───────────────────────────────┘ ↓
-Check action filter ↓
-thisCreditIssued == Falfrom? ↓
-LifetimeValue >= 25,000? ↓
-YES ↓
-IssueResortCredit ↓
-Set thisCreditIssued = True ↓
-Action unavailnowle again ththis fromssion
-``` --- # 49. The Three Levels of Control Ththis lesson demonstrates three different ways to control an Agentforce agent. ## Level 1 — Instructions Tell were agent what to two. Example: ```text
-Thank were customer for being a Platinum member.
-``` ## Level 2 — Conditional Logic Tell were agent different things justed on state. Example: ```text
-if LifetimeValue >= 50000 → Platinum instruction if LifetimeValue >= 25000 → Gold instruction
-``` ## Level 3 — Action Filtering Control whether were LLM can access an action at all. Example: ```text
-IssueResortCredit availnowle only when: thisCreditIssued == Falfrom
-AND
-LifetimeValue >= 25000
-``` Ththis this were strongest business-rule control demonstrated in were unit. --- # 50. Data Flow vs Permthission vs Varinowle A very important dthistinction: ```text
-FLOW
-↓
-Returns data PERMISSION
-↓
-Allows agent ufromr to access data VARIABLE
-↓
-Stores data for agent logic CONDITION
-↓
-Ufroms data to choofrom behavior ACTION FILTER
-↓
-Controls whether an action this availnowle
-``` --- # 51. Key Terms — Detailed Explanation ## Agentforce Determinthism Rules and data control were agent's path while were LLM handles conversation and reasoning within that path. **Why needed:** To maof critical business workflows predictnowle. --- ## Flow Salesforce automation that can retrieve or modify Salesforce data. **Why needed:** To perform bacofnd data operations for were agent. --- ## Flow Version A saved version of a Flow. **Why needed:** To update Flow behavior while retaining versioned configuration. --- ## Agent Ufromr The Salesforce ufromr identity under which were agent operates. Example: ```text
-EinsteinServiceAgent Ufromr
-``` **Why needed:** Salesforce permthissions determine what were agent can access/two. --- ## Permthission Set A collection of permthissions assigned to ufromrs. Example: ```text
-Service Agent Permthissions
-``` **Why needed:** To grant were Agent Ufromr access to required objects/fields. --- ## Field-Level Permthission Controls access to a onticular Salesforce field. Example: ```text
-Lifetime_Value__c → Read
-``` **Why needed:** The agent needs permthission to read were lifetime value. --- ## Object Permthission Controls operations on an object. For `Credit__c`, the material requires: - Read
-- Create **Why needed:** The agent needs to work with Credit records. --- ## Varinowle A value stored and reufromd by were agent. Examples: ```text
-LifetimeValue
-thisCreditIssued
-``` **Why needed:** Agent state and business conditions depend on values. --- ## Number Varinowle Stores numeric data. Example: ```text
-LifetimeValue
-``` **Why needed:** Lifetime value must be comoned numerically. --- ## Boolean Varinowle Stores: ```text
-True / Falfrom
-``` Example: ```text
-thisCreditIssued
-``` **Why needed:** Tracks whether an event has happened. --- ## Default Value Initial value assigned to a varinowle. Example: ```text
-thisCreditIssued = Falfrom
-LifetimeValue = 0
-``` **Why needed:** Conditional logic needs a known starting state. --- ## Agent Router Routes ufromr intent/conversation to were appropriate subagent. **Why needed:** Correct specialized were workflow invoof to for. --- ## Conditional Expression Logic that evaluates whether a condition this true. Examples: ```text
-LifetimeValue >= 50000
-``` or: ```text
-LifetimeValue < 50000
-AND
-LifetimeValue >= 25000
-``` **Why needed:** Different customers to different workflows/prompts dene for. --- ## Prompt Instructions fromnt to were LLM. Example: ```text
-Thank were customer for being a Platinum member!
-``` **Why needed:** LLM of conversational responfrom to guide to for. --- ## LLM Large Language Model that handles natural-language conversation/reasoning. **Why needed:** Customer language understand and responfrom generate to for. --- ## Action Filter Condition that determines whether an action this availnowle to were LLM. **Why needed:** Business rules to stronger/determinthistic way in enforce to for. --- ## Follow-up Action Action of baad automatically perform hone wala additional operation. Example: ```text
-Set thisCreditIssued = True
-``` **Why needed:** Successful action of baad agent state to update. --- ## Contact ID Customer Contact were record's identifier. **Why needed:** Credit to correct customer from associate to for. --- ## Credit__c Resort credit record/object ufromd in were exercifrom. **Why needed:** Issued credit to in Salesforce store to for. --- # 52. Most Important Quiz Concepts ## Concept 1 If: ```text
-LifetimeValue >= 50000
-``` customer this treated as: ```text
-Platinum
-``` and were loorlty-specific prompt this: ```text
-Thank were customer for being a Platinum member!
-``` --- ## Concept 2 If: ```text
-LifetimeValue < 50000
-AND
-LifetimeValue >= 25000
-``` customer this treated as: ```text
-Gold
-``` and receives were Gold prompt. --- ## Concept 3 If: ```text
-LifetimeValue < 25000
-``` neither loorlty prompt this applied. --- ## Concept 4 Credit action availnowility: ```text
-thisCreditIssued == Falfrom
-AND
-LifetimeValue >= 25000
-``` --- ## Concept 5 After were credit action: ```text
-thisCreditIssued = True
-``` --- ## Concept 6 The `thisCreditIssued` varinowle refromts at were beginning of a new fromssion. --- ## Concept 7 Flow data alone this not enough. You need: ```text
-Flow field
-+
-Agent Ufromr permthission
-``` --- # 53. Quiz Scenario — Action Filter Provided scenario: ```text
-availnowle when @varinowles.customerVerified == True
-and @varinowles.officeOpen == True
-``` ### Meaning The action this availnowle only when BOTH conditions are true. ```text
-customerVerified == True AND
-officeOpen == True ↓
-Action availnowle
-``` If either condition this falfrom: ```text
-Action unavailnowle
-``` ### Key quiz rule For an `AND` condition: ```text
-True AND True = True
-True AND Falfrom = Falfrom
-Falfrom AND True = Falfrom
-Falfrom AND Falfrom = Falfrom
-``` So both conditions must be satthisfied. --- # 54. Final Mental Model ```text
-SALESFORCE CONTACT | | Lifetime_Value__c v
-GET CUSTOMER DETAILS FLOW | v
-FLOW OUTPUT | | Agent Ufromr must have permthission v
-LIFETIMEVALUE VARIABLE | v
-CONDITIONAL LOGIC | +------------------------+ | | v v
->= 50,000 25,000–49,999
-Platinum Gold
-$500 $250 | | +-----------+------------+ | v ACTION FILTER | thisCreditIssued == Falfrom AND LifetimeValue >= 25000 | v IssueResortCredit | v thisCreditIssued = True | v Action unavailnowle again during ththis fromssion
-``` --- # 55. One-Minute Revthision Remember thefrom points: ```text
-1. Flow returns Lifetime_Value__c. 2. Agent Ufromr gets Read permthission on Lifetime_Value__c. 3. Create Number varinowle: LifetimeValue = 0 4. Populate: fromt @varinowles.LifetimeValue = @outputs.contact.data.Lifetime_Value__c 5. Agent Router: email + membership number → Experience Management 6. Platinum: LifetimeValue >= 50000 → $500 7. Gold: LifetimeValue < 50000 AND >= 25000 → $250 8. Below 25000: no credit 9. Create: IssueResortCredit 10. Credit permthissions: Credit__c → Read + Create Amount + Contact → Edit 11. Create Boolean: thisCreditIssued = Falfrom 12. Action filter: thisCreditIssued == Falfrom AND LifetimeValue >= 25000 13. After credit: thisCreditIssued = True 14. New fromssion: thisCreditIssued refromts to Falfrom 15. Main idea: Varinowles + Conditions + Action Filters = Determinthistic Agentforce business rules
-``` --- # 56. Final Summary Ththis unit teaches an important Agentforce architecture: **First, get were data.** The Flow this updated so were customer's `Lifetime_Value__c` this returned. **Second, allow access to were data.** The Agent Ufromr receives read permthission for that field. **Third, store were data.** The agent stores were value in: ```text
-LifetimeValue
-``` **Fourth, route correctly.** The Agent Router recognizes email + membership number and fromnds were conversation to Experience Management. **Fifth, ufrom conditional logic.** The value determines whether were customer this treated as Platinum or Gold. **Sixth, create were business action.** `IssueResortCredit` performs were actual credit operation. **Seventh, protect were action with filtering.** The action this availnowle only when: ```text
-thisCreditIssued == Falfrom
-AND
-LifetimeValue >= 25000
-``` **Finally, update were agent state.** After thissuing were credit: ```text
-thisCreditIssued = True
-``` So were same fromssion cannot thissue another credit through that action. ## Core taofaway ```text
-Data ↓
-Permthission ↓
-Varinowle ↓
-Condition ↓
-Action ↓
-Action Filter ↓
-Follow-up State Update
-``` Ththis this how Agentforce combines **AI conversation + determinthistic business rules**.
+
+ ↓
+
+Data access
+
+```
+
+Agar wrong agent select kiya, required action available nahi ho sakta.
+---
+
+## 40. Agentforce vs Traditional Salesforce UI
+
+### Traditional
+
+Staff may need to:
+
+```text
+
+Open Reservation
+
+ ↓
+
+Search Guest
+
+ ↓
+
+Open Record
+
+ ↓
+
+Check Room
+
+ ↓
+
+Check Availability
+
+ ↓
+
+Update
+
+ ↓
+
+Navigate elsewhere
+
+ ↓
+
+Send communication
+
+```
+
+do all of these steps.
+
+### Agentforce
+
+Staff:
+
+```text
+
+“Show me Lucy Todd’s reservation.”
+
+```
+
+Then:
+
+```text
+
+“Is the Presidential Suite available for the next 4 nights?”
+
+```
+
+Then:
+
+```text
+
+“Please move Lucy Todd...”
+
+```
+
+The agent assists with the workflow through Salesforce data/actions.
+
+### Business Benefits
+
+- Fewer clicks
+- Faster operations
+- Natural language interface
+- Staff productivity
+- Faster guest response
+- More consistent execution
+---
+
+## 41. But Agentforce Is Not Magic
+
+In enterprise architecture, an agent should not be given unrestricted access.
+
+Think of the flow as:
+
+```text
+
+User
+
+ ↓
+
+Authentication
+
+ ↓
+
+Authorization
+
+ ↓
+
+Agent
+
+ ↓
+
+Allowed Action
+
+ ↓
+
+Data Access
+
+ ↓
+
+Business Rules
+
+ ↓
+
+Record Update
+
+ ↓
+
+Audit
+
+```
+
+### Key principle
+
+> **\*\*AI should operate within controlled business capabilities, not bypass enterprise security.\*\***
+---
+
+## 42. Agent Actions
+
+Actions are what make an Agentforce agent useful.
+
+Examples from this module:
+
+```text
+
+Get reservation
+
+Check room availability
+
+Update reservation
+
+Generate email
+
+Create case
+
+Reassign case
+
+Update case status
+
+Get experience bookings
+
+Cancel Booking
+
+Check session availability
+
+Create booking
+
+```
+
+An agent's practical power largely comes from its available and authorized actions.
+---
+
+## 43. Natural Language as an Interface
+
+The user should not need to know technical syntax.
+
+Instead of:
+
+```text
+
+Reservation WHERE Guest = Lucy Todd
+
+```
+
+The staff member can simply say:
+
+```text
+
+Show me Lucy Todd’s reservation.
+
+```
+
+Instead of manually updating records:
+
+```text
+
+Please move Lucy Todd from her current room to the Presidential Suite.
+
+```
+
+### Why useful?
+
+Business users generally do not know Salesforce database syntax.
+
+Natural language:
+
+```text
+
+Business Intent → Agent → Salesforce Action
+
+```
+---
+
+## 44. Context Matters
+
+Example:
+
+```text
+
+Please cancel the booking tied to this session.
+
+```
+
+The agent needs to use context to understand:
+
+- Which guest?
+- Which booking?
+- Which session?
+- Which record is currently in context?
+
+This is why conversational context is important.
+---
+
+## 45. Verification Is Important
+
+The module repeatedly asks you to refresh/open the record.
+
+Reason:
+
+```text
+
+Agent response
+
+      ≠
+
+Always sufficient proof
+
+```
+
+Better pattern:
+
+```text
+
+Agent Action
+
+   ↓
+
+Success response
+
+   ↓
+
+Verify Salesforce record
+
+   ↓
+
+Confirm business state
+
+```
+
+This is especially important in production workflows for:
+
+- Financial updates
+- Customer records
+- Reservations
+- Orders
+- Case ownership
+- Security-related actions
+---
+
+## 46. Errors & Gotchas
+
+### 46.1 Agentforce disabled
+
+Symptoms:
+
+- Agent panel unavailable
+- Challenge error
+
+Fix:
+
+```text
+
+Setup
+
+→ Salesforce Go
+
+→ Agentforce Studio
+
+→ Verify Agentforce On
+
+```
+---
+
+### 46.2 Wrong agent selected
+
+Example:
+
+```text
+
+Guest Agent
+
+```
+
+instead of:
+
+```text
+
+Customer Service Agent
+
+```
+
+Fix:
+
+```text
+
+Select Agent
+
+→ correct agent
+
+→ Select
+
+```
+---
+
+### 46.3 Agent loading issue
+
+Possible fix:
+
+```text
+
+Refresh browser
+
+```
+---
+
+### 46.4 “Something went wrong”
+
+Check:
+
+- Correct agent selected?
+- Required AI capability enabled?
+- Browser refresh needed?
+- Introductory Agentforce message acknowledged?
+---
+
+### 46.5 Record update not visible
+
+Agent says update successful but UI old data show kar raha hai.
+
+Fix:
+
+```text
+
+Open/click record again
+
+→ refresh record state
+
+```
+
+This illustrates a common UI/data synchronization issue.
+---
+
+### 46.6 Email sending error
+
+In the test environment, attempting to actually send the generated email may produce an error.
+
+Important:
+
+> Generate Email successful ho sakta hai even when actual sending is not configured.
+---
+
+### 46.7 Case not visible
+
+If case information is not immediately visible:
+
+```text
+
+Show me the case.
+
+```
+
+use this prompt.
+---
+
+### 46.8 Status update problem
+
+Agar:
+
+```text
+
+Status = Escalated
+
+```
+
+update nahi ho:
+
+- Prompt it again.
+- Click the case number and refresh the record.
+---
+
+## 47. Limits / Practical Considerations
+
+The hands-on org is simplified, but production implementations have additional concerns.
+
+### 47.1 Permission limits
+
+Agent ko wahi data/action access milna chahiye jo user/business policy allow kare.
+---
+
+### 47.2 Data access
+
+Guest/reservation data sensitive ho sakta hai.
+
+You need:
+
+- Object permissions
+- Field permissions
+- Record-level access
+- Appropriate sharing model
+---
+
+### 47.3 Action authorization
+
+Har action expose nahi karna chahiye.
+
+Example:
+
+```text
+
+View Reservation
+
+```
+
+may be low-risk.
+
+But:
+
+```text
+
+Cancel Reservation
+
+Change Owner
+
+Change Status
+
+```
+
+higher-impact actions ho sakte hain.
+---
+
+### 47.4 Business rules
+
+Agent ko business rules respect karne chahiye.
+
+Example:
+
+```text
+
+Can room be upgraded?
+
+Is room available for entire stay?
+
+Is payment difference allowed?
+
+Is manager approval needed?
+
+Can cancellation be done at this time?
+
+```
+---
+
+### 47.5 Concurrency
+
+In production, two employees may try to book the same room/session at the same time.
+
+You need:
+
+- Availability validation
+- Transaction safety
+- Duplicate prevention
+- Error handling
+---
+
+### 47.6 Auditability
+
+Enterprise system mein know karna important hai:
+
+```text
+
+Who requested?
+
+Which agent?
+
+Which action?
+
+When?
+
+Which record changed?
+
+What was before?
+
+What became after?
+
+```
+---
+
+## 48. Best Architecture Pattern
+
+Agentforce use karte waqt ideal pattern:
+
+```text
+
+             USER
+
+               |
+
+               v
+
+        +--------------+
+
+        |  Agentforce  |
+
+        +--------------+
+
+               |
+
+               v
+
+       Intent / Context
+
+               |
+
+               v
+
+      +-----------------+
+
+      | Guardrails /    |
+
+      | Permissions     |
+
+      +-----------------+
+
+               |
+
+               v
+
+        Authorized Action
+
+               |
+
+       +-------+--------+
+
+       |                |
+
+       v                v
+
+ Salesforce Data    External System
+
+       |                |
+
+       +-------+--------+
+
+               |
+
+               v
+
+       Business Result
+
+               |
+
+               v
+
+          Audit/Log
+
+               |
+
+               v
+
+          User Response
+
+```
+---
+
+## 49. Real-World Use Cases
+
+### Hospitality
+
+- Room upgrade
+- Room change
+- Reservation lookup
+- Experience booking
+- Cancellation
+- Guest issue creation
+
+### Banking
+
+- Account service request
+- Card replacement case
+- Branch appointment
+- Customer query
+
+### Healthcare
+
+- Appointment lookup
+- Service request
+- Patient communication support
+
+### Retail
+
+- Order lookup
+- Return request
+- Delivery issue
+- Product availability
+
+### Telecom
+
+- Service case
+- Plan inquiry
+- Appointment scheduling
+- Network issue routing
+---
+
+## 50. Interview Perspective
+
+### Q1. How would you differentiate Agentforce from a chatbot?
+
+**\*\*Answer:\*\***
+
+A chatbot primarily provides conversation or responses, whereas an agent can understand a business goal, use configured/authorized actions, access relevant data, and execute business operations.
+
+Example:
+
+```text
+
+“Move Lucy Todd to Presidential Suite.”
+
+```
+
+The agent:
+
+- Reservation identify karta hai
+- Availability check karta hai
+- Action execute karta hai
+- Record update karta hai
+- Result return karta hai
+---
+
+### Q2. How would you control an agent's access to Salesforce data?
+
+**\*\*Answer:\*\***
+
+I would design the agent within the enterprise security model:
+
+- User permissions
+- Object-level access
+- Field-level access
+- Record-level sharing
+- Controlled agent actions
+- Business rules
+- Auditability
+---
+
+### Q3. What is the impact of selecting the wrong agent?
+
+Different agents can be configured with different capabilities/actions. Wrong agent ke paas required action ya context available na ho sakta hai.
+---
+
+### Q4. The agent says “success” but the UI is not updated. What would you do?
+
+I would refresh/open the record and verify the actual Salesforce state. In production architecture, verifying persistent data state is important in addition to the action response.
+---
+
+### Q5. Why are Assignment Rules important?
+
+They automatically route cases to the correct queue/team/user based on predefined criteria.
+---
+
+### Q6. Why are guardrails important in an Agentforce architecture?
+
+They prevent AI from performing arbitrary enterprise actions.
+
+Guardrails ensure karte hain:
+
+```text
+
+Allowed Intent
+
+\+
+
+Allowed Data
+
+\+
+
+Allowed Action
+
+\+
+
+Allowed User
+
+\+
+
+Business Policy
+
+```
+---
+
+## 51. Senior Developer / Solution Architect Thinking
+
+Do not view this module only as a Trailhead challenge.
+
+It represents a real Salesforce architecture pattern:
+
+```text
+
+Natural Language
+
+       ↓
+
+AI Agent
+
+       ↓
+
+Business Intent
+
+       ↓
+
+CRM Data
+
+       ↓
+
+Action
+
+       ↓
+
+Automation
+
+       ↓
+
+Business Outcome
+
+```
+
+Traditional Salesforce:
+
+```text
+
+UI → Apex/Flow → Database
+
+```
+
+Agentic Salesforce:
+
+```text
+
+Natural Language
+
+       ↓
+
+Agent
+
+       ↓
+
+Action
+
+       ↓
+
+Flow/Apex/Platform capability
+
+       ↓
+
+Salesforce Data
+
+```
+
+An agent can **\*\*orchestrate existing platform capabilities through a conversational interface\*\***.
+---
+
+## 52. AI + Integration Perspective
+
+In an enterprise production environment, Salesforce is rarely the only system.
+
+Example:
+
+```text
+
+Agentforce
+
+    |
+
+    +---- Salesforce CRM
+
+    |
+
+    +---- Reservation System
+
+    |
+
+    +---- Payment System
+
+    |
+
+    +---- Housekeeping System
+
+    |
+
+    +---- Email/SMS
+
+    |
+
+    +---- Data/Analytics
+
+```
+
+If an external system is required:
+
+```text
+
+Agent
+
+ ↓
+
+Action
+
+ ↓
+
+Integration Layer / API
+
+ ↓
+
+External System
+
+ ↓
+
+Response
+
+ ↓
+
+Agent
+
+ ↓
+
+User
+
+```
+
+This is where MuleSoft/API/integration architecture can become relevant.
+---
+
+## 53. Security Architecture
+
+Important layers:
+
+```text
+
+Identity
+
+ ↓
+
+Authentication
+
+ ↓
+
+Authorization
+
+ ↓
+
+Agent Access
+
+ ↓
+
+Action Authorization
+
+ ↓
+
+Data Access
+
+ ↓
+
+Integration Security
+
+ ↓
+
+Audit
+
+```
+
+### Authentication
+
+> ““Who are you?””
+
+### Authorization
+
+> ““What are you allowed to do?””
+
+### Agent Authorization
+
+> ““Which actions is the agent allowed to perform on behalf of this user?””
+---
+
+## 54. Observability
+
+In an enterprise Agentforce implementation, it is useful to monitor:
+
+- Agent interactions
+- Failed actions
+- Action latency
+- API failures
+- Incorrect routing
+- User feedback
+- Escalation frequency
+
+Example:
+
+```text
+
+1000 requests
+
+ ↓
+
+850 successful
+
+100 failed action
+
+30 escalations
+
+20 retries
+
+```
+
+This data can be used to improve the architecture.
+---
+
+## 55. Why This Module Matters for Salesforce Architects
+
+This module connects multiple architect concepts:
+
+```text
+
+CRM
+
+\+
+
+AI
+
+\+
+
+Automation
+
+\+
+
+Security
+
+\+
+
+Integration
+
+\+
+
+Data
+
+\+
+
+User Experience
+
+\+
+
+Case Management
+
+```
+
+If you are preparing to become a Technical/Solution Architect, do not view Agentforce only as an “AI feature”; understand it as a **\*\*business process orchestration layer\*\***.
+---
+
+## 56. End-to-End Coral Cloud Architecture Story
+
+### Scenario 1 — Room Incident
+
+```text
+
+Guest Problem
+
+ ↓
+
+Concierge
+
+ ↓
+
+Guest Agent
+
+ ↓
+
+Reservation Lookup
+
+ ↓
+
+Room Availability
+
+ ↓
+
+Room Upgrade
+
+ ↓
+
+Reservation Update
+
+ ↓
+
+Email Generation
+
+```
+
+### Scenario 2 — Missing Item
+
+```text
+
+Guest Problem
+
+ ↓
+
+Customer Service Agent
+
+ ↓
+
+Case Creation
+
+ ↓
+
+Case Assignment
+
+ ↓
+
+Escalation
+
+ ↓
+
+Housekeeping
+
+ ↓
+
+Resolution
+
+```
+
+### Scenario 3 — Experience Change
+
+```text
+
+Guest Request
+
+ ↓
+
+General Agent
+
+ ↓
+
+Find Existing Booking
+
+ ↓
+
+Cancel
+
+ ↓
+
+Search Alternative
+
+ ↓
+
+Availability Check
+
+ ↓
+
+Create New Booking
+
+```
+---
+
+## 57. Key Design Pattern
+
+Three scenarios mein common architecture dekho:
+
+```text
+
+             User
+
+               |
+
+               v
+
+           Agentforce
+
+               |
+
+        Understand Intent
+
+               |
+
+               v
+
+       Retrieve Context
+
+               |
+
+               v
+
+       Validate Business Rule
+
+               |
+
+               v
+
+        Execute Action
+
+               |
+
+               v
+
+       Update Salesforce
+
+               |
+
+               v
+
+       Confirm / Communicate
+
+```
+
+This pattern can be reused across many enterprise Agentforce use cases.
+---
+
+## 58. Terms — Complete Quick Dictionary
+
+| Term | Simple Meaning | Why We Need It |
+
+|---|---|---|
+
+| Agentforce | Salesforce agentic AI capability | AI-based business task execution |
+
+| Employee Agent | Employee-facing AI assistant | Staff productivity |
+
+| Guest Agent | Guest/reservation operations agent | Reservation support |
+
+| Customer Service Agent | Service/case operations agent | Case management |
+
+| General Agent | General business/guest assistance | Broader tasks |
+
+| Agentforce Studio | Agent configuration environment | Manage/build/configure agents |
+
+| Agent | AI system that can reason over a request and use allowed actions | Business task execution |
+
+| Action | Operation performed through an agent | Salesforce/external system change |
+
+| Reservation | Guest stay booking | Accommodation management |
+
+| Room Type | Room category | Accommodation classification |
+
+| Availability | Whether a resource is available | Prevent overbooking |
+
+| Upgrade | Assign a better room/resource | Guest service |
+
+| Case | Service issue record | Issue tracking |
+
+| Case Owner | Responsible user/team | Accountability |
+
+| Assignment Rule | Automatic case routing rule | Correct team assignment |
+
+| Escalated | Higher attention required | Urgent issue handling |
+
+| Case Feed | Case activity/work view | Case management |
+
+| Experience | Resort activity | Guest engagement |
+
+| Experience Booking | Activity reservation | Session management |
+
+| Session | Specific time slot for an activity | Scheduling |
+
+| Booking | Reserved activity/resource | Capacity management |
+
+| Is Canceled | Cancellation indicator | State tracking |
+
+| Record Number | Unique record reference | Exact record identification |
+
+| App Launcher | Apps access interface | Navigate between Salesforce apps |
+
+| Setup | Salesforce configuration area | Administration/configuration |
+
+| Quick Find | Setup search | Fast configuration lookup |
+
+| Natural Language | Human-style instruction | Easy business-user interaction |
+
+| Guardrail | Safety/control mechanism | Prevent unsafe/unapproved actions |
+
+| Authorization | Allowed actions/data | Security |
+
+| Authentication | User identity verification | Security |
+
+| Audit | Activity/change tracking | Compliance/accountability |
+
+| Integration | Communication between systems | Enterprise connectivity |
+
+| API | Programmatic interface | System integration |
+
+| Assignment | Assign work to a user/team | Operational routing |
+
+| Escalation | Move an issue to higher-priority handling | SLA/urgent response |
+
+| Concierge | Guest-facing resort staff | Business persona in the scenario |
+---
+
+## 59. What You Should Remember
+
+### One-line memory trick
+
+```text
+
+Agentforce = Understand → Retrieve → Validate → Act → Confirm
+
+```
+
+### Lucy
+
+```text
+
+Reservation → Availability → Upgrade → Verify → Email
+
+```
+
+### Diaper Bag
+
+```text
+
+Case → Assign → Escalate → Resolve
+
+```
+
+### Miko
+
+```text
+
+Find Booking → Cancel → Find Alternative → Book
+
+```
+---
+
+## 60. Hands-on Challenge Checklist
+
+### Setup
+
+- [ ] Coral Cloud Resorts org open
+- [ ] Salesforce Go open
+- [ ] Agentforce Studio found
+- [ ] Agentforce turned on
+- [ ] Browser refreshed
+- [ ] Coral Cloud Resorts app opened
+
+### Lucy Todd
+
+- [ ] Guest Agent selected
+- [ ] Lucy reservation found
+- [ ] R-00000016 identified
+- [ ] Presidential Suite availability checked
+- [ ] Lucy moved to Presidential Suite
+- [ ] Reservation verified
+- [ ] Confirmation email generated
+
+### Diaper Bag
+
+- [ ] Customer Service Agent selected
+- [ ] Create Cased
+- [ ] Case 00001068 identified
+- [ ] Case assigned to Housekeeping
+- [ ] Status changed to Escalated
+- [ ] Record refreshed/verified
+
+### Miko Mistumi
+
+- [ ] General Agent selected
+- [ ] Experience bookings located
+- [ ] B-00107923 identified
+- [ ] Coral Bay Cruise canceled
+- [ ] Availability for 5 checked
+- [ ] Magical Aquarium Tunnel Tour booked
+- [ ] B-00107924 verified
+---
+
+## 61. Summary — Simple Hinglish
+
+The main lesson of the Coral Cloud Resorts module is that **\*\*Agentforce makes Salesforce data and business actions accessible to employees through a natural-language interface.\*\***
+
+We covered three major real-world workflows:
+
+## 1. Guest Reservation
+
+Lucy Todd's room was damaged.
+
+Agentforce helped with:
+
+```text
+
+Find Reservation
+
+→ Check Room Availability
+
+→ Presidential Suite
+
+→ Move Guest
+
+→ Verify Reservation
+
+→ Email generate
+
+```
+
+## 2. Customer Service Case
+
+A diaper bag was missing.
+
+Agentforce:
+
+```text
+
+Create Case
+
+→ Housekeeping assign
+
+→ Escalate
+
+```
+
+karne mein help ki.
+
+## 3. Experience Booking
+
+Miko's family wanted to avoid the cruise.
+
+Agentforce:
+
+```text
+
+Existing booking find
+
+→ Cruise cancel
+
+→ Alternative session find
+
+→ 5 people availability
+
+→ New booking create
+
+```
+
+kar diya.
+---
+
+## 62. Final Architect-Level Summary
+
+Remember the entire module with this architecture statement:
+
+> **\*\*Agentforce acts as a natural-language business interaction layer that can use configured and authorized actions to retrieve Salesforce context, execute business operations, update records, and communicate outcomes.\*\***
+
+Simple English:
+
+> **\*\*The user states a requirement in natural language → the agent understands the context → uses allowed Salesforce data/actions → performs the business operation → the record is updated → the user receives the result.\*\***
+
+In production, design around it with:
+
+```text
+
+Security
+
+\+
+
+Permissions
+
+\+
+
+Guardrails
+
+\+
+
+Business Rules
+
+\+
+
+Integration
+
+\+
+
+Audit
+
+\+
+
+Observability
+
+\+
+
+Error Handling
+
+```
+
+should be explicitly designed.
+
+### Most important takeaway
+
+```text
+
+AI alone is not the architecture.
+
+AI
+
+\+
+
+Business Process
+
+\+
+
+Data
+
+\+
+
+Actions
+
+\+
+
+Security
+
+\+
+
+Integration
+
+\+
+
+Governance
+
+\=
+
+Enterprise Agent Architecture
+
+```
+
+This mindset is highly useful for Salesforce Technical Architect / Solution Architect interviews.
