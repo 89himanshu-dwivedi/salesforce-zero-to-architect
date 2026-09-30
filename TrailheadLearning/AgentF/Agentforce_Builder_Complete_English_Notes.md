@@ -1,361 +1,1626 @@
-# Learn About Agentforce Builder — Complete Hinglthish Notes > **Purpofrom:** Ththis twocument explains were Agentforce Builder Coral Cloud Resorts badge step by step. It includes were steps, terms, instructions, actions, testing, deployment, and final summary from were provided material. Important Salesforce terms are explained in simple Englthish, with **why it this needed** included for each major term. --- # 1. Learning Objectives In ththis badge, you will: - Agentforce Builder using a **fromrvice agent** create ofrenge.
-- Service were agent's for a **custom subagent** create ofrenge.
-- **Flows** through custom actions build ofrenge.
-- Exthisting **deployment flow** to update ofrenge.
-- Ek fromrvice were agent **Experience Cloud site** in add ofrenge. ### Simple understanding Overall flow: **Agentforce Builder → Service Agent → Custom Subagent → Actions/Flows → Reasoning Instructions → Test → Activate → Deployment Flow → Experience Cloud → Customer Chat** --- # 2. Coral Cloud Resorts + Agentforce Builder Coral Cloud Resorts of two important strengths are: 1. Destination activities
-2. Customer fromrvice Business this growing and were busy fromason this approaching. Customer fromrvice agents need to recommend activities and book activities for clients. Problem: - Customer requests are increasing.
-- Human fromrvice agents on workload this increasing.
-- Activity availnowility, questions and booofngs to efficiently handle to is. ### Solution **Agentforce Builder** using a AI fromrvice agent this created jo: - Activity/experience information de sakta is.
-- Availnowility/fromssion information retrieve can.
-- Customer details validate can.
-- Experience fromssion booofng create can.
-- Customer-facing Experience Cloud site on chat through may be availnowle. --- # 3. Agentforce Builder Agentforce Builder were agent create, configure, test and activate to for ufrom hota is. Agentforce Builder of four highlighted features: ## 3.1 Natural Language Aap plain language in describe can of were agent what to should. AI can help: - Subagents generate to in
-- Instructions generate/refine to in
-- Actions add to in
-- Guardrails and logic add to in ### Why needed? Har configuration manually program to zaroori not hota. Natural language from agent behavior define to easier hota is. --- ## 3.2 Portnowility Agent to text-first approach in build ofor ja sakta is. Canvas view in agent instructions clear natural language in this availnowlen. Isbenefit: - Text copy/paste to easier.
-- Teams of beech patterns fromache ofththis ja sakte are.
-- Ek environment/team in banaththis patterns to reufrom ofor ja sakta is.
-- Configuration scattered fromttings in buried not hoti. ### Why needed? Reusnowle and fromachenowle agent configuration development to easier banati is. --- ## 3.3 Flexibility Agent to multiple ways from edit ofor ja sakta is: ### Canvas View Natural language editor. ### Agentforce Assthistant Plain-language commands through changes suggest can. ### Script View Agent Script through direct scripting. Script view in: - Syntax highlighting
-- Autocompletion
-- Validation availnowle hote are. ### Why needed? Simple changes for Canvas/natural language convenient is, whenof detailed control for Script ufromful is. --- ## 3.4 Real-Time Vthisibility Preview panel from were agent live test ofor ja sakta is. Aap can frome: - Agent of responfrom
-- Agent ne what plan banew
-- Kaunfrom actions execute hue
-- Interaction details
-- Important events
-- Metadata
-- Kthisi step on what hua ### Why needed? Agent to production in activate to from first usof behavior inspect and validate to this important. --- # 4. Agent Script **Agent Script** Agentforce in Builder agents to build and power to for scripting language is. It combines: - Natural-language flexibility
-- Programmatic expressions of relinowility ### Why needed? Natural language from high-level behavior define ofor ja sakta is, while Agent Script from specific action references and were logic precifrom banew ja sakta is. --- # 5. Developer Edition Org / Playground Badge complete to for custom playground should jthisme: - Agentforce Studio
-- Sample data availnowle be. ## Steps 1. **Create Playground** click.
-2. **Yes, Create Playground** click.
-3. New org automatically Trailhead account from attach will happen.
-4. Org of expiration date note ofrein.
-5. **Launch** click ofrof playground open. ### Why needed? Trailhead exercifrom to complete to for required sample Salesforce environment thisi custom in were org this availnowle. --- # 6. Agentforce and Agentforce Studio Ennowle Karna ## Steps 1. Setup icon → **Setup**
-2. Setup Quick Find in **Salesforce Go** fromarch.
-3. **Agentforce Studio** fromarch/fromlect.
-4. **Get Started**
-5. **Turn On**
-6. Confirmation wintwow in then **Turn On** ### Why needed? Agentforce Studio ennowled hone of baad hi Agentforce Builder of tools ufrom ofrof agent create/configure ofor ja sakta is. --- # 7. Experience Cloud Site Publthish Karna Agent to Coral Cloud of Experience Cloud site on deploy to is. ## Steps 1. Setup Quick Find → **All Sites**
-2. Coral Cloud site of saamne **Builder**
-3. Popup aaththis to **OK**
-4. Upper-right **Publthish**
-5. Confirmation wintwow in **Publthish**
-6. **Got It**
-7. Experience Site browfromr tnow clofrom can. ### Why needed? Agent customer-facing Experience Cloud site through availnowle hoga, thisfor were site ready/publthished rakhna this required. --- # 8. Create were Service Agent ## Agent banane of steps 1. App Launcher open.
-2. **Agentforce Studio** fromarch ofrof fromlect.
-3. **New Agent** click.
-4. "What two you want your agent to two?" in enter: ```text
-You are a customer fromrvice reprefromntative, helping our guests maof refromrvations, update booofngs, and navigate all that Coral Cloud Resorts has to offer.
-``` 5. Enter/Return press ofrein.
-6. Agent Name: ```text
-CC Service Agent
-``` 7. Developer Name automatically populate hota is.
-8. **Select Ufromr** choofrom.
-9. Search ufromrs in: ```text
-EinsteinServiceAgent Ufromr
-``` fromlect. 10. **Let's Go**
-11. **Sofp Ahead** ### Important Agent of name exactly: **CC Service Agent** should be. ### Why needed? Service agent customer fromrvice of central AI agent is. Yeh customer's were request understantwofr appropriate subagent/action tak route twoes. --- # 9. Agentforce Builder of 3 Main Sections Agentforce Builder three major fromctions in divided is: 1. **Navigation Explorer**
-2. **Editor View**
-3. **Agentforce Assthistant** --- # 10. Navigation Explorer Navigation Explorer were agent's different configuration areas to organize twoes. Main fromctions: - Settings
-- Subagents
-- Varinowles
-- Connections
-- Data --- ## 10.1 Settings Settings in agent details hoti are: - Name
-- Role
-- Description
-- Language
-- Other configuration fromttings ### Why needed? Agent of justic identity and configuration to define. --- ## 10.2 Subagents Subagents were agent's specialized worofrs hote are. Subagents in were fromction: - Agent Router
-- Associated subagents hote are. ### Agent Router Agent Router a core component is jo ufromr input and conversation hthistory justed on decide twoes of which subagent ufrom should be. ### Why needed? Ek large agent inside different specialized tasks to fromonate rakhna easier hota is. Example: **Customer request → Agent Router → Experience Management subagent** --- ## 10.3 Varinowles Varinowles values store and reufrom two. Varinowles help two: - Agent logic control to in
-- Values reufrom to in
-- Decthisions lene in ### Why needed? Agent to information temporarily/ logically to ufrom values to reference to padta is. --- ## 10.4 Connections Connections were agent ufromr-facing channels from connect two. Examples: - Messaging
-- Slack
-- Voice ### Why needed? Agent to customers/ufromrs tak specific channels through to expofrom. --- ## 10.5 Data Data in knowledge sources hote are jinto agent retrieval for ufrom can. Example: - FAQs PDF uploaded to Data 360 ### Why needed? Agent to trusted information source to provide, taaof that relevant knowledge retrieve ofrof answer de saof. --- # 11. Editor View Navigation Explorer in whichi option to fromlect to on usof tnow Editor View in open hoti is. Editor of two important views: ## Canvas View Natural-language editor. Features: - Natural language editing
-- Common logic shortcuts
-- Resources picofr
-- Subagents
-- Actions
-- Varinowles ## Script View Direct script editing. Features: - Developer-friendly syntax highlighting
-- Autocompletion
-- Validation ### Why needed? Canvas simple natural-language configuration for ufromful is, while Script detailed and precifrom editing for ufromful is. --- # 12. Agentforce Assthistant Agentforce Assthistant plain language in agent build to in helps. Example commands: ```text
-Update were name of ththis agent to Coral Cloud Service Agent
-``` or: ```text
-Create a new subagent named Cafrom Management
-``` Assthistant clarification questions pooch sakta is. Propofromd changes ufromr confirmation of baad implement hote are. ### Why needed? Agent configuration to conversational way in modify to easier hota is. --- # 13. Create Custom Subagent — Experience Management Coral Cloud to resort activities for specialized subagent should. Activities to Coral Cloud in **Experiences** ofha gaor is. Examples: - Scuba diving
-- Kaorofng
-- Hiofng Experience Management subagent handle ofrega: - Experience questions
-- Availnowility
-- Refromrvations
-- Session booofngs
-- Experience details ## Steps 1. Explorer in **Subagents** of plus icon on click.
-2. **+New Subagent**
-3. Name: ```text
-Experience Management
-``` 4. Description: ```text
-Ththis subagent addresfroms customer inquiries and thissues related to booofng experiences at Coral Cloud Resorts, including maofng refromrvations, modifying fromssion booofngs, and answering queries nowout experience details.
-``` 5. **Create and Open**
-6. Experience Management tnow open hoga.
-7. **Save** ### Why needed? Main fromrvice were agent each task of detailed logic dene of bajay experience-related work to specialized subagent in thisolate this twone. --- # 14. Actions **Actions** that tools are jo subagents actual work complete to for ufrom can. Example: Agar customer'ssi experience of baare in poochta is, the agent experience details retrieve ofrni hongi. ### Why needed? Instructions only were agent tellsn of what to is. Action were agent actual Salesforce operation/data retrieval to of mechanthism deta is. --- # 15. Custom Action — Get Experience Details ## Steps 1. Experience Management subagent open ofep.
-2. **Add action**
-3. **+Create a custom action**
-4. Name: ```text
-Get Experience Details
-``` 5. Description: ```text
-Provides details nowout an Experience__c that a ufromr would liof more information nowout.
-``` 6. **Create and Open**
-7. Reference Action Type: **Flow** 8. Reference Action: **Get Experience Details** 9. `experienceName` input on: **Require Input to execute action** 10. `experienceRecord` output on: **Show in conversation** 11. Other options unchanged ofep.
-12. **Save** ### Why needed? Agent to experience of details Salesforce from to retrieve action should. ### Require Input Action execute hone for required input ensure twoes. ### Show in conversation Action of output in were conversation availnowle/show to for. --- # 16. Validate Customer Details Security for were agent verify to is of customer genuine/known contact is. Required information: - Email
-- Membership number --- ## Get Customer Details Action Steps: 1. Experience Management of plus icon on click.
-2. **+New Action**
-3. Name: ```text
-Get Customer Details
-``` 4. Description: ```text
-Validate were Customer details by passing their email and memberNumber to frome if there this a related contact.
-``` 5. **Create and Open**
-6. Reference Action Type: **Flow** 7. Reference Action: **Get Customer Details** 8. Inputs/Outputs in: ### email **Require Input to execute action** ### memberNumber **Require Input to execute action** ### contact **Show in conversation** 9. Other options unchanged.
-10. **Save** ### Why needed? Customer identity/details validate to fromcurity step is. Agent to other actions run to from first were customer identify to is. --- # 17. Asfromt Library Agar actions already create be chuof are, unhe Asfromt Library from reufrom/add ofor ja sakta is. Do exthisting actions: ## Get Sessions Har experience of individual fromssions retrieve twoes. ## Create Experience Session Booofng in Salesforce new record create twoes. ### Why needed? Exthisting actions to twobara create to of zaroorat not. Asfromt Library reufrom to supports. --- ## Add Actions from Asfromt Library 1. Experience Management of plus icon on click.
-2. **Add from Asfromt Library**
-3. Search: ```text
-fromssion
-``` 4. Select: - **Create Experience Session Booofng**
-- **Get Sessions** 5. **Add to Agent**
-6. Ab Experience Management of under total **four actions** hone should.
-7. **Save** ### Four actions 1. Get Experience Details
-2. Get Customer Details
-3. Create Experience Session Booofng
-4. Get Sessions --- # 18. Reasoning Instructions Actions availnowle hone of baad also were agent know not hota of: - Kaunsa action ofb run to is.
-- Kthis order in run to is.
-- Customer from what information leni is.
-- Action of results how ufrom to are. Isfor **Subagent Reasoning Instructions** ufrom hote are. ### Why needed? Actions = the agent's tools. Reasoning Instructions = tools to ofb/how ufrom to is usof guidance. --- # 19. Experience Management Reasoning Instructions Current instructions delete ofrof ththis instructions add: ```text
-1.If a customer would liof more information on Activities or Experiences, you should run were “appropriate action” and then summarize were results with improved readnowility. Always ensure you know were customer before running ththis action.
-2.If were customer this not known, you must always ask for their email address and their membership number to get their Contact record by running {!@actions.Get_Customer_Details} before running any other actions.
-3.If asofd to get fromssions for were experience ufrom {!@actions.Get_Sessions}. Ask for were Date of were fromssions if not provided. Ufrom were Id of were Experience__c from {!@actions.Get_Experience_Details}. Do not ufrom were experience name, ththis must be an ID.
-``` --- # 20. Resource Picofr and Action Reference First instruction in: ```text
-“appropriate action”
-``` to replace ofrof `@` type ofrein. > Important: `@` manually type to is. Copy/paste from Resource Picofr trigger not hota. Then: 1. **Actions** fromlect.
-2. **Get Experience Details** fromlect. ### Why needed? Generic phrafrom "appropriate action" to actual Salesforce action reference from replace to on were agent clear know hota is of which action execute to is. --- # 21. AI Instruction Refinement Agentforce Builder AI instructions to refine to in also can help. Do ways: - Instruction hover to on **sonkles icon**
-- `/` command Suggested changes: - Removed content red highlight
-- Added content green highlight Ufromr to changes **accept/decline** to hote are. ### Why needed? AI-assthisted refinement instructions to clearer and more effective banane in can help, while ufromr still controls were final change. --- # 22. Canvas View vs Script View Agentforce in Builder Script view toggle: ```text
-</>
-``` ## Steps 1. Experience Management tnow open ofep.
-2. Upper-right **Script view** button click.
-3. Script view open will happen.
-4. Last instruction of end on cursor ofep.
-5. Enter press ofrof blank line banaththisin. Agar instruction find to be: - Wintwows: `Ctrl + F`
-- Mac: `Command + F` Search: ```text
-if asofd to get
-``` --- # 23. Booofng Instruction Add Karna New instruction: ```text
-4.If asofd to book, ufrom were appropriate action. The Contact__c this were contact ID from were {!@actions.Get_Customer_Details}. The Session__c this were ID of were fromssion from were action {!@actions.Get_Sessions}. If multiple fromssions are prefromnt, ask to fromlect one of were fromssions and ufrom that Session as were ID for were Session__c. Prompt for were Number of Guests and ufrom that for were Number_of_Guests__c.
-``` First fromntence in: ```text
+# Learn About Agentforce Builder --- Complete English Notes
+
+## Purpose
+
+These notes explain how to build and deploy a Salesforce Agentforce
+service agent for Coral Cloud Resorts. They cover the learning
+objectives, setup, agent and subagent creation, actions and flows,
+reasoning instructions, testing, deployment, key terms, end-to-end
+workflows, and a completion checklist.
+
+The notes are organized as a practical walkthrough. Each major concept
+includes a short explanation of why it matters.
+
+------------------------------------------------------------------------
+
+
+---
+
+## 1. Learning Objectives
+
+In this badge, you will learn how to:
+
+-   Create a service agent in Agentforce Builder.
+-   Create a custom subagent for the service agent.
+-   Build custom actions that use Salesforce flows.
+-   Update an existing deployment flow.
+-   Add the service agent to an Experience Cloud site.
+
+### Overall workflow
+
+**Agentforce Builder → Service Agent → Custom Subagent → Actions and
+Flows → Reasoning Instructions → Test → Activate → Update Deployment
+Flow → Experience Cloud → Customer Chat**
+
+------------------------------------------------------------------------
+
+
+---
+
+## 2. Coral Cloud Resorts and Agentforce Builder
+
+Coral Cloud Resorts focuses on destination activities and customer
+service. As the business grows, service agents need to answer questions,
+recommend activities, check availability, and book experiences.
+
+### The problem
+
+-   Customer requests are increasing.
+-   Human service agents have a growing workload.
+-   Questions about activities, availability, and bookings need to be
+    handled efficiently.
+
+### The solution
+
+Use Agentforce Builder to create an AI service agent that can:
+
+-   Provide information about activities and experiences.
+-   Retrieve availability and session information.
+-   Validate customer details.
+-   Create experience-session bookings.
+-   Be made available through a customer-facing Experience Cloud site.
+
+------------------------------------------------------------------------
+
+
+---
+
+## 3. What Is Agentforce Builder?
+
+Agentforce Builder is used to create, configure, test, and activate
+agents.
+
+### 3.1 Natural-language configuration
+
+You can describe in plain language what the agent should do. AI
+assistance can help generate or refine:
+
+-   Subagents.
+-   Instructions.
+-   Actions.
+-   Guardrails and logic.
+
+**Why it matters:** You do not need to configure every behavior
+manually. Natural language makes it easier to describe the agent's
+intended behavior.
+
+### 3.2 Portability
+
+Agent configuration can be developed using a text-first approach.
+Instructions are visible in natural language in the canvas.
+
+Benefits include:
+
+-   Easier copying and pasting of text.
+-   Sharing patterns across teams.
+-   Reusing established patterns in another environment or team.
+-   Keeping configuration from being scattered across unrelated
+    settings.
+
+**Why it matters:** Reusable, readable configuration makes agent
+development and maintenance easier.
+
+### 3.3 Flexibility
+
+You can edit an agent in several ways:
+
+-   **Canvas View:** Configure the agent using natural language.
+-   **Agentforce Assistant:** Use plain-language requests to suggest
+    changes.
+-   **Script View:** Edit Agent Script directly.
+
+Script View includes syntax highlighting, autocompletion, and
+validation.
+
+**Why it matters:** Canvas View is convenient for common changes, while
+Script View gives developers more precise control.
+
+### 3.4 Real-time visibility
+
+The preview panel lets you inspect the agent while testing, including:
+
+-   The agent's responses.
+-   The plan it forms.
+-   Actions it executes.
+-   Interaction details.
+-   Important events and metadata.
+-   What happened at each step.
+
+**Why it matters:** Inspect the agent's behavior before activating it
+for customer use.
+
+------------------------------------------------------------------------
+
+
+---
+
+## 4. Agent Script
+
+**Agent Script** is the scripting language used to build and control
+agents in Agentforce Builder. It combines natural-language flexibility
+with programmatic expressions.
+
+**Why it matters:** Natural language can describe high-level behavior,
+while Agent Script can specify exact action references and logic.
+
+------------------------------------------------------------------------
+
+
+---
+
+## 5. Create a Developer Edition Org or Playground
+
+Use a custom Trailhead Playground or Developer Edition org that includes
+Agentforce Studio and sample data.
+
+### Steps
+
+1.  Click **Create Playground**.
+2.  Click **Yes, Create Playground**.
+3.  Allow the new org to be attached to your Trailhead account.
+4.  Note the org's expiration date.
+5.  Click **Launch** to open the playground.
+
+**Why it matters:** The playground provides the Salesforce environment
+and sample data needed to complete the exercises.
+
+------------------------------------------------------------------------
+
+
+---
+
+## 6. Enable Agentforce Studio
+
+### Steps
+
+1.  Open **Setup** using the Setup icon.
+2.  In Setup Quick Find, search for **Salesforce Go**.
+3.  Find or select **Agentforce Studio**.
+4.  Click **Get Started**.
+5.  Click **Turn On**.
+6.  Click **Turn On** again in the confirmation window.
+
+**Why it matters:** Agentforce Studio must be enabled before you can use
+its tools to create and configure agents.
+
+------------------------------------------------------------------------
+
+
+---
+
+## 7. Publish the Experience Cloud Site
+
+The agent will be deployed on the Coral Cloud Experience Cloud site.
+
+### Steps
+
+1.  In Setup Quick Find, search for **All Sites**.
+2.  Find the Coral Cloud site and click **Builder**.
+3.  If a popup appears, click **OK**.
+4.  Click **Publish** in the upper-right corner.
+5.  Confirm by clicking **Publish**.
+6.  Click **Got It**.
+7.  Close the Experience Builder browser tab when finished.
+
+**Why it matters:** The customer-facing site must be published so that
+customers can access the experience and its chat interface.
+
+------------------------------------------------------------------------
+
+
+---
+
+## 8. Create the Service Agent
+
+### Steps
+
+1.  Open the App Launcher.
+
+2.  Search for and open **Agentforce Studio**.
+
+3.  Click **New Agent**.
+
+4.  For "What do you want your agent to do?", enter:
+
+    ``` text
+    You are a customer service representative, helping our guests make reservations, update bookings, and navigate all that Coral Cloud Resorts has to offer.
+    ```
+
+5.  Press Enter or Return.
+
+6.  Set the agent name to:
+
+    ``` text
+    CC Service Agent
+    ```
+
+7.  Confirm that the Developer Name is populated automatically.
+
+8.  Choose **Select User**.
+
+9.  Search for and select:
+
+    ``` text
+    EinsteinServiceAgent User
+    ```
+
+10. Click **Let's Go**.
+
+11. Click **Skip Ahead**.
+
+**Important:** Use the exact agent name **CC Service Agent**.
+
+**Why it matters:** The service agent is the main AI agent that handles
+customer requests and routes them to the appropriate subagent or action.
+
+------------------------------------------------------------------------
+
+
+---
+
+## 9. The Three Main Areas of Agentforce Builder
+
+Agentforce Builder has three main areas:
+
+1.  **Navigation Explorer**
+2.  **Editor View**
+3.  **Agentforce Assistant**
+
+------------------------------------------------------------------------
+
+
+---
+
+## 10. Navigation Explorer
+
+The Navigation Explorer organizes the agent's configuration.
+
+Its main sections include:
+
+-   Settings
+-   Subagents
+-   Variables
+-   Connections
+-   Data
+
+### 10.1 Settings
+
+Settings contain details such as the agent's:
+
+-   Name.
+-   Role.
+-   Description.
+-   Language.
+-   Other configuration options.
+
+**Why it matters:** These settings define the agent's identity and basic
+configuration.
+
+### 10.2 Subagents
+
+Subagents are specialized workers that handle particular types of tasks.
+The agent includes an **Agent Router** and its associated subagents.
+
+#### Agent Router
+
+The Agent Router uses the user's input and conversation history to
+determine which subagent should handle the request.
+
+**Example:** Customer request → Agent Router → Experience Management
+subagent.
+
+**Why it matters:** Specializing work helps route each request to the
+appropriate part of the agent.
+
+### 10.3 Variables
+
+Variables store values that the agent can reference. They can support
+logic, retain relevant values, and help the agent make decisions.
+
+**Why it matters:** Agent logic often needs values to be stored and
+reused during a conversation or process.
+
+### 10.4 Connections
+
+Connections link the agent to user-facing channels, such as:
+
+-   Messaging.
+-   Slack.
+-   Voice.
+
+**Why it matters:** Connections determine the channels through which
+users can interact with the agent.
+
+### 10.5 Data
+
+Data includes knowledge sources that the agent can retrieve information
+from. For example, a PDF containing FAQs may be uploaded as a knowledge
+source through Data 360.
+
+**Why it matters:** Connected knowledge sources help the agent provide
+relevant answers based on available information.
+
+------------------------------------------------------------------------
+
+
+---
+
+## 11. Editor View: Canvas View and Script View
+
+Selecting an item in the Navigation Explorer opens it in the Editor
+View.
+
+### Canvas View
+
+Canvas View is a natural-language editor. It provides:
+
+-   Natural-language editing.
+-   Shortcuts for common logic.
+-   Resource pickers.
+-   Access to subagents.
+-   Access to actions.
+-   Access to variables.
+
+### Script View
+
+Script View allows direct editing of Agent Script and includes:
+
+-   Syntax highlighting.
+-   Autocompletion.
+-   Validation.
+
+**Why it matters:** Canvas View supports accessible configuration, while
+Script View supports precise editing and explicit references.
+
+------------------------------------------------------------------------
+
+
+---
+
+## 12. Agentforce Assistant
+
+Agentforce Assistant helps modify agent configuration using
+plain-language requests.
+
+Example requests:
+
+``` text
+Update the name of this agent to Coral Cloud Service Agent.
+```
+
+``` text
+Create a new subagent named Case Management.
+```
+
+The assistant may ask clarifying questions. Proposed changes are applied
+after the user confirms them.
+
+**Why it matters:** Conversational assistance can make agent
+configuration easier, while confirmation keeps the user in control of
+changes.
+
+------------------------------------------------------------------------
+
+
+---
+
+## 13. Create the Custom Subagent: Experience Management
+
+Coral Cloud Resorts needs a specialized subagent for resort activities,
+called **Experience Management**.
+
+Examples of experiences include scuba diving, kayaking, and hiking.
+
+The subagent handles:
+
+-   Questions about experiences.
+-   Availability.
+-   Reservations.
+-   Session bookings.
+-   Experience details.
+
+### Steps
+
+1.  In the Explorer, open **Subagents**.
+
+2.  Click the plus icon and select **New Subagent**.
+
+3.  Set the name to:
+
+    ``` text
+    Experience Management
+    ```
+
+4.  Set the description to:
+
+    ``` text
+    This subagent addresses customer inquiries and issues related to booking experiences at Coral Cloud Resorts, including making reservations, modifying session bookings, and answering queries about experience details.
+    ```
+
+5.  Click **Create and Open**.
+
+6.  Confirm that Experience Management opens.
+
+7.  Click **Save**.
+
+**Why it matters:** A specialized subagent keeps experience-related
+responsibilities together instead of placing all task logic in the main
+service agent.
+
+------------------------------------------------------------------------
+
+
+---
+
+## 14. What Are Actions?
+
+Actions are tools that a subagent can use to perform work, such as
+retrieving Salesforce data or carrying out an operation.
+
+For example, when a customer asks about an experience, the agent may
+need to retrieve its details.
+
+**Why it matters:** Instructions tell an agent what it should do;
+actions provide the mechanism to retrieve data or perform an operation.
+
+------------------------------------------------------------------------
+
+
+---
+
+## 15. Create the Custom Action: Get Experience Details
+
+### Steps
+
+1.  Open the **Experience Management** subagent.
+
+2.  Click **Add Action**.
+
+3.  Select **+ Create a Custom Action**.
+
+4.  Set the name to:
+
+    ``` text
+    Get Experience Details
+    ```
+
+5.  Set the description to:
+
+    ``` text
+    Provides details about an Experience__c that a user would like more information about.
+    ```
+
+6.  Click **Create and Open**.
+
+7.  Set **Reference Action Type** to **Flow**.
+
+8.  Set **Reference Action** to **Get Experience Details**.
+
+9.  For the `experienceName` input, enable **Require Input to execute
+    action**.
+
+10. For the `experienceRecord` output, enable **Show in conversation**.
+
+11. Leave the other options unchanged.
+
+12. Click **Save**.
+
+### Why the settings matter
+
+-   **Require Input to execute action:** Ensures that the required input
+    is supplied before the action runs.
+-   **Show in conversation:** Makes the action's output available in the
+    conversation.
+
+The agent needs this action to retrieve experience details from
+Salesforce.
+
+------------------------------------------------------------------------
+
+
+---
+
+## 16. Validate Customer Details
+
+Before running other actions, the agent must identify the customer using
+the required information:
+
+-   Email address.
+-   Membership number.
+
+### Create the Get Customer Details action
+
+1.  In Experience Management, click the plus icon.
+
+2.  Select **+ New Action**.
+
+3.  Set the name to:
+
+    ``` text
+    Get Customer Details
+    ```
+
+4.  Set the description to:
+
+    ``` text
+    Validate the customer details by passing their email and memberNumber to see if there is a related contact.
+    ```
+
+5.  Click **Create and Open**.
+
+6.  Set **Reference Action Type** to **Flow**.
+
+7.  Set **Reference Action** to **Get Customer Details**.
+
+8.  Configure the inputs and output:
+
+    -   `email` → **Require Input to execute action**
+    -   `memberNumber` → **Require Input to execute action**
+    -   `contact` → **Show in conversation**
+
+9.  Leave the other options unchanged.
+
+10. Click **Save**.
+
+**Why it matters:** Customer validation is a security and identification
+step. The agent should identify the customer before running other
+actions that depend on the customer's record.
+
+------------------------------------------------------------------------
+
+
+---
+
+## 17. Add Existing Actions from the Asset Library
+
+If actions already exist, reuse them from the Asset Library instead of
+creating duplicates.
+
+The two existing actions are:
+
+-   **Get Sessions:** Retrieves the sessions associated with an
+    experience.
+-   **Create Experience Session Booking:** Creates a new booking record
+    in Salesforce.
+
+### Steps
+
+1.  In Experience Management, click the plus icon.
+
+2.  Select **Add from Asset Library**.
+
+3.  Search for:
+
+    ``` text
+    session
+    ```
+
+4.  Select:
+
+    -   **Create Experience Session Booking**
+    -   **Get Sessions**
+
+5.  Click **Add to Agent**.
+
+6.  Confirm that Experience Management has four actions in total.
+
+7.  Click **Save**.
+
+### The four actions
+
+1.  Get Experience Details
+2.  Get Customer Details
+3.  Create Experience Session Booking
+4.  Get Sessions
+
+**Why it matters:** Reusing existing assets avoids duplicated work and
+makes use of actions that have already been created.
+
+------------------------------------------------------------------------
+
+
+---
+
+## 18. Reasoning Instructions
+
+Adding actions is not enough. The agent also needs instructions
+explaining:
+
+-   Which action to run.
+-   The order in which actions should run.
+-   What information to collect from the customer.
+-   How to use the results returned by actions.
+
+These are configured as **Subagent Reasoning Instructions**.
+
+**Why it matters:** Reasoning instructions guide the agent's use of its
+tools and help it follow the required workflow.
+
+------------------------------------------------------------------------
+
+
+---
+
+## 19. Configure Experience Management Reasoning Instructions
+
+Replace the current instructions with the following:
+
+``` text
+1. If a customer would like more information on Activities or Experiences, you should run the appropriate action and then summarize the results with improved readability. Always ensure you know the customer before running this action.
+
+2. If the customer is not known, you must always ask for their email address and membership number to get their Contact record by running {!@actions.Get_Customer_Details} before running any other actions.
+
+3. If asked to get sessions for an experience, use {!@actions.Get_Sessions}. Ask for the date of the sessions if it has not been provided. Use the ID of the Experience__c from {!@actions.Get_Experience_Details}. Do not use the experience name; an ID is required.
+```
+
+------------------------------------------------------------------------
+
+
+---
+
+## 20. Use the Resource Picker to Reference an Action
+
+In the first instruction, replace the generic phrase:
+
+``` text
 appropriate action
-``` to replace ofrein: ```text
-{!@actions.Create_Experience_Session_Booofng}
-``` ### Final logic Booofng when: - Contact ID → `Get_Customer_Details`
-- Session ID → `Get_Sessions`
-- Multiple fromssions → customer from fromssion fromlect ofrwana
-- Number of Guests → customer from poochna
-- Booofng action → `Create_Experience_Session_Booofng` ### Why needed? Booofng were record correct customer, correct fromssion and guest count with create to for exact IDs/values this requiredn. --- # 24. Save, Commit and Activate 1. **Save**
-2. Canvas view on back aaththisin.
-3. **Commit**
-4. Confirmation in then **Commit**
-5. **Activate**
-6. Confirmation in then **Activate** ### Commit Agent were changes committed state in lane for. ### Activate Agent to active/ufromnowle state in lane for. ### Important troubleshooting Agar commit error aaththis: Agentforce Assthistant in: ```text
-scan and fix
-``` enter. Prompts follow ofrein. **Accept All** click and then commit try. Agar activation error: **We can't activate your agent** aaththis, provided Salesforce help article to review ofrein: `Agentforce: Unnowle to Activate Agentforce Agent` --- # 25. Preview were Agent Agent functionality build during test of ja sakti is. in Preview aap can frome: - Agent plan
-- Executed actions
-- Interaction Details
-- Ufromr-agent conversation ## Test Steps 1. **Preview** click.
-2. Zarurat be to refresh.
-3. Prompt: ```text
-Can you let me know more nowout were full moon beach onty experience?
-``` 4. Jnow email/membership number poocha jaththis: ```text
-I am sofiarodriguez@example.com and my membership number this 10008155
-``` 5. Kal for fromssion book to to request ofrein. --- # 26. Live Test Mode vs Simulate in Preview **Live Test Mode** droptwown hota is. ## Live Test Mode Agent actual org data access and modify can. ### Important Changes real be sakte are. ## Simulate Safe test environment/context in to test. ### Why needed? Testing of purpofrom on depend twoes: - Accurate real behavior → Live Test Mode
-- Safer testing/no impact on live data → Simulate --- # 27. Publthish and Update Ab web deployment to publthish to is and exthisting flow update to is. ## Embedded Service Deployment Steps: 1. Setup icon → **Setup**
-2. Quick Find → **Embedded Service Deployments**
-3. **ESA Web Deployment**
-4. **Publthish** Note: Deployment to up to 10 minutes lag sakte are, leofn next step continue ofor ja sakta is. ### Why needed? Latest agent were changes web deployment in publthish to this required. --- # 28. Route to ESA Flow Exthisting were Flow update ofrof work to newly created fromrvice agent tak route to is. ## Steps 1. Setup Quick Find → **Flows**
-2. **Route to ESA** flow open.
-3. **Route to ESA** component fromlect.
-4. Set Input Values update. ### Route To ```text
-Agentforce Service Agent
-``` ### Agentforce Service Agent ```text
-CC Service Agent
-``` 5. **Save As New Version**
-6. Everything unchanged ofep.
-7. **Save**
-8. **Activate**
-9. Back arrow from Setup on return ofrein. ### Why needed? Flow to batana is of incoming work to newly created **CC Service Agent** to route to is. ### Troubleshooting Agar **CC Service Agent** option in not dikhta: - Agentforce in Builder CC Service Agent open.
-- Confirm ofrein of agent activated is. --- # 29. Add Agentforce Agent to Coral Cloud Site Ab chat component to Experience Cloud site in add to is. ## Steps 1. Setup → **Setup**
-2. Quick Find → **All Sites**
-3. Coral Cloud of saamne **Builder**
-4. **Components** widget click.
-5. Search: ```text
+```
+
+with the actual action reference.
+
+### Steps
+
+1.  Place the cursor where the phrase **appropriate action** appears.
+2.  Type `@` manually. Typing `@` opens the Resource Picker; pasting it
+    does not trigger the picker.
+3.  Select **Actions**.
+4.  Select **Get Experience Details**.
+
+**Why it matters:** Replacing generic wording with an exact action
+reference tells the agent which action it should execute.
+
+------------------------------------------------------------------------
+
+
+---
+
+## 21. Refine Instructions with AI Assistance
+
+Agentforce Builder can help refine instructions.
+
+You can:
+
+-   Hover over an instruction and select the sparkle icon.
+-   Use the `/` command to request suggested changes.
+
+Suggested changes may show:
+
+-   Removed content highlighted in red.
+-   Added content highlighted in green.
+
+You can accept or decline the proposed changes.
+
+**Why it matters:** AI-assisted refinement can make instructions
+clearer, but the user remains responsible for approving the final
+wording.
+
+------------------------------------------------------------------------
+
+
+---
+
+## 22. Switch to Script View
+
+Use Script View to add a more specific booking instruction.
+
+### Steps
+
+1.  Open the **Experience Management** subagent.
+2.  Click **Script View** in the upper-right corner. The toggle may
+    appear as `</>`.
+3.  In Script View, place the cursor at the end of the instructions.
+4.  Press Enter to create a blank line.
+5.  If you need to find the relevant instruction, use:
+    -   Windows: `Ctrl + F`
+    -   Mac: `Command + F`
+
+Search for:
+
+``` text
+if asked to get
+```
+
+------------------------------------------------------------------------
+
+
+---
+
+## 23. Add the Booking Instruction
+
+Add the following instruction:
+
+``` text
+4. If asked to book, use the appropriate action. The Contact__c is the contact ID from {!@actions.Get_Customer_Details}. The Session__c is the ID of the session from the action {!@actions.Get_Sessions}. If multiple sessions are present, ask the customer to select one of the sessions and use that Session as the ID for Session__c. Prompt for the Number of Guests and use that for Number_of_Guests__c.
+```
+
+In the first sentence, replace:
+
+``` text
+appropriate action
+```
+
+with:
+
+``` text
+{!@actions.Create_Experience_Session_Booking}
+```
+
+### Final booking logic
+
+When creating a booking:
+
+-   **Contact ID:** Obtain it from `Get_Customer_Details`.
+-   **Session ID:** Obtain it from `Get_Sessions`.
+-   **Multiple sessions:** Ask the customer to select the intended
+    session.
+-   **Number of guests:** Ask the customer and use the provided count.
+-   **Booking action:** Run `Create_Experience_Session_Booking`.
+
+**Why it matters:** The booking must be associated with the correct
+customer and session, and it must store the requested guest count.
+
+------------------------------------------------------------------------
+
+
+---
+
+## 24. Save, Commit, and Activate
+
+1.  Click **Save**.
+2.  Return to Canvas View.
+3.  Click **Commit**.
+4.  Confirm by clicking **Commit** in the confirmation window.
+5.  Click **Activate**.
+6.  Confirm activation when prompted.
+
+### What these steps mean
+
+-   **Save:** Saves the current edits.
+-   **Commit:** Commits the agent's configuration changes.
+-   **Activate:** Enables the agent in its active state.
+
+### Troubleshooting
+
+If a commit error occurs:
+
+1.  Open Agentforce Assistant.
+
+2.  Enter:
+
+    ``` text
+    scan and fix
+    ```
+
+3.  Follow the prompts.
+
+4.  Click **Accept All** if appropriate.
+
+5.  Try committing again.
+
+If activation fails with **We can't activate your agent**, review the
+Salesforce help article titled **Agentforce: Unable to Activate
+Agentforce Agent**.
+
+------------------------------------------------------------------------
+
+
+---
+
+## 25. Preview and Test the Agent
+
+Preview lets you test the agent while building it. You can inspect the
+plan, executed actions, interaction details, and the conversation.
+
+### Steps
+
+1.  Click **Preview**.
+
+2.  Refresh if necessary.
+
+3.  Enter this test prompt:
+
+    ``` text
+    Can you let me know more about the full moon beach party experience?
+    ```
+
+4.  If the agent asks for an email and membership number, enter:
+
+    ``` text
+    I am sofiarodriguez@example.com and my membership number is 10008155.
+    ```
+
+5.  Then ask the agent to book a session.
+
+------------------------------------------------------------------------
+
+
+---
+
+## 26. Live Test Mode vs. Simulate
+
+### Live Test Mode
+
+The agent can access and modify actual org data.
+
+**Important:** Real data changes may occur.
+
+### Simulate
+
+Tests the agent in a simulated context.
+
+**Why it matters:** Choose the testing mode based on the purpose of the
+test. Live Test Mode can demonstrate behavior against org data, while
+Simulate can reduce the risk of affecting live data.
+
+------------------------------------------------------------------------
+
+
+---
+
+## 27. Publish the Embedded Service Deployment
+
+The web deployment must be published so that it uses the latest agent
+configuration.
+
+### Steps
+
+1.  Open **Setup**.
+2.  In Quick Find, search for **Embedded Service Deployments**.
+3.  Open **ESA Web Deployment**.
+4.  Click **Publish**.
+
+Publishing may take up to 10 minutes. You can continue with the next
+setup step while it completes.
+
+**Why it matters:** Publishing makes the latest configuration available
+through the web deployment.
+
+------------------------------------------------------------------------
+
+
+---
+
+## 28. Update the Route to ESA Flow
+
+Update the existing flow so incoming work is routed to the new service
+agent.
+
+### Steps
+
+1.  In Setup Quick Find, search for **Flows**.
+
+2.  Open the **Route to ESA** flow.
+
+3.  Select the **Route to ESA** component.
+
+4.  Update the input values:
+
+    **Route To**
+
+    ``` text
+    Agentforce Service Agent
+    ```
+
+    **Agentforce Service Agent**
+
+    ``` text
+    CC Service Agent
+    ```
+
+5.  Click **Save As New Version**.
+
+6.  Leave the other settings unchanged.
+
+7.  Click **Save**.
+
+8.  Click **Activate**.
+
+9.  Use the back arrow to return to Setup.
+
+**Why it matters:** The flow must route incoming work to the newly
+created **CC Service Agent**.
+
+### Troubleshooting
+
+If **CC Service Agent** does not appear as an option:
+
+-   Open CC Service Agent in Agentforce Builder.
+-   Confirm that the agent is activated.
+
+------------------------------------------------------------------------
+
+
+---
+
+## 29. Add Agentforce to the Coral Cloud Site
+
+Add the embedded messaging component to the Experience Cloud site.
+
+### Steps
+
+1.  Open **Setup**.
+
+2.  In Quick Find, search for **All Sites**.
+
+3.  Click **Builder** next to Coral Cloud.
+
+4.  Open the **Components** panel.
+
+5.  Search for:
+
+    ``` text
+    Embedded Messaging
+    ```
+
+6.  Drag the component into the **Book an Experience of a Lifetime**
+    section.
+
+7.  Leave the default settings unchanged.
+
+8.  Click **Publish**.
+
+9.  Confirm by clicking **Publish**.
+
+10. Click **Got It**.
+
+**Why it matters:** Embedded Messaging provides the customer-facing chat
+interface through which customers can interact with the agent.
+
+------------------------------------------------------------------------
+
+
+---
+
+## 30. Test the Agent as a Customer
+
+This is the final customer-side test.
+
+### Steps
+
+1.  Open the **Experience Builder** menu.
+
+2.  Select **View coral-cloud**.
+
+3.  Allow a few minutes for the published site to become available if
+    necessary.
+
+4.  Click the messaging icon in the lower-right corner.
+
+5.  Wait for the agent's greeting.
+
+6.  Enter this test prompt:
+
+    ``` text
+    Can you let me know about the Underground Cave Exploration?
+    ```
+
+7.  If asked, provide:
+
+    ``` text
+    sofiarodriguez@example.com and my membership number is 10008155.
+    ```
+
+8.  Answer the agent's follow-up questions and try booking a session.
+
+### Optional verification
+
+Find the **Underground Cave Exploration** session record in Salesforce
+and check the selected date or booking record.
+
+The provided exercise indicates that the agent can create or update
+records based on the information supplied by the customer.
+
+### If the agent does not respond
+
+Try republishing the Experience Cloud site. The initial publication of
+the agent and site connection may take a few minutes to become
+available.
+
+------------------------------------------------------------------------
+
+
+---
+
+## 31. Important Terms: Quick Reference
+
+  -----------------------------------------------------------------------
+  Term                    Meaning                 Why it matters
+  ----------------------- ----------------------- -----------------------
+  **Agent**               An AI-powered service   Helps automate or
+                          interface that          assist with
+                          understands requests    customer-service tasks.
+                          and can execute
+                          suitable actions.
+
+  **Service Agent**       An agent focused on     Handles customer
+                          customer service.       questions, bookings,
+                                                  and service tasks.
+
+  **Subagent**            A specialized worker    Separates complex work
+                          within the main agent.  into focused
+                                                  responsibilities.
+
+  **Agent Router**        Uses user input and     Routes requests to the
+                          conversation history to relevant specialist.
+                          choose a subagent.
+
+  **Action**              A tool an agent can use Enables data retrieval
+                          to perform work.        and operations.
+
+  **Custom Action**       An action created for a Supports specific
+                          particular requirement, business operations.
+                          such as Get Experience
+                          Details.
+
+  **Flow**                Salesforce automation   Carries out the
+                          that can perform a      operation referenced by
+                          process or backend      an action.
+                          operation.
+
+  **Asset Library**       A source of reusable    Helps avoid duplicating
+                          assets and actions.     existing work.
+
+  **Reasoning             Instructions that guide Makes the workflow more
+  Instructions**          a subagent's use of     explicit and
+                          actions and results.    consistent.
+
+  **Variables**           Values that the agent   Supports logic and
+                          can store and           decisions.
+                          reference.
+
+  **Connections**         Configuration that      Enables interaction
+                          connects the agent to   through channels such
+                          user-facing channels.   as Messaging, Slack, or
+                                                  Voice.
+
+  **Data**                Knowledge sources       Helps the agent answer
+                          available for           using relevant
+                          retrieval.              available information.
+
+  **Canvas View**         A natural-language      Makes common
+                          agent editor.           configuration changes
+                                                  accessible.
+
+  **Script View**         An environment for      Enables precise
+                          direct Agent Script     scripting and
+                          editing.                references.
+
+  **Agentforce            An AI helper that       Supports conversational
+  Assistant**             suggests                editing.
+                          agent-configuration
+                          changes.
+
+  **Resource Picker**     A picker opened by      Helps insert exact
+                          typing `@` to select    references into
+                          resources such as       instructions.
+                          actions.
+
+  **Contact ID**          The identifier of a     Associates a booking
+                          customer's Contact      with the correct
+                          record.                 customer.
+
+  **Experience ID**       The identifier of an    Uniquely identifies the
+                          `Experience__c` record. experience used to
+                                                  retrieve sessions.
+
+  **Session ID**          The identifier of a     Associates a booking
+                          particular experience   with the correct
+                          session.                session.
+
+  **Number of Guests**    The number of guests    Stores the requested
+                          included in a booking.  guest count.
+
+  **Require Input to      A setting that requires Helps prevent execution
+  Execute Action**        an input before an      without required
+                          action can run.         information.
+
+  **Show in               A setting that makes an Lets the agent use or
+  Conversation**          action output available display the action
+                          in the conversation.    result.
+
+  **Commit**              Commits the agent's     Prepares the
+                          configuration changes.  configuration for
+                                                  activation.
+
+  **Activate**            Enables the agent in    Makes the agent
+                          its active state.       available for the
+                                                  relevant testing and
+                                                  deployment flow.
+
+  **Preview**             An interface for        Helps verify responses
+                          testing the agent       and action execution
+                          during development.     before customer use.
+
+  **Live Test Mode**      A testing mode that can Tests behavior against
+                          access or modify actual org data, but can cause
+                          org data.               real changes.
+
+  **Simulate**            A simulated testing     Helps test without the
+                          context.                same impact on live
+                                                  data.
+
+  **Embedded Service      A web deployment        Helps expose the agent
+  Deployment**            configuration for       through the web
+                          making a service        experience.
+                          experience available.
+
+  **Route to ESA Flow**   A flow that routes      Sends work to the
+                          incoming work to an     intended agent.
+                          Agentforce service
+                          agent.
+
+  **Experience Cloud**    Salesforce              Hosts the Coral Cloud
+                          functionality for       customer experience.
+                          customer-facing sites
+                          and digital
+                          experiences.
+
+  **Embedded Messaging**  The customer-facing     Lets customers start a
+                          chat interface added to conversation with the
+                          the site.               agent.
+  -----------------------------------------------------------------------
+
+------------------------------------------------------------------------
+
+
+---
+
+## 32. End-to-End Architecture
+
+``` text
+Customer
+   |
+   v
+Coral Cloud Experience Cloud Site
+   |
+   v
 Embedded Messaging
-``` 6. Component to **Book an Experience of a Lifetime** fromction on drag/drop ofrein.
-7. Default fromttings leave ofrein.
-8. **Publthish**
-9. Confirmation in **Publthish**
-10. **Got It** ### Why needed? Embedded Messaging customer-facing chat interface provide twoes jthisthrough customer Agentforce agent from interact can. --- # 30. View were Agent as a Customer Final customer-side test. ## Steps 1. **Experience Builder menu** click.
-2. **View coral-cloud** fromlect.
-3. Site publthish hone in some minutes lag sakte are.
-4. Lower-right **Messaging icon** click.
-5. Agent of greeting of wait ofrein. Test prompt: ```text
-Can you let me know nowout were Underground Cave Exploration?
-``` Reminder: ```text
-sofiarodriguez@example.com and my membership number this 10008155.
-``` 6. Agent of questions answer ofrein.
-7. Session book ofrein. ### Optional verification CRM in **Underground Cave Exploration** fromssion record find ofrof fromlected date of record check can. Provided material according to, agent customer-provided information from record update can. ### If Agent Doesn't Respond Experience Cloud were site republthish to of toshthish ofrein. Initial publthish on agent and site of proper connection estnowlthish hone in some minutes lag sakte are. --- # 31. Important Terms — Quick Deep Explanation ## Agent AI-justed fromrvice interface jo customer request understand ofrof appropriate behavior/actions execute twoes. **Why needed:** Customer fromrvice tasks automate/assthist to for. --- ## Service Agent Customer fromrvice-focufromd agent. **Why needed:** Customer inquiries, booofngs and fromrvice tasks to handle. --- ## Subagent Main agent inside specialized agent. **Why needed:** Complex work to smaller specialized areas in divide to for. --- ## Agent Router Ufromr input and conversation hthistory justed on appropriate subagent determine twoes. **Why needed:** Request to correct specialthist tak bhejne for. --- ## Action Agent next to availnowle tool jo actual task/data operation perform twoes. **Why needed:** Agent to real work perform to for. --- ## Custom Action Ufromr-created action, jaifrom `Get Experience Details`. **Why needed:** Specific business requirement for custom operation provide to. --- ## Flow Salesforce automation/process jo action of bacofnd operation to perform can. **Why needed:** Agent of requested operation to Salesforce data/process with execute to. --- ## Asfromt Library Exthisting reusnowle asfromts/actions of source. **Why needed:** Already-created actions to reufrom to and duplicate work avoid to. --- ## Reasoning Instructions Subthe agent tellsn of actions to ofb and how ufrom to is. **Why needed:** Agent of behavior to controlled and predictnowle to create. --- ## Varinowles Values jo agent logic in store/reufrom of ja sakti are. **Why needed:** Decthisions and reasoning in information reto ufrom. --- ## Connections Agent to ufromr-facing channels from connect to wali configuration. **Why needed:** Messaging/Slack/Voice jaifrom channels on agent to expofrom. --- ## Data Agent of knowledge retrieval sources. **Why needed:** Agent to relevant information to retrieve. --- ## Canvas View Natural-language justed agent editor. **Why needed:** Easy vthisual/natural-language configuration. --- ## Script View Direct Agent Script editing environment. **Why needed:** Precifrom scripting, references, syntax and validation for. --- ## Agentforce Assthistant AI helper jo agent configuration changes suggest/helps. **Why needed:** Agent building and editing to conversational to create. --- ## Resource Picofr `@` type to on resources fromlect to of picofr. Examples: - Actions
-- Other availnowle resources **Why needed:** Instructions in exact resources/actions reference to for. --- ## Contact ID Customer Contact were record's identifier. **Why needed:** Booofng to correct customer with associate to for. --- ## Experience ID `Experience__c` the record's identifier. **Why needed:** Experience to uniquely identify to for. --- ## Session ID Specific experience fromssion of identifier. **Why needed:** Booofng to correct date/fromssion from associate to for. --- ## Number of Guests Booofng in guests of quantity. **Why needed:** Booofng record in guest count store to for. --- ## Require Input to Execute Action Action execute hone from first required input ensure twoes. **Why needed:** Mthissing information with action execute hone from bachane for. --- ## Show in Conversation Action output to conversation context in show twoes. **Why needed:** Agent/the customer action result ufrom/dthisplay to for. --- ## Commit Agent configuration were changes committed state in save to of step. **Why needed:** Changes to activation for ready to for. --- ## Activate Agent to active state in ennowle twoes. **Why needed:** Agent to actual ufrom/testing/deployment flow in availnowle to create. --- ## Preview Agent behavior to build phafrom in test to of interface. **Why needed:** Go-live from first behavior verify to for. --- ## Live Test Mode Testing when actual org data access/modify can. **Why needed:** Realthistic behavior to test. **Rthisk:** Changes real be sakte are. --- ## Simulate Safer simulated testing environment. **Why needed:** Testing to live data impact from thisolate to for. --- ## Embedded Service Deployment Web deployment configuration jthisthrough fromrvice agent web experience in this availnowle. **Why needed:** Agent to web/customer-facing deployment tak le jane for. --- ## Route to ESA Flow Work to Agentforce Service Agent of taraf route twoes. **Why needed:** Incoming fromrvice interthe action correct agent tak pahunchane for. --- ## Experience Cloud Salesforce platform on customer-facing site/community experience. **Why needed:** Customers to Coral Cloud of online experience and agent chat to provide. --- ## Embedded Messaging Experience Cloud on were page customer-agent chat interface. **Why needed:** Customer directly fromrvice agent from conversation start ofr saof. --- # 32. End-to-End Architecture ```text
-Customer | v
-Coral Cloud Experience Cloud Site | v
-Embedded Messaging | v
+   |
+   v
 Agentforce Service Agent
-(CC Service Agent) | v
-Agent Router | v
-Experience Management Subagent | +-----------------------------+ | | | v v v
-Get Customer Get Experience Get Sessions
-Details Details | | | +-------------+---------------+ | v Create Experience Session Booofng | v Salesforce Record
-``` --- # 33. Complete Action Flow ## Scenario: Customer asks nowout an experience ```text
-Customer asks for experience information ↓
-Agent checks customer identity ↓
-Email + Membership Number ↓
-Get Customer Details ↓
-Customer Contact identified ↓
-Get Experience Details ↓
-Experience information returned ↓
-Agent summarizes information
-``` --- ## Scenario: Customer asks for fromssions ```text
-Customer asks for fromssions ↓
-Customer identity checofd ↓
-Get Experience Details ↓
-Experience__c ID obtained ↓
-Ask for date if mthissing ↓
-Get Sessions ↓
-Session results returned
-``` Important: **Get Sessions for experience name not, Experience__c ID ufrom to is.** --- ## Scenario: Customer books a fromssion ```text
-Customer wants to book ↓
-Get Customer Details ↓
-Contact ID ↓
-Get Sessions ↓
-Session ID ↓
-If multiple fromssions:
-ask customer to fromlect one ↓
-Ask Number of Guests ↓
-Create Experience Session Booofng ↓
-Booofng record created
-``` --- # 34. Important IDs and Data Mapping | Information | Comes From | Ufromd For |
-|---|---|---|
-| Customer email | Customer | Get Customer Details |
-| Membership number | Customer | Get Customer Details |
-| Contact ID | Get Customer Details | `Contact__c` |
-| Experience name | Customer/request | Get Experience Details |
-| Experience ID | Get Experience Details | Get Sessions |
-| Session ID | Get Sessions | `Session__c` |
-| Number of Guests | Customer | `Number_of_Guests__c` | --- # 35. Badge Checklthist Ufrom ththis checklthist while completing were Trailhead exercifrom: - [ ] Create custom Playground
-- [ ] Launch Playground
-- [ ] Ennowle Agentforce Studio
-- [ ] Publthish Coral Cloud Experience Cloud site
-- [ ] Open Agentforce Studio
-- [ ] Create `CC Service Agent`
-- [ ] Assign `EinsteinServiceAgent Ufromr`
-- [ ] Create `Experience Management` subagent
-- [ ] Add `Get Experience Details`
-- [ ] Configure Flow reference
-- [ ] Require `experienceName`
-- [ ] Show `experienceRecord`
-- [ ] Add `Get Customer Details`
-- [ ] Require email
-- [ ] Require memberNumber
-- [ ] Show contact output
-- [ ] Add `Create Experience Session Booofng`
-- [ ] Add `Get Sessions`
-- [ ] Add reasoning instructions
-- [ ] Replace generic action reference with `Get Experience Details`
-- [ ] Switch to Script view
-- [ ] Add booofng instruction
-- [ ] Reference `Create Experience Session Booofng`
-- [ ] Save
-- [ ] Commit
-- [ ] Activate
-- [ ] Preview agent
-- [ ] Test experience information
-- [ ] Test customer validation
-- [ ] Test fromssion retrieval
-- [ ] Test booofng
-- [ ] Republthish ESA Web Deployment
-- [ ] Update `Route to ESA` flow
-- [ ] Set Route To = `Agentforce Service Agent`
-- [ ] Set Agentforce Service Agent = `CC Service Agent`
-- [ ] Save As New Version
-- [ ] Activate flow
-- [ ] Add Embedded Messaging to Coral Cloud site
-- [ ] Publthish site
-- [ ] Open coral-cloud site
-- [ ] Open Messaging
-- [ ] Test customer conversation
-- [ ] Verify booofng/fromssion record if desired --- # 36. Final Summary — What You Actually Learned ## 1. Agentforce Builder Agentforce Builder a place provide twoes jahan fromrvice were agent: - Create
-- Configure
-- Customize
-- Test
-- Activate ofor ja sakta is. --- ## 2. Agent + Subagent Main fromrvice agent customer interaction handle twoes. Specialized work to subagents handle two. Is badge in: **CC Service Agent → Experience Management** --- ## 3. Actions Actions were agent's tools are. Is example in: - Get Experience Details
-- Get Customer Details
-- Get Sessions
-- Create Experience Session Booofng --- ## 4. Flows Custom actions Salesforce Flow to reference can. Flow bacofnd operation perform to in helps. --- ## 5. Reasoning Instructions Agent to only tools dena enough not is. Usto instructions also should: - Customer to identify ofro.
-- Required information lo.
-- Correct action run ofro.
-- Correct IDs ufrom ofro.
-- Multiple fromssions be to customer from fromlection lo.
-- Guest count lo.
-- Booofng action execute ofro. --- ## 6. IDs Matter Booofng for correct record IDs this importantn: ```text
+(CC Service Agent)
+   |
+   v
+Agent Router
+   |
+   v
+Experience Management Subagent
+   |
+   +-------------------------+-------------------------+
+   |                         |                         |
+   v                         v                         v
+Get Customer Details   Get Experience Details     Get Sessions
+   |                         |                         |
+   +-------------------------+-------------------------+
+                             |
+                             v
+              Create Experience Session Booking
+                             |
+                             v
+                    Salesforce Record
+```
+
+------------------------------------------------------------------------
+
+
+---
+
+## 33. Complete Action Flows
+
+### Scenario A: A customer asks about an experience
+
+``` text
+Customer asks for experience information
+                  |
+                  v
+        Check customer identity
+                  |
+                  v
+     Ask for email and membership number
+                  |
+                  v
+         Get Customer Details
+                  |
+                  v
+       Identify the Contact record
+                  |
+                  v
+        Get Experience Details
+                  |
+                  v
+      Retrieve experience information
+                  |
+                  v
+       Summarize the results for the customer
+```
+
+### Scenario B: A customer asks for sessions
+
+``` text
+Customer asks for available sessions
+                  |
+                  v
+        Check customer identity
+                  |
+                  v
+        Get Experience Details
+                  |
+                  v
+       Obtain the Experience__c ID
+                  |
+                  v
+          Ask for a date if missing
+                  |
+                  v
+             Get Sessions
+                  |
+                  v
+           Return session results
+```
+
+**Important:** `Get Sessions` requires the \*\*Experience\_\_c ID\*\*,
+not the experience name.
+
+### Scenario C: A customer books a session
+
+``` text
+Customer wants to book a session
+                  |
+                  v
+         Get Customer Details
+                  |
+                  v
+             Obtain Contact ID
+                  |
+                  v
+              Get Sessions
+                  |
+                  v
+              Obtain Session ID
+                  |
+                  v
+      If there are multiple sessions,
+          ask the customer to choose
+                  |
+                  v
+        Ask for the number of guests
+                  |
+                  v
+   Create Experience Session Booking
+                  |
+                  v
+           Booking record created
+```
+
+------------------------------------------------------------------------
+
+
+---
+
+## 34. Important IDs and Data Mapping
+
+  Information         Source                   Used for
+  ------------------- ------------------------ ---------------------------------
+  Customer email      Customer                 Input to Get Customer Details
+  Membership number   Customer                 Input to Get Customer Details
+  Contact ID          Get Customer Details     `Contact__c`
+  Experience name     Customer request         Input to Get Experience Details
+  Experience ID       Get Experience Details   Input to Get Sessions
+  Session ID          Get Sessions             `Session__c`
+  Number of guests    Customer                 `Number_of_Guests__c`
+
+------------------------------------------------------------------------
+
+
+---
+
+## 35. Badge Completion Checklist
+
+Use this checklist while completing the Trailhead exercises.
+
+### Environment and setup
+
+-   [ ] Create a custom Playground.
+-   [ ] Launch the Playground.
+-   [ ] Enable Agentforce Studio.
+-   [ ] Publish the Coral Cloud Experience Cloud site.
+-   [ ] Open Agentforce Studio.
+
+### Agent and subagent
+
+-   [ ] Create `CC Service Agent`.
+-   [ ] Assign `EinsteinServiceAgent User`.
+-   [ ] Create the `Experience Management` subagent.
+
+### Actions and reasoning
+
+-   [ ] Add `Get Experience Details`.
+-   [ ] Configure its Flow reference.
+-   [ ] Require `experienceName`.
+-   [ ] Show `experienceRecord` in the conversation.
+-   [ ] Add `Get Customer Details`.
+-   [ ] Require `email`.
+-   [ ] Require `memberNumber`.
+-   [ ] Show the contact output.
+-   [ ] Add `Create Experience Session Booking`.
+-   [ ] Add `Get Sessions`.
+-   [ ] Add reasoning instructions.
+-   [ ] Replace the generic action wording with the
+    `Get Experience Details` reference.
+-   [ ] Switch to Script View.
+-   [ ] Add the booking instruction.
+-   [ ] Reference `Create Experience Session Booking`.
+
+### Save and test
+
+-   [ ] Save.
+-   [ ] Commit.
+-   [ ] Activate.
+-   [ ] Preview the agent.
+-   [ ] Test experience information retrieval.
+-   [ ] Test customer validation.
+-   [ ] Test session retrieval.
+-   [ ] Test booking.
+
+### Deployment
+
+-   [ ] Republish the ESA Web Deployment.
+-   [ ] Update the `Route to ESA` flow.
+-   [ ] Set **Route To** to `Agentforce Service Agent`.
+-   [ ] Set **Agentforce Service Agent** to `CC Service Agent`.
+-   [ ] Save as a new flow version.
+-   [ ] Activate the flow.
+-   [ ] Add Embedded Messaging to the Coral Cloud site.
+-   [ ] Publish the site.
+-   [ ] Open the Coral Cloud site.
+-   [ ] Open Messaging.
+-   [ ] Test the customer conversation.
+-   [ ] Optionally verify the booking or session record.
+
+------------------------------------------------------------------------
+
+
+---
+
+## 36. Final Summary: What You Learned
+
+### 1. Agentforce Builder
+
+Agentforce Builder provides a place to create, configure, customize,
+test, and activate a service agent.
+
+### 2. Agent and subagent
+
+The main service agent handles customer interaction, while specialized
+subagents handle focused work.
+
+In this badge:
+
+**CC Service Agent → Experience Management**
+
+### 3. Actions
+
+Actions are the tools the agent uses. In this example:
+
+-   Get Experience Details
+-   Get Customer Details
+-   Get Sessions
+-   Create Experience Session Booking
+
+### 4. Flows
+
+Custom actions can reference Salesforce flows. A flow performs the
+underlying operation or automation.
+
+### 5. Reasoning instructions
+
+The agent needs more than a list of available tools. Its instructions
+should explain how to:
+
+-   Identify the customer.
+-   Collect required information.
+-   Run the correct action.
+-   Use the correct IDs.
+-   Ask the customer to choose when multiple sessions are available.
+-   Collect the guest count.
+-   Execute the booking action.
+
+### 6. IDs matter
+
+The booking must use the correct record identifiers:
+
+``` text
 Contact__c = Contact ID
 Session__c = Session ID
 Number_of_Guests__c = Customer-provided guest count
-``` Especially: **Get Sessions to experience name of instead Experience__c ID ufrom to is.** --- ## 7. Preview and Testing Agent to activate to of baad blindly ufrom not to. Preview from: - Conversation test
-- Action execution
-- Plan
-- Interaction Details inspect ofththis ja sakte are. --- ## 8. Live Test Mode vs Simulate **Live Test Mode:** actual org data modify can. **Simulate:** safer simulated testing. Testing when mode understand this important. --- ## 9. Deployment Agent create to final step not is. Deployment chain: ```text
-Agent ↓
-Activate ↓
-Embedded Service Deployment Publthish ↓
-Route to ESA Flow Update ↓
-Flow Activate ↓
-Experience Cloud ↓
-Embedded Messaging ↓
-Publthish ↓
-Customer
-``` --- # 37. One-Minute Revthision Agar interview/quiz from first only 1 minute is, ththis orad rakho: ```text
-Agentforce Builder ↓
-Create Service Agent ↓
-CC Service Agent ↓
-Create Experience Management Subagent ↓
-Add Actions ↓
-Get Experience Details
+```
+
+In particular, \*\*Get Sessions uses the Experience\_\_c ID, not the
+experience name\*\*.
+
+### 7. Preview and testing
+
+Before relying on the agent, inspect its conversation, plan, action
+execution, and interaction details in Preview.
+
+### 8. Live Test Mode vs. Simulate
+
+-   **Live Test Mode:** Can access or modify actual org data.
+-   **Simulate:** Uses a simulated testing context.
+
+Choose the mode with awareness of whether real data may be affected.
+
+### 9. Deployment
+
+Creating an agent is not the final step. The deployment process
+includes:
+
+``` text
+Create and configure agent
+          |
+          v
+        Activate
+          |
+          v
+Publish Embedded Service Deployment
+          |
+          v
+Update Route to ESA Flow
+          |
+          v
+       Activate Flow
+          |
+          v
+Configure Experience Cloud
+          |
+          v
+Add Embedded Messaging
+          |
+          v
+      Publish Site
+          |
+          v
+  Customer uses the agent
+```
+
+------------------------------------------------------------------------
+
+
+---
+
+## 37. One-Minute Revision
+
+Remember this sequence:
+
+``` text
+Agentforce Builder
+        |
+        v
+Create Service Agent: CC Service Agent
+        |
+        v
+Create Experience Management Subagent
+        |
+        v
+Add Actions:
+- Get Experience Details
+- Get Customer Details
+- Get Sessions
+- Create Experience Session Booking
+        |
+        v
+Add Reasoning Instructions
+        |
+        v
+Use the correct record IDs
+        |
+        v
+Save → Commit → Activate
+        |
+        v
+Preview and test
+        |
+        v
+Publish Embedded Service Deployment
+        |
+        v
+Update Route to ESA Flow
+        |
+        v
+Route work to CC Service Agent
+        |
+        v
+Add Embedded Messaging
+        |
+        v
+Publish Experience Cloud Site
+        |
+        v
+Customer interacts with the agent
+        |
+        v
+Experience information and bookings are handled
+```
+
+------------------------------------------------------------------------
+
+
+---
+
+## 38. Key Takeaways
+
+-   **Agentforce Builder** is used to create, configure, test, and
+    activate an agent.
+-   **Subagent** means a specialized responsibility within the agent.
+-   **Action** is a tool that performs work.
+-   **Flow** is Salesforce automation used by an action to carry out an
+    operation.
+-   **Reasoning Instructions** tell the agent which actions to use and
+    how to use them.
+-   **Preview** helps test the agent during development.
+-   **Activate** enables the agent in its active state.
+-   **Embedded Messaging** provides the customer-facing chat interface.
+-   **Experience Cloud** hosts the customer-facing site.
+-   **Route to ESA Flow** routes incoming work to the intended
+    Agentforce service agent.
+
+------------------------------------------------------------------------
+
+
+---
+
+## 39. Final Mental Model
+
+``` text
+CUSTOMER
+   |
+   | “Tell me about an experience”
+   v
+SERVICE AGENT
+   |
+   v
+AGENT ROUTER
+   |
+   v
+EXPERIENCE MANAGEMENT SUBAGENT
+   |
+   v
+Check customer identity
+   |
+   v
 Get Customer Details
+   |
+   v
+Get Experience Details
+   |
+   v
 Get Sessions
-Create Experience Session Booofng ↓
-Add Reasoning Instructions ↓
-Ufrom correct IDs ↓
-Commit ↓
-Activate ↓
-Preview ↓
-Publthish Embedded Service Deployment ↓
-Update Route to ESA Flow ↓
-Route to CC Service Agent ↓
-Add Embedded Messaging ↓
-Publthish Experience Cloud Site ↓
-Customer interacts with Agent ↓
-Experience can be queried/booofd
-``` --- # 38. Key Taofaway **Agentforce Builder = Agent to create + configure + give tools + give reasoning + test + activate to of environment.** **Subagent = specialized responsibility.** **Action = tool that performs work.** **Flow = Salesforce automation/bacofnd operation ufromd by an action.** **Reasoning Instructions = the agent tells action ofb and how ufrom to is.** **Preview = test before/while deployment.** **Activate = the agent active banana.** **Embedded Messaging = customer-facing chat.** **Experience Cloud = customer-facing site.** **Route to ESA Flow = incoming work to correct Agentforce fromrvice agent tak route to.** --- # 39. Final Mental Model ```text
-CUSTOMER ↓
-"Tell me nowout an experience" ↓
-SERVICE AGENT ↓
-AGENT ROUTER ↓
-EXPERIENCE MANAGEMENT SUBAGENT ↓
-Check Customer ↓
-Get Customer Details ↓
-Get Experience Details ↓
-Get Sessions ↓
-Customer fromlects fromssion ↓
-Customer gives guest count ↓
-Create Experience Session Booofng ↓
+   |
+   v
+Customer selects a session
+   |
+   v
+Customer provides guest count
+   |
+   v
+Create Experience Session Booking
+   |
+   v
 SALESFORCE RECORD
-``` **Core idea:** Agentforce in Builder AI were agent only conversational answer dene wala bot not banew ja raha. Agent to specialized subagent, actions, Salesforce Flows, reasoning instructions, customer validation, testing, deployment and Experience Cloud messaging with a complete fromrvice workflow banew ja raha is.
+```
+
+**Core idea:** Agentforce Builder is not just for creating a chatbot
+that gives conversational answers. It can be used to build a service
+workflow that combines a main agent, specialized subagents, actions,
+Salesforce flows, reasoning instructions, customer validation, testing,
+deployment, and Experience Cloud messaging.
