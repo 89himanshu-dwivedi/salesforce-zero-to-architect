@@ -111,6 +111,7 @@ Ab architecture me add karna padega:
 ---
 
 Connect with me for complete material , share and Follow me.
+
 ---
 
 # 💼 Salesforce Technical / Solution Architect Mindset
