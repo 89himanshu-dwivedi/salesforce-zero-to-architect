@@ -1,0 +1,105 @@
+# 🎯 Topic 21 — End User Ka Nazariya
+## Trust Ka Business Case
+
+Privacy ka ultimate purpose sirf **regulation satisfy karna** nahi hai.
+
+Architecture ka end goal hai:
+
+> **Customer ko confidence dena ki unka data safely, transparently aur responsibly handle ho raha hai.**
+
+Isliye privacy ko:
+
+**Compliance + Security + Customer Experience + Trust + Business Value**
+
+ke combination ke roop me dekhna chahiye.
+
+---
+
+# 21.1 Users Kyu Naraz Hain?
+
+## Legislation Ki Asli Wajah
+
+Privacy regulations hawa me nahi aaye.
+
+Repeated data breaches, misuse of personal information aur high-profile incidents ne users ka trust damage kiya.
+
+### Example
+
+Cambridge Analytica jaise incidents ne ye concern highlight kiya ki:
+
+> **"Mera personal data exactly kaise use ho raha hai?"**
+
+Users ko often lagta hai:
+
+```text
+My Data
+   ↓
+Company
+   ↓
+Multiple Systems
+   ↓
+Unknown Usage
+```
+
+Aur unke paas limited visibility/control hota hai.
+
+### User Expectation
+
+```text
+Data
+ ↓
+Transparency
+ ↓
+Control
+ ↓
+Security
+ ↓
+Accountability
+```
+
+---
+# 🔑 Remember
+
+### Developer asks:
+
+**"How do I build this?"**
+
+### Architect asks:
+
+**"Why are we building this, how should the whole system fit together, what can change, what can fail, and what business outcome should we achieve?"**
+
+### 🧩 Final Formula
+
+**Think Strategically + Communicate Clearly + See the Big Picture = Architect Mindset**
+
+# 🚀 Connect, Share & Follow for Complete Learning Materials
+
+**Want to explore the complete material, detailed notes, practical examples, and additional learning resources?**
+
+Let's connect and grow together! 🤝
+
+I regularly share valuable learning materials, technical insights, practical knowledge, and resources designed to help you strengthen your skills and expand your understanding.
+
+### 📚 Get Access to Complete Materials
+- 📖 **Detailed Notes:** Access comprehensive notes covering important concepts and topics.
+- 💡 **Practical Examples:** Learn through real-world scenarios, use cases, and hands-on examples.
+- 🛠️ **Technical Resources:** Explore useful tools, guides, and additional learning resources.
+- 🚀 **Continuous Learning:** Stay updated with new content, insights, and knowledge.
+
+### 🤝 Let's Build a Learning Community
+
+If you find this content useful, take a moment to:
+
+- 🔗 **Connect with me** for access to complete learning materials and additional resources.
+- 📤 **Share** this content with friends, colleagues, and anyone who might benefit from it.
+- ❤️ **Follow me** to stay connected and receive updates on upcoming content and learning resources.
+
+**Your support helps us share knowledge, learn together, and grow as a community.**
+
+---
+
+### 🌟 Learn More. Share More. Grow Together.
+
+*Connect | Share | Follow | Keep Learning*
+
+---
