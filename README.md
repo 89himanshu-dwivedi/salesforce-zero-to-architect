@@ -1,4 +1,4 @@
-# Salesforce: Zero to Architect
+# Intro
 
 Hi, I'm **Himanshu Kumar** — Technical Lead & Salesforce Solution Architect with **8 years** on the platform.
 
@@ -41,9 +41,6 @@ Build a strong foundation, think beyond code, understand business requirements, 
 **Learn → Build → Integrate → Design → Architect**
 
 ---
-
-**Author:** Himanshu Kumar  
-[GitHub](https://github.com/89himanshu-dwivedi) · [LinkedIn](https://www.linkedin.com/in/himanshukumar-sf/)
 
 ## About Author
 
