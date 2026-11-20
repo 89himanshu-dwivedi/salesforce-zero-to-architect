@@ -75,7 +75,7 @@ Full terms: [LICENSE](LICENSE)
 
 ### How ownership is marked
 
-Every page carries the integrity token **`SFZTH-HKD-2026-89HD-7Q4M2X`** in four
+Every page carries the integrity token **`SFZTH-HKD-2026-89HD-7Q4M2X`** in 
 independent places, so partial removal still leaves evidence:
 
 - an HTML banner comment at the top of the file
