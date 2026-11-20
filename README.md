@@ -8,40 +8,44 @@ This repo is my open log of the full Salesforce path: Admin → Developer → Co
 
 ---
 
-## Start here — [Zero to Hero](zero-to-hero/README.md)
+## Salesforce — Zero to Architect
 
-> **Read-only unless you ask.** This content is copyrighted and no licence is granted.
-> See [Permission required](#permission-required--please-read-before-using-anything-here) below.
+A growing knowledge repository documenting Salesforce from fundamentals to advanced engineering, real-world implementation, and architecture.
 
-The full curriculum, split into folders so you can read it in order without skipping anything:
+## 📚 Topics Covered
 
-- **23 series**, one folder each (`zero-to-hero/01-sf-basics`, `02-data-modeling`, …)
-- Inside every series folder, **one page per sub-topic group** with all its topics in learning order
-- Every topic has 9 layers: Simple → Advanced → Super Advanced → Practical → Interview → Errors → Limits → Best Option → Real World
-- Everything is Markdown, so it reads directly here on GitHub — start at [zero-to-hero](zero-to-hero/README.md)
+- Salesforce Fundamentals & Administration
+- Data Modeling & Data Management
+- SOQL & SOSL
+- Apex — Basic to Advanced
+- Salesforce Sharing & Visibility
+- Lightning Web Components (LWC)
+- Integrations & API Architecture
+- Identity, Authentication & Authorization
+- Salesforce Architecture & Design Patterns
+- Sales, Service, Experience & Industry Clouds
+- Data Cloud, Agentforce & AI Engineering
+- DevOps, CI/CD & Salesforce Development Lifecycle
+- System Design, Real-World Scenarios & Projects
+
+## 🗂 Repository
+
+Everything is organized into folders, learning series, practical examples, notes, roadmaps, and architecture discussions.
+
+**This repository is continuously evolving. More topics, deep dives, integrations, projects, and architectural concepts will be added over time.**
+
+## 🎯 Objective
+
+Build a strong foundation, think beyond code, understand business requirements, solve real-world problems, and grow into a Salesforce Architect.
+
+**Learn → Build → Integrate → Design → Architect**
 
 ---
 
-## What you'll get from here
+**Author:** Himanshu Kumar  
+[GitHub](https://github.com/89himanshu-dwivedi) · [LinkedIn](https://www.linkedin.com/in/himanshukumar-sf/)
 
-- Apex written the way it should be at scale — trigger frameworks, async patterns, governor-limit-safe design
-- LWC patterns: component communication, wire vs imperative, LMS, Jest tests
-- Integration work: REST/SOAP, Named Credentials, Platform Events, CDC, retry and dead-letter handling
-- Architect-domain notes: Sharing & Visibility, Data Architecture, Integration Architecture, Identity & Access, Dev Lifecycle
-- Cloud deep-dives: Sales, Service, Experience, Field Service, Data Cloud, Agentforce
-- Design docs with the reasoning behind each decision, not just the final answer
-
-Useful if you're studying for Platform Developer II, the Architect journey, or CTA — or if you just want real examples instead of Trailhead snippets.
-
----
-
-## How this repo is built
-
-I add one folder at a time as I work through a topic. Each folder holds my notes plus the metadata or Apex for that topic.
-
----
-
-## About me
+## About Author
 
 - Technical Lead & Solution Architect at **CRISIL Ltd, an S&P Global company** — currently on S&P Global projects
 - 8 years: Apex, LWC, CPQ & Revenue Cloud, FSC, Health Cloud, Public Sector Solutions, Agentforce, Data Cloud
