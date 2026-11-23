@@ -1,5 +1,13 @@
 
+# Enterprise Architecture Thinking: Zero to Architect
 
+Hi, I'm **Himanshu Kumar** — Technical Lead & Solution Architect with **8 years** of experience building enterprise systems.
+
+I work at **CRISIL Ltd, an S&P Global company**, on S&P Global projects.
+
+This is my catch-all learning repo for everything that sits *around the application* — messaging, caching, databases, integrations, infrastructure, cloud, AI/GenAI, and the architecture thinking needed to connect them into production-ready enterprise systems.
+
+---
 
 # Identity & Access Management — Hinglish Study Guide
 
@@ -62,12 +70,6 @@ A structured, Hinglish learning guide for Salesforce Identity & Access Managemen
 - Canvas, deep linking, RelayState, and mobile SSO
 - Exam scenarios, quizzes, troubleshooting, review sessions, and architecture decisions
 
-# Enterprise Architecture Thinking: Zero to Architect
 
-Hi, I'm **Himanshu Kumar** — Technical Lead & Solution Architect with **8 years** of experience building enterprise systems.
-
-I work at **CRISIL Ltd, an S&P Global company**, on S&P Global projects.
-
-This is my catch-all learning repo for everything that sits *around the application* — messaging, caching, databases, integrations, infrastructure, cloud, AI/GenAI, and the architecture thinking needed to connect them into production-ready enterprise systems.
 
 ---
