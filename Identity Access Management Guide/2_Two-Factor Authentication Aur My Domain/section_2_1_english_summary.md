@@ -60,69 +60,34 @@ The source lists services offering 2FA: Google, Facebook, Twitter/X, Microsoft, 
 | Verification methods | Salesforce distinguishes phishing-resistant methods (such as passkeys/built-in authenticators and security keys) from standard MFA (such as Salesforce Authenticator or TOTP apps), depending on user requirements. | Do not assume every second factor has the same strength. |
 | MFA vs. 2FA terminology | Salesforce documentation commonly uses **MFA**. 2FA is two-factor authentication; MFA is the broader term. | Use Salesforce’s MFA terminology when discussing Salesforce policy. |
 
-## 9. Additional Knowledge (Separate — Focused Only on This Topic)
+# 🚀 Connect, Share & Follow for Complete Learning Materials
 
-| Additional Point | Why it matters to 2FA | Official Salesforce Reference |
-|---|---|---|
-| MFA is not merely optional for employee UI access | Salesforce requires MFA for internal logins to active production and sandbox orgs, including direct and SSO login. | [Understand MFA Requirements](https://help.salesforce.com/s/articleView?id=xcloud.mfa_make_the_case.htm&language=en_US&type=5) |
-| Privileged users need phishing-resistant MFA | Standard OTP methods may not satisfy the stronger requirement for privileged users. | [Prepare for MFA Enforcement for All Employee Users](https://help.salesforce.com/s/articleView?id=005321561&language=en_US&type=1) |
-| Users register their own verification method | Salesforce admins cannot register a user's MFA verifier on their behalf; each user completes registration. | [Register MFA Verification Methods](https://help.salesforce.com/s/articleView?id=xcloud.security_register_verification_methods.htm&language=en_US&type=5) |
-| Salesforce differentiates verification-method strength | Passkeys/security keys are phishing-resistant; Salesforce Authenticator and TOTP apps are standard MFA methods in the documented tiering. | [Verification Method Selection](https://help.salesforce.com/s/articleView?id=sf.security_optimize_verification_method_registration.htm&language=en_US&type=5) |
+**Want to explore the complete material, detailed notes, practical examples, and additional learning resources?**
 
-## 10. Technical Clarifications
+Let's connect and grow together! 🤝
 
-- **2FA vs. MFA:** 2FA means exactly two authentication factors; MFA is the broader umbrella for two or more factors. Salesforce policy and Help content primarily use “MFA.”
-- **Factor vs. method:** A factor is a category of evidence (know/have/are). A method is a concrete implementation, such as a passkey, authenticator app, or security key.
-- **Security is layered:** MFA reduces the risk of password-only compromise, but it is not a guarantee against every attack. Phishing-resistant methods provide stronger protection against credential phishing.
-- **Alerts:** The source says the user may receive an alert after a blocked attempt. Alerting depends on the service and its configuration; it is not a universal consequence of 2FA.
+I regularly share valuable learning materials, technical insights, practical knowledge, and resources designed to help you strengthen your skills and expand your understanding.
 
-## 11. Interview Q&A
+### 📚 Get Access to Complete Materials
+- 📖 **Detailed Notes:** Access comprehensive notes covering important concepts and topics.
+- 💡 **Practical Examples:** Learn through real-world scenarios, use cases, and hands-on examples.
+- 🛠️ **Technical Resources:** Explore useful tools, guides, and additional learning resources.
+- 🚀 **Continuous Learning:** Stay updated with new content, insights, and knowledge.
 
-**Q1. What is Two-Factor Authentication?**  
-It verifies a user's identity using two distinct factor categories, typically a password plus a second factor such as a registered authenticator, passkey, or security key.
+### 🤝 Let's Build a Learning Community
 
-**Q2. What are the three factor categories?**  
-Something you know, something you have, and something you are.
+If you find this content useful, take a moment to:
 
-**Q3. If an attacker steals the password, why does 2FA help?**  
-The stolen password alone is insufficient; the attacker also needs to satisfy the second factor.
+- 🔗 **Connect with me** for access to complete learning materials and additional resources.
+- 📤 **Share** this content with friends, colleagues, and anyone who might benefit from it.
+- ❤️ **Follow me** to stay connected and receive updates on upcoming content and learning resources.
 
-**Q4. Is 2FA the same as MFA?**  
-2FA uses exactly two factors. MFA is the general term for authentication requiring multiple factors.
+**Your support helps us share knowledge, learn together, and grow as a community.**
 
-**Q5. What does Salesforce require in 2026?**  
-Salesforce MFA requirements apply to internal users accessing active production and sandbox UI logins. Privileged users have a stronger phishing-resistant MFA requirement. Exact rollout timing and applicable requirements should be checked against Salesforce’s current official guidance.
+---
 
-## 12. Board-Level Answer
+### 🌟 Learn More. Share More. Grow Together.
 
-“Passwords alone are no longer a sufficient control for protecting user accounts. Two-factor authentication adds a second, independent verification factor, reducing the likelihood that a stolen password results in account takeover. For Salesforce, we should implement MFA for employee access and adopt phishing-resistant methods—especially for privileged users—while preparing user enrollment and support processes.”
+*Connect | Share | Follow | Keep Learning*
 
-## 13. Quick Revision
-
-- 2FA = two distinct factors; MFA is the broader term.
-- KNOW = secret/password; HAVE = device/token; ARE = biometric.
-- A compromised password should not be enough to pass a properly configured 2FA login.
-- Salesforce uses MFA terminology and requires MFA for employee UI access to active production/sandbox orgs.
-- Privileged users require phishing-resistant MFA.
-- Not every MFA method has equal phishing resistance.
-
-## 14. No-Skip Checklist
-
-- [ ] 2FA/MFA meaning and “Your other password” analogy
-- [ ] Know / Have / Are categories and examples
-- [ ] Two-factor login flow
-- [ ] Password-compromise scenario
-- [ ] CEO/CFO four-week hacking-attempt story from source
-- [ ] Public Service Announcement for banking/payment services
-- [ ] Service examples from source
-- [ ] Salesforce 2026 MFA requirement and phishing-resistant MFA for privileged users
-- [ ] Additional knowledge kept separate from main source topic
-- [ ] Interview Q&A and Board-Level Answer reviewed
-
-## 15. Official References
-
-- [Salesforce — Understand MFA Requirements](https://help.salesforce.com/s/articleView?id=xcloud.mfa_make_the_case.htm&language=en_US&type=5)
-- [Salesforce — Learn What MFA Is and Why It's So Important](https://help.salesforce.com/s/articleView?id=sf.mfa_learn_about.htm&language=en_US&type=5)
-- [Salesforce — Prepare for MFA Enforcement for All Employee Users](https://help.salesforce.com/s/articleView?id=005321561&language=en_US&type=1)
-- [Salesforce — Help Users Register MFA Verification Methods](https://help.salesforce.com/s/articleView?id=xcloud.security_register_verification_methods.htm&language=en_US&type=5)
-- [Salesforce — Verification Method Selection During MFA Registration](https://help.salesforce.com/s/articleView?id=sf.security_optimize_verification_method_registration.htm&language=en_US&type=5)
+---
