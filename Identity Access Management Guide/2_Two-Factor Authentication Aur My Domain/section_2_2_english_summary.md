@@ -34,48 +34,35 @@ Physical authentication devices include:
 **Why older tokens became less common:** hardware cost, distribution to each employee, lost/damaged-device replacement, inventory and lifecycle-management overhead.
 
 ## 2. SMS / Voice OTP
-**OTP = One-Time Passcode.** After username/password verification, the service sends a code to the registered phone by SMS or voice. The user enters it; valid codes complete login, while invalid or expired codes are rejected.
 
-Security caveat: SMS/voice OTP can be vulnerable to SIM swapping, phone-number takeover, interception, and phishing.
+# 🚀 Connect, Share & Follow for Complete Learning Materials
 
-## 3. Software Tokens — TOTP
-**TOTP = Time-Based One-Time Passcode.** An authenticator app generates a temporary code using a shared secret and current time. The user registers the app once; codes rotate after the time window. Examples include Google Authenticator and compatible apps. Continuous internet connectivity is not required to generate codes.
+**Want to explore the complete material, detailed notes, practical examples, and additional learning resources?**
 
-## 4. Push Notifications
-A login attempt sends a notification to the registered phone. The user taps **Approve** or **Deny**; there is no code to type.
+Let's connect and grow together! 🤝
 
-Salesforce Authenticator (iOS/Android) supports push notifications and TOTP codes.
-- Approve: login proceeds after verification.
-- Deny: login is blocked.
-- Ignore/timeout: the request doesn't complete; login doesn't proceed.
+I regularly share valuable learning materials, technical insights, practical knowledge, and resources designed to help you strengthen your skills and expand your understanding.
 
-Protect the phone with a device lock, PIN/biometrics, and never approve unexpected login prompts. Push verification relies on possession of the registered device.
+### 📚 Get Access to Complete Materials
+- 📖 **Detailed Notes:** Access comprehensive notes covering important concepts and topics.
+- 💡 **Practical Examples:** Learn through real-world scenarios, use cases, and hands-on examples.
+- 🛠️ **Technical Resources:** Explore useful tools, guides, and additional learning resources.
+- 🚀 **Continuous Learning:** Stay updated with new content, insights, and knowledge.
 
-## 5. Biometric / Built-In Authenticator
-Fingerprint, face, iris, or a device PIN/password can verify identity through a device's built-in authenticator/passkey system (e.g., Face ID, Touch ID, Windows Hello). Salesforce's built-in-authenticator/passkey flow verifies through the device; biometric data is not normally sent to Salesforce as a fingerprint image.
+### 🤝 Let's Build a Learning Community
 
-## Additional Knowledge — Current Salesforce Check
-| Additional / corrected point | Why it matters | Official reference |
-|---|---|---|
-| Salesforce direct-login SMS OTP is available as an MFA method for external users only (subject to configuration); it is not the standard employee MFA method. | Avoid assuming SMS OTP is available for all employee accounts. | https://help.salesforce.com/s/articleView?id=xcloud.mfa_config_available_verifiers.htm&type=5 |
-| Supported Salesforce TOTP details commonly specify a 6-digit code and 30-second counter. | The source mentions 30 seconds / 2 minutes; current Salesforce TOTP requirements specify 30 seconds. | https://help.salesforce.com/s/articleView?id=sf.mfa_supported_verification_methods_totp.htm&type=5 |
-| Salesforce distinguishes standard-strength methods (Salesforce Authenticator and third-party TOTP apps) from phishing-resistant methods (built-in passkeys and physical security keys). | MFA methods do not provide equal phishing resistance; privileged users may face stronger requirements. | https://help.salesforce.com/s/articleView?id=xcloud.mfa_supported_verification_methods.htm&type=5 |
-| Salesforce Authenticator supports both push notifications and TOTP fallback codes. | Push is not the app's only capability; TOTP can help when connectivity is unavailable. | https://help.salesforce.com/s/articleView?id=sf.mfa_supported_verification_methods_sfa.htm&type=5 |
-| Modern USB/FIDO2 security keys are different from older OTP key fobs. | Do not confuse rotating-code hardware tokens with passkey/public-key security keys. | https://help.salesforce.com/s/articleView?id=xcloud.mfa_supported_verification_methods.htm&type=5 |
+If you find this content useful, take a moment to:
 
-## Quick Revision
-- Hardware token = physical device.
-- OTP = One-Time Passcode.
-- TOTP = Time-Based One-Time Passcode, calculated from secret + time.
-- Push = approve/deny notification, no code entry.
-- Biometric/built-in authenticator = device-based identity verification.
-- SMS OTP is convenient but exposed to phone-number attacks; Salesforce limits SMS MFA to external users.
-- For privileged Salesforce users, prefer phishing-resistant passkeys or security keys.
+- 🔗 **Connect with me** for access to complete learning materials and additional resources.
+- 📤 **Share** this content with friends, colleagues, and anyone who might benefit from it.
+- ❤️ **Follow me** to stay connected and receive updates on upcoming content and learning resources.
 
-## No-Skip Checklist
-- [ ] Hardware token examples and management overhead
-- [ ] OTP acronym and SMS/voice flow
-- [ ] TOTP acronym, apps, secret/time mechanism, offline generation
-- [ ] Push approve/deny/timeout and phone security
-- [ ] Biometric/built-in authenticator concept
-- [ ] Current Salesforce distinctions and official reference links
+**Your support helps us share knowledge, learn together, and grow as a community.**
+
+---
+
+### 🌟 Learn More. Share More. Grow Together.
+
+*Connect | Share | Follow | Keep Learning*
+
+---
